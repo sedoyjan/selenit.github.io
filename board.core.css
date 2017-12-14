@@ -967,7 +967,7 @@ body {
 }
 
 body {
-    font-family: OpenSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #000;
 }
 
@@ -976,7 +976,7 @@ img {
 }
 
 input, button, textarea, select {
-	font-family: OpenSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #000;
 }
 
@@ -16340,7 +16340,7 @@ body.debug-resize-mode .tau-board-grid-resize-trigger__b {
     margin: 3px 0 0;
     padding-right: 5px;
     white-space: normal;
-    font-family: OpenSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* endregion*/
@@ -17044,7 +17044,7 @@ body.debug-resize-mode .tau-board-grid-resize-trigger__b {
 .filter-builder {
     min-width: 480px;
     max-width: 700px;
-    font-family: OpenSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .filter-builder__popup .tau-bubble__inner {
@@ -18336,7 +18336,7 @@ a.tau-entity-id:hover {
     right: 0;
     overflow: hidden;
     font-size: 13px;
-    font-family: OpenSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .system-pane--two-column .system-view {
@@ -18534,7 +18534,7 @@ a.tau-entity-id:hover {
 }
 .single-sign-on {
     max-width: 700px;
-    font-family: OpenSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13px;
 
 }
@@ -20962,7 +20962,7 @@ a.tau-entity-id:hover {
         align-items: center;
     box-sizing: border-box;
     height: 24px;
-    font-family: OpenSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 11px;
     line-height: 14px;
     white-space: nowrap;
