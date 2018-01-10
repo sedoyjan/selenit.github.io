@@ -28,9 +28,17 @@ body {
 
 .template-main {
     min-height: 100%;
-    grid-template-rows: 3rem 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+}
+
+.row {
+    border-color: #cee;
+}
+
+.row > * + * {
+    margin-left: 10px;
 }
 
 .header {
@@ -51,6 +59,17 @@ body {
     grid-column: 1;
 }
 
+.template-inner {
+    min-height: 100%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.template-inner > * {
+    margin: 0;
+}
+
 .right {
     grid-row: 2;
     grid-column: 2;
@@ -67,4 +86,9 @@ body {
 .collapsible > summary:focus {
     outline: none;
     color: #006;
+}
+
+p {
+    background: #ccc;
+    padding: 10px;
 }

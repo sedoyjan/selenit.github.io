@@ -4,12 +4,23 @@
 <link rel="stylesheet" href="style.css">
 <div class="layout grid template-main">
 
-    <div class="layout stack header">
+    <div class="layout stack header row">
         <p>Header</p>
+        <p>Some more content</p>
+        <p>Stacked horizontally</p>
     </div>
 
     <div class="layout stack left column">
         <p>Main content</p>
+        <p>stacked vertically</p>
+        <div>
+            <div class="layout grid template-inner">
+                <p>This content</p>
+                <p>is inside</p>
+                <p>the nested</p>
+                <p>grid</p>
+            </div>
+        </div>
     </div>
 
     <div class="layout stack right column">
@@ -17,7 +28,7 @@
         <p>Additional content</p>
 
         <details class="collapsible" open>
-            <summary>Collapsible panel</summary>
+            <summary>Collapsible panel 1</summary>
 
             <div class="layout stack column">
                 <p>I'm a simple text component</p>
@@ -27,7 +38,7 @@
         </details>
 
         <details class="collapsible" open>
-            <summary>Collapsible panel</summary>
+            <summary>Collapsible panel 2</summary>
 
             <div class="layout stack column">
                 <p>I'm a simple text component</p>
@@ -35,6 +46,8 @@
             </div>
 
         </details>
+
+        <p>Still stacked vertically</p>
 
     </div>
 
