@@ -52,3 +52,10 @@
     </div>
 
 </div>
+<script src="Sortable.min.js"></script>
+<script>
+var lists = document.getElementsByClassName("layout");
+for (var i = 0, list; list = lists[i]; i++) {
+    Sortable.create(list, { group: "layouts" });
+}
+</script>
