@@ -6,7 +6,7 @@ body {
 }
 
 .layout {
-    border: solid 1px;
+    border: #ccc solid 1px;
     padding: 10px;
     box-sizing: border-box;
 }
