@@ -7,7 +7,11 @@ html {
     font-size: 50%;
 }
 
-body { font: 2rem/1.5 Lora, serif; }
+body {
+    font: 2rem/1.5 Lora, serif;
+    margin: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -38,7 +42,7 @@ h3 {
 
 
 main {
-    width: 40em;
+    width: 39em;
     margin: auto;
     padding: 1rem;
 }
@@ -70,14 +74,23 @@ code {
     color: #600;
 }
 
+blockquote {
+    margin: 0 -1rem;
+    padding: 0 3rem;
+    background: linear-gradient(#F26E21,#F26E21) no-repeat 0 0, linear-gradient(#F26E21,#F26E21) no-repeat 100% 0;
+    background-size: 3px 100%;
+}
+
 iframe {
     display: block;
-    block-step-size: 3rem;
+}
+.cp_embed_wrapper {
+    margin: 0 -1rem;
 }
 
 .top-header {
     width: 45em;
-    margin: auto;
+    margin: 3rem auto;
     background: #F26E21;
     border-radius: 1.5em;
     position: relative;
@@ -184,56 +197,65 @@ iframe {
     line-height: 3.8rem;
     margin: 0;
     display: block;
-    padding: 0 .5rem;
+    padding: 0 .3rem 0 1rem;
     border: none;
     border-radius: 0 0 2rem 2rem;
     transition: all .3s;
+    cursor: pointer;
+}
+
+.search:hover .search__field {
+    background: #fff;
 }
 
 .search__field:focus,
 .search__field:not(:placeholder-shown) {
-    width: calc(100% + 6.2rem);
+    width: calc(100% + 6.6rem);
     outline: 0;
     transform: none;
     border-radius: 0 0 0 2rem;
     background: #fff;
+    cursor: text;
 }
 
 .search__button {
     background: #f0f0f0;
     font: inherit;
     position: absolute;
-    top: -12.4rem;
-    left: calc(100% + 4.2rem);
+    top: -12.6rem;
+    left: calc(100% + 4.6rem);
     height: 3.8rem;
-    width: 7.8rem;
+    width: 8rem;
     font-size: .75em;
     box-sizing: border-box;
     border-radius: 1.5rem;
     color: #f0f0f0;
     border: none;
     transition: all .3s;
+    pointer-events: none;
 }
 
 .search__field:focus ~ .search__button,
 .search__field:not(:placeholder-shown) ~ .search__button {
-    background: #aaa;
+    background: #1485CC;
     color: #fff;
     border-radius: 0 1.5rem 1.5rem 0;
-    transform: translate(2rem, 12.4rem);
+    transform: translate(2rem, 12.6rem);
+    pointer-events: all;
 }
 
 .search__label {
     position: absolute;
     top: 0;
-    left: 4.2rem;
+    left: 3.8rem;
     line-height: 3.8rem;
     color: #aaa;
     transition: all .3s;
+    cursor: pointer;
 }
 
-.search__label:hover {
-    color: #888;
+.search:hover .search__label {
+    color: #1485CC;
 }
 
 .search__field:focus ~ .search__label,
@@ -276,13 +298,80 @@ iframe {
     transform: scale(.75);
 }
 
+.comments {
+    width: 39em;
+    margin: auto;
+    padding: 1rem;
+}
+
+.comments-list {
+    margin-top: 6rem;
+    padding: 0;
+}
+
+.comments-list__item {
+    list-style: none;
+}
+
+.comments-list__metas {
+}
+
+.comments-list__pic {
+    width: 4.2rem;
+    height: 4.2rem;
+    margin: 0 1rem 0 -5.2rem;
+    float: left;
+    border-radius: 50%;
+}
+
+.comments-list__user-name {
+    font: inherit;
+    font-weight: 700;
+    margin: 0;
+    position: static;
+    float: left;
+}
+
+.comments-list__dates {
+    text-align: right;
+    font-style: italic;
+    background: linear-gradient(to top, #f0f0ff 1px, transparent 1px, transparent 3rem, #F26E21 3rem, #F26E21 3.1rem, transparent 3.1rem) repeat 0 -.6rem;
+    margin: 0 -1rem 0 0;
+    padding: 0 1rem 3rem 0;
+}
+
+.comments-list__fields {
+    float: left;
+    margin-right: 4rem;
+}
+
+.comments-list__fields-btn {
+    background: none;
+    padding: 0 2rem;
+    background: #f0f0f0;
+    color: #1485CC;
+    border: 1px dashed #ccc;
+    font: inherit;
+}
+
+.comments .children {
+    padding-left: 5.2rem;
+}
+
 @media (min-width: 60em) {
     html {
         font-size: 62.5%;
     }
 
-    main {        
+    main {
         background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 .4rem;
+        background-size: 100% 3rem;
+    }
+
+    .comments-list__content {
+        padding: 0 1rem;
+        margin: 0 -1rem;
+        background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.6rem;
         background-size: 100% 3rem;
     }
 
@@ -338,8 +427,8 @@ iframe {
 <li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/o-nas" class="nav__link">Трюки</a></li>
 <li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/o-nas" class="nav__link">FAQ</a></li>
 <li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item">
-    <form class="search">
-        <input type="search" id="search" class="search__field" placeholder="&nbsp;">
+    <form class="search" action="http://css-live.ru/">
+        <input type="search" id="search" class="search__field" placeholder="&nbsp;" name="s">
         <button class="search__button">Найти</button>
         <label for="search" class="search__label">Поиск...</label>
     </form>
@@ -426,3 +515,163 @@ iframe {
 <p>В CSS — и в этой статье — термины «блок» и «строчный элемент»/«элемент строки» относятся исключительно к внешнему виду, и могут относиться вообще не к <i>элементу</i> DOM, а к <i>псевдо</i>элементу. Общего с устаревшей классификацией элементов из HTML 4 у них не больше, чем у JavaScript и Java. Не дайте себя запутать, <i>и да пребудет с вами CSSила! :)</i></p>
 
 </main>
+
+<section class="comments">
+
+
+<div class="article-comments__head">
+    <h2 class="article-comments__title">Комментарии (4 шт.)</h2>
+</div>
+<div class="article-comments__main" id="article-comments__main">
+    <div class="article-comments__list">
+        <ol class="comments-list">
+            <li class="comment even thread-even depth-1 comments-list__item" id="li-comment-333832">
+                <div id="comment-333832" class="comment" data-id="333832">
+                    <div class="comments-list__metas">
+                        <img src="http://css-live.ru/wp-content/themes/happenstance/img/nophoto_comments.svg"
+                            class="comments-list__pic">
+                        <h3 class="comments-list__user-name">Lev Solntsev</h3>
+                        <div class="comments-list__dates">
+                            <time class="comments-list__date" datetime="2018-07-24T19:08:37+00:00">24.07.2018 в 19:08
+                            </time>
+                        </div>
+                    </div>
+                    <!-- .comment-meta -->
+
+
+                    <div class="comments-list__content">
+
+                        <blockquote><p><i>Иногда</i>&nbsp;они могут&nbsp;<i>почти</i>&nbsp;заменить&nbsp;<a
+                            href="http://css-live.ru/articles/mysli-vslux-o-podsetkax-v-css-grid-layout.html">подсетки</a>:
+                        </p></blockquote>
+                        <p>Забавно, но в Сафари (iPad) пример не работает. Выравнивание по верху.</p>
+                        <div class="comments-list__fields">
+                            <button type="button" class="comments-list__fields-btn" data-id="333832">
+                                <span>Ответить</span>
+                            </button>
+
+                        </div>
+                        <div class="reply">
+                            <!--			   <a rel='nofollow' class='comment-reply-link' href='http://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html?replytocom=333832#respond' onclick='return addComment.moveForm( "comment-333832", "333832", "respond", "22152" )' aria-label='Комментарий к записи Lev Solntsev'>Ответить</a> <span>&darr;</span>			</div><!-- .reply -->
+                            <p class="edit-link"><a class="comment-edit-link"
+                                href="http://css-live.ru/wp-admin/comment.php?action=editcomment&amp;c=333832">Изменить</a>
+                            </p></div><!-- .comment-content -->
+                    </div><!-- #comment-## -->
+
+                    <ol class="children">
+                        <li class="comment byuser comment-author-selenit bypostauthor odd alt depth-2 comments-list__item"
+                            id="li-comment-333833">
+                            <div id="comment-333833" class="comment" data-id="333833">
+                                <div class="comments-list__metas">
+                                    <img src="http://css-live.ru/wp-content/uploads/2018/01/selenit-photo-150x150.jpg"
+                                        alt="SelenIT"
+                                        class="comments-list__pic avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo">
+                                    <h3 class="comments-list__user-name"><b class="fn">SelenIT</b>
+                                        <span>(Автор записи)</span></h3>
+                                    <div class="comments-list__dates">
+                                        <time class="comments-list__date" datetime="2018-07-24T20:07:57+00:00">
+                                            24.07.2018 в 20:07
+                                        </time>
+                                    </div>
+                                </div>
+                                <!-- .comment-meta -->
+
+
+                                <div class="comments-list__content">
+
+                                    <p>Упс, моя недоработка, увлекся борьбой с Фоксом и поленился проверить(. А с
+                                        флексбоксами (верхний пример в <a href="http://jsfiddle.net/qf15s3zv/3/"
+                                            rel="nofollow">http://jsfiddle.net/qf15s3zv/3/</a>) работает?</p>
+                                    <div class="comments-list__fields">
+                                        <button type="button" class="comments-list__fields-btn" data-id="333833">
+                                            <span>Ответить</span>
+                                        </button>
+
+                                    </div>
+                                    <div class="reply">
+                                        <!--			   <a rel='nofollow' class='comment-reply-link' href='http://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html?replytocom=333833#respond' onclick='return addComment.moveForm( "comment-333833", "333833", "respond", "22152" )' aria-label='Комментарий к записи SelenIT'>Ответить</a> <span>&darr;</span>			</div><!-- .reply -->
+                                        <p class="edit-link"><a class="comment-edit-link"
+                                            href="http://css-live.ru/wp-admin/comment.php?action=editcomment&amp;c=333833">Изменить</a>
+                                        </p></div><!-- .comment-content -->
+                                </div><!-- #comment-## -->
+
+                                <ol class="children">
+                                    <li class="comment even depth-3 comments-list__item" id="li-comment-333834">
+                                        <div id="comment-333834" class="comment" data-id="333834">
+                                            <div class="comments-list__metas">
+                                                <img
+                                                    src="http://css-live.ru/wp-content/themes/happenstance/img/nophoto_comments.svg"
+                                                    class="comments-list__pic">
+                                                <h3 class="comments-list__user-name"><b class="fn">Lev Solntsev</b></h3>
+                                                <div class="comments-list__dates">
+                                                    <time class="comments-list__date"
+                                                        datetime="2018-07-24T20:13:48+00:00">24.07.2018 в 20:13
+                                                    </time>
+                                                </div>
+                                            </div>
+                                            <!-- .comment-meta -->
+
+
+                                            <div class="comments-list__content">
+
+                                                <p>Там да.</p>
+                                                <div class="comments-list__fields">
+                                                    <button type="button" class="comments-list__fields-btn"
+                                                        data-id="333834">
+                                                        <span>Ответить</span>
+                                                    </button>
+
+                                                </div>
+                                                <div class="reply">
+                                                    <!--			   <a rel='nofollow' class='comment-reply-link' href='http://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html?replytocom=333834#respond' onclick='return addComment.moveForm( "comment-333834", "333834", "respond", "22152" )' aria-label='Комментарий к записи Lev Solntsev'>Ответить</a> <span>&darr;</span>			</div><!-- .reply -->
+                                                    <p class="edit-link"><a class="comment-edit-link"
+                                                        href="http://css-live.ru/wp-admin/comment.php?action=editcomment&amp;c=333834">Изменить</a>
+                                                    </p></div><!-- .comment-content -->
+                                            </div><!-- #comment-## -->
+
+                                        </div>
+                                    </li><!-- #comment-## -->
+                                </ol><!-- .children -->
+                            </div>
+                        </li><!-- #comment-## -->
+                    </ol><!-- .children -->
+                </div>
+            </li><!-- #comment-## -->
+            <li class="comment odd alt thread-odd thread-alt depth-1 comments-list__item" id="li-comment-333836">
+                <div id="comment-333836" class="comment" data-id="333836">
+                    <div class="comments-list__metas">
+                        <img src="http://css-live.ru/wp-content/themes/happenstance/img/nophoto_comments.svg"
+                            class="comments-list__pic">
+                        <h3 class="comments-list__user-name"><b class="fn">Алексей</b></h3>
+                        <div class="comments-list__dates">
+                            <time class="comments-list__date" datetime="2018-07-26T13:33:04+00:00">26.07.2018 в 13:33
+                            </time>
+                        </div>
+                    </div>
+                    <!-- .comment-meta -->
+
+
+                    <div class="comments-list__content">
+
+                        <p>Полезная статья. Спасибо!</p>
+                        <div class="comments-list__fields">
+                            <button type="button" class="comments-list__fields-btn" data-id="333836">
+                                <span>Ответить</span>
+                            </button>
+
+                        </div>
+                        <div class="reply">
+                            <!--			   <a rel='nofollow' class='comment-reply-link' href='http://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html?replytocom=333836#respond' onclick='return addComment.moveForm( "comment-333836", "333836", "respond", "22152" )' aria-label='Комментарий к записи Алексей'>Ответить</a> <span>&darr;</span>			</div><!-- .reply -->
+                            <p class="edit-link"><a class="comment-edit-link"
+                                href="http://css-live.ru/wp-admin/comment.php?action=editcomment&amp;c=333836">Изменить</a>
+                            </p></div><!-- .comment-content -->
+                    </div><!-- #comment-## -->
+
+                </div>
+            </li><!-- #comment-## -->
+        </ol><!-- .commentlist -->
+    </div>
+
+</div>
+
+</section>
