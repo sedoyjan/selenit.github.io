@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 <title>CSS-live.ru</title>
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Montserrat:500|Anonymous+Pro&amp;subset=cyrillic" rel="stylesheet">
+<link rel="icon" href="http://css-live.ru/wp-content/uploads/2018/01/favicon.png" sizes="32x32" />
 <style>
 html {
     font-size: 50%;
@@ -24,7 +25,7 @@ h1 {
     line-height: 6rem;
     padding-bottom: 3rem;
     position: relative;
-    top: 1rem;
+    top: .9rem;
 }
 
 h2 {
@@ -47,7 +48,6 @@ h3 {
 main {
     width: 39em;
     margin: auto;
-    padding: 1rem;
 }
 
 p, ul, ol {
@@ -77,7 +77,7 @@ code {
 }
 
 blockquote {
-    margin: 0 -1rem;
+    margin: 0;
     padding: 0 3rem;
     background: linear-gradient(#F26E21,#F26E21) no-repeat 0 0, linear-gradient(#F26E21,#F26E21) no-repeat 100% 0;
     background-size: 3px calc(100% - .6rem);
@@ -85,9 +85,6 @@ blockquote {
 
 iframe {
     display: block;
-}
-.cp_embed_wrapper {
-    margin: 0 -1rem;
 }
 
 .top-header {
@@ -142,28 +139,37 @@ iframe {
     justify-content: space-between;
 }
 
+.decor span {
+    transition: all .3s;
+}
+
+.decor span:hover {
+    color: #1485CC;
+}
+
 .nav__item {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 3rem;
     line-height: 1;
-    grid-row: 5;
+    grid-row: 1;
     grid-column: 15;
 }
 
-.nav__item:nth-child(1) { grid-area: 2 / 2 / span 1 / span 4; border-radius: 2rem 2rem 0 0; }
-.nav__item:nth-child(2) { grid-area: 3 / 2 / span 5 / span 1; background: none;}
-.nav__item:nth-child(3) { grid-area: 8 / 2 / span 1 / span 4; border-radius: 0 0 2rem 2rem; }
-.nav__item:nth-child(4) { grid-area: 2 / 7 / span 1 / span 4; border-radius: 2rem 2rem 0 0; }
-.nav__item:nth-child(5) { grid-area: 8 / 7 / span 1 / span 4; border-radius: 0 0 2rem 2rem; }
-.nav__item:nth-child(6) { grid-area: 5 / 7 / span 1 / span 4; border-radius: 0 2rem 0 2rem; }
-.nav__item:nth-child(7) { grid-area: 3 / 7 / span 2 / span 1; writing-mode: vertical-rl; transform: rotate(.5turn); }
-.nav__item:nth-child(8) { grid-area: 6 / 10 / span 2 / span 1; writing-mode: vertical-rl;}
-.nav__item:nth-child(10) { grid-area: 2 / 12 / span 1 / span 4; border-radius: 2rem 2rem 0 0; }
-.nav__item:nth-child(9) { grid-area: 5 / 15 / span 3 / span 1; border-radius: 0 2rem 0 0; writing-mode: vertical-rl; }
-.nav__item:nth-child(11) { grid-area: 5 / 12 / span 1 / span 3; border-radius: 0 0 0 2rem; }
-.nav__item:nth-child(12) { grid-area: 3 / 12 / span 2 / span 1; writing-mode: vertical-rl; transform: rotate(.5turn); }
-.nav__item:nth-child(13) { grid-area: 8 / 12 / span 1 / span 4; border-radius: 0 0 2rem 2rem; overflow: visible; }
+.item-secrets { grid-area: 8 / 7 / span 1 / span 4; border-radius: 0 0 2rem 2rem; }
+.item-social { grid-area: 5 / 13 / span 3 / span 3; background: none;}
+.item-news { grid-area: 2 / 12 / span 1 / span 4; border-radius: 2rem 2rem 0 0; }
+.item-practice { grid-area: 2 / 7 / span 1 / span 4; border-radius: 2rem 2rem 0 0; }
+.item-html { grid-area: 2 / 3 / span 1 / span 3; border-radius: 0 2rem 0 0 ; }
+.item-js { grid-area: 4 / 2 / span 4 / span 1; writing-mode: vertical-rl; transform: rotate(.5turn); }
+.item-css { grid-area: 2 / 2 / span 2 / span 1; border-radius: 0 0 2rem 0; writing-mode: vertical-rl; transform: rotate(.5turn); }
+.item-svg { grid-area: 8 / 2 / span 1 / span 2; border-radius: 0 0 0 2rem; }
+.item-about { grid-area: 3 / 12 / span 3 / span 1; border-radius: 0 2rem 0 0; writing-mode: vertical-rl; transform: rotate(.5turn); }
+.item-tricks { grid-area: 3 / 7 / span 3 / span 1; border-radius: 0 2rem 0 0; writing-mode: vertical-rl; transform: rotate(.5turn); }
+.item-theory { grid-area: 5 / 8 / span 1 / span 3; border-radius: 0 2rem 0 0; }
+.item-faq { grid-area: 6 / 10 / span 2 / span 1; writing-mode: vertical-rl; transform: rotate(.5turn); }
+.item-search { grid-area: 8 / 12 / span 1 / span 4; border-radius: 0 0 2rem 2rem; overflow: visible; }
+.item-wow { grid-area: 8 / 4 / span 1 / span 2; border-radius: 0 0 2rem 0; }
 
 .nav__link {
     width: 100%;
@@ -178,7 +184,9 @@ iframe {
 }
 
 .nav__link:hover, .nav__link:focus {
-    color: #1485CC;
+    outline: none;
+    background: #1485CC;
+    color: #fff;
     box-shadow: 0 1px 7px rgba(0,0,0,.3);
 }
 
@@ -206,7 +214,8 @@ iframe {
 }
 
 .search:hover .search__field {
-    background: #fff;
+    background: #1485CC;
+    color: #fff;
     box-shadow: 0 1px 7px rgba(0,0,0,.3);
 }
 
@@ -216,7 +225,8 @@ iframe {
     outline: 0;
     transform: none;
     border-radius: 0 0 0 2rem;
-    background: #fff;
+    background: #1485CC;
+    color: #fff;
     cursor: text;
     box-shadow: 0 1px 7px rgba(0,0,0,.3);
 }
@@ -240,17 +250,18 @@ iframe {
 
 .search__field:focus ~ .search__button,
 .search__field:not(:placeholder-shown) ~ .search__button {
-    background: #1485CC;
+    color: #1485CC;
     border-radius: 0 1.5rem 1.5rem 0;
     transform: translate(2rem, 12.6rem);
     box-shadow: 0 1px 7px rgba(0,0,0,.3);
+    width: 8.6rem;
     pointer-events: all;
 }
 
 .search__label {
     position: absolute;
     top: 0;
-    left: 3.8rem;
+    left: 2rem;
     line-height: 3.8rem;
     color: #aaa;
     transition: all .3s;
@@ -258,18 +269,19 @@ iframe {
 }
 
 .search:hover .search__label {
-    color: #1485CC;
+    color: #fff;
 }
 
 .search__field:focus ~ .search__label,
 .search__field:not(:placeholder-shown) ~ .search__label {
     color: #fff;
-    transform: translate(-5.2rem, -3rem) scale(.75);
+    transform: translate(-3.7rem, -3rem) scale(.75);
 }
 
 .social__list {
     list-style: none;
     display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
     grid-gap: .4rem;
     margin: 0;
     padding: 0;
@@ -277,9 +289,22 @@ iframe {
     height: 100%;
 }
 
+.social__list::before {
+    content: '';
+    grid-area: 2 / 1 / span 2 / span 2;
+}
+
 .social__item {
     width: 100%;
     height: 100%;
+}
+
+.social__item:nth-child(3) {
+    border-radius: 0 2rem 0 0;
+}
+
+.social__item:nth-child(3) .social__img {
+    border-radius: 0 1.8rem 0 0;
 }
 
 .social__link {
@@ -291,9 +316,12 @@ iframe {
     align-items: center;
     box-sizing: border-box;
     padding: 0 0 0 1px;
+    border-radius: inherit;
 }
 
 .social__link:hover, .social__link:focus {
+    outline: none;
+    background: #1485CC;
     box-shadow: 0 1px 7px rgba(0,0,0,.3);
 }
 
@@ -304,10 +332,6 @@ iframe {
 .article__meta {
     position: relative;
     line-height: 3rem;
-}
-
-.article__meta a, .meta__date {
-    font-size: .8em;
 }
 
 .meta {
@@ -336,6 +360,7 @@ iframe {
 
 .meta__categories, .meta__tags {
     padding-left: 3rem;
+    font-size: .8em;
 }
 .meta__categories {
     background: url(http://css-live.ru/wp-content/themes/happenstance/img/papka-1.svg) left 10px no-repeat;
@@ -417,13 +442,13 @@ iframe {
     }
 
     main {
-        background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 .3rem;
+        background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem;
         background-size: 100% 3rem;
     }
 
     .comments-list__content {
-        padding: 0 1rem;
-        margin: 0 -1rem;
+        padding: 0;
+        margin: 0;
         background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem;
         background-size: 100% 3rem;
     }
@@ -439,8 +464,19 @@ iframe {
 
 <nav>
 <ul id="nav" class="nav top_nav">
-<li id="menu-item-61" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/tajny-css2-1" class="nav__link">Секреты</a></li>
-<li id="menu-item-57" class=" nav__item">
+<li id="menu-item-3766" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item item-html"><a href="http://css-live.ru/category/html5" class="nav__link">HTML5</a></li>
+<li id="menu-item-14495" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item item-css"><a href="http://css-live.ru/category/css" class="nav__link">CSS</a></li>
+<li id="menu-item-7859" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item item-js"><a href="http://css-live.ru/category/javascript" class="nav__link">JavaScript</a></li>
+<li id="menu-item-15617" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item item-svg"><a href="http://css-live.ru/category/svg" class="nav__link">SVG</a></li>
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item item-wow"><a href="http://css-live.ru/cssjssvg-s-podvypodvertom" class="nav__link">!!!</a></li>
+<li id="menu-item-3168" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item item-practice"><a href="http://css-live.ru/praktika" class="nav__link">Практика</a></li>
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item item-tricks"><a href="http://css-live.ru/category/tricks" class="nav__link">Трюки</a></li>
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item item-theory"><a href="http://css-live.ru/category/teoriya" class="nav__link">Теория</a></li>
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item item-faq"><a href="http://css-live.ru/faq" class="nav__link">FAQ</a></li>
+<li id="menu-item-61" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item item-secrets"><a href="http://css-live.ru/category/tajny-css2-1" class="nav__link">Секреты</a></li>
+<li id="menu-item-3908" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item item-news"><a href="http://css-live.ru/category/vecssti-s-polej" class="nav__link">Новости</a></li>
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item item-about"><a href="http://css-live.ru/o-nas" class="nav__link">О нас</a></li>
+<li id="menu-item-57" class=" nav__item item-social">
     <ul class="social__list">
         <li class="social__item">
             <a href="http://www.facebook.com/csslive" class="social__link social__link_type_fb">
@@ -453,6 +489,11 @@ iframe {
             </a>
         </li>
         <li class="social__item">
+            <a href="http://feeds.feedburner.com/css-live" class="social__link social__link_type_rss">
+                <img src="http://css-live.ru/wp-content/themes/happenstance/img/rss.svg" class="social__img" alt="rss">
+            </a>
+        </li>
+        <li class="social__item">
             <a href="https://twitter.com/#!/cssliveru" class="social__link social__link_type_tw">
                 <img src="http://css-live.ru/wp-content/themes/happenstance/img/twitter.svg" class="social__img" alt="twitter">
             </a>
@@ -462,24 +503,9 @@ iframe {
                 <img src="http://css-live.ru/wp-content/themes/happenstance/img/if_telegram.svg" class="social__img" alt="telegram">
             </a>
         </li>
-        <li class="social__item">
-            <a href="http://feeds.feedburner.com/css-live" class="social__link social__link_type_rss">
-                <img src="http://css-live.ru/wp-content/themes/happenstance/img/rss.svg" class="social__img" alt="rss">
-            </a>
-        </li>
     </ul>
 </li>
-<li id="menu-item-3908" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/vecssti-s-polej" class="nav__link">Новости</a></li>
-<li id="menu-item-3168" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/praktika" class="nav__link">Практика</a></li>
-<li id="menu-item-3766" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/html5" class="nav__link">HTML5</a></li>
-<li id="menu-item-7859" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/javascript" class="nav__link">JavaScript</a></li>
-<li id="menu-item-14495" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/css" class="nav__link">CSS</a></li>
-<li id="menu-item-15617" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/svg" class="nav__link">SVG</a></li>
-<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/o-nas" class="nav__link">О нас</a></li>
-<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/category/teoriya" class="nav__link">Теория</a></li>
-<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/category/tricks" class="nav__link">Трюки</a></li>
-<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/faq" class="nav__link">FAQ</a></li>
-<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item">
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item item-search">
     <form class="search" action="http://css-live.ru/">
         <input type="search" id="search" class="search__field" placeholder="&nbsp;" name="s">
         <button class="search__button">Найти</button>
