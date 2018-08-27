@@ -22,6 +22,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 4rem;
     line-height: 6rem;
+    padding-bottom: 3rem;
+    position: relative;
+    top: 1rem;
 }
 
 h2 {
@@ -299,6 +302,51 @@ iframe {
     transform: scale(.75);
 }
 
+.article__meta {
+    position: relative;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+}
+
+.meta__autor-photo {
+    position: absolute;
+    left: -9rem;
+    top: -0.6rem;
+}
+
+.meta__photo {
+    display: block;
+    max-width: 6rem;
+    max-height: 6rem;
+    border-radius: 50%;
+}
+
+.meta__date {
+    display: block;
+    font-style: italic;
+}
+
+.meta__categories, .meta__tags {
+    padding-left: 3rem;
+}
+.meta__categories {
+    background: url(http://css-live.ru/wp-content/themes/happenstance/img/papka-1.svg) left 10px no-repeat;
+}
+.meta__tags {
+    background: url(http://css-live.ru/wp-content/themes/happenstance/img/papka-2.svg) left 10px no-repeat;
+}
+
+.meta__comments {
+    position: absolute;
+    left: calc(100% + 6rem);
+    top: -3rem;
+    width: calc(48vw - 23.5em);
+}
+
 .comments {
     width: 39em;
     margin: auto;
@@ -387,7 +435,7 @@ iframe {
 
 <nav>
 <ul id="nav" class="nav top_nav">
-<li id="menu-item-61" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/css" class="nav__link">Секреты</a></li>
+<li id="menu-item-61" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/tajny-css2-1" class="nav__link">Секреты</a></li>
 <li id="menu-item-57" class=" nav__item">
     <ul class="social__list">
         <li class="social__item">
@@ -417,16 +465,16 @@ iframe {
         </li>
     </ul>
 </li>
-<li id="menu-item-3908" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/faq" class="nav__link">Новости</a></li>
-<li id="menu-item-3168" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/vecssti-s-polej" class="nav__link">Практика</a></li>
+<li id="menu-item-3908" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/vecssti-s-polej" class="nav__link">Новости</a></li>
+<li id="menu-item-3168" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/praktika" class="nav__link">Практика</a></li>
 <li id="menu-item-3766" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/html5" class="nav__link">HTML5</a></li>
 <li id="menu-item-7859" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/javascript" class="nav__link">JavaScript</a></li>
-<li id="menu-item-14495" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/svg" class="nav__link">CSS</a></li>
-<li id="menu-item-15617" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/design-and-usability" class="nav__link">SVG</a></li>
+<li id="menu-item-14495" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/css" class="nav__link">CSS</a></li>
+<li id="menu-item-15617" class=" menu-item menu-item-type-taxonomy menu-item-object-category nav__item"><a href="http://css-live.ru/category/svg" class="nav__link">SVG</a></li>
 <li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/o-nas" class="nav__link">О нас</a></li>
-<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/category/tajny-css2-1" class="nav__link">Теория</a></li>
-<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/o-nas" class="nav__link">Трюки</a></li>
-<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/o-nas" class="nav__link">FAQ</a></li>
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/category/teoriya" class="nav__link">Теория</a></li>
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/category/tricks" class="nav__link">Трюки</a></li>
+<li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item"><a href="http://css-live.ru/faq" class="nav__link">FAQ</a></li>
 <li id="menu-item-21477" class=" menu-item menu-item-type-post_type menu-item-object-page nav__item">
     <form class="search" action="http://css-live.ru/">
         <input type="search" id="search" class="search__field" placeholder="&nbsp;" name="s">
@@ -444,6 +492,32 @@ iframe {
 
 <header>
     <h1>Удивительный и неизвестный inline-block</h1>
+    <div class="article__meta">
+        <div class="meta">
+            <div class="meta__autor-photo">
+                <img src="http://css-live.ru/wp-content/uploads/2018/01/selenit-photo-150x150.jpg" alt="SelenIT" class="meta__photo avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo"> 
+            </div>
+            <div class="meta__info">
+                <a href="http://css-live.ru//author/selenit/" class="meta__name" title="SelenIT">SelenIT</a>
+                <time class="meta__date">24.07.2018</time>
+            </div>
+            <div class="meta__tags-wrap">
+                <div class="meta__categories">
+                    <a href="http://css-live.ru/css" class="meta__category-link meta__category-link_type_javascript">CSS</a>,
+                    <a href="http://css-live.ru/articles-css" class="meta__category-link meta__category-link_type_javascript">Статьи по CSS</a>,
+                    <a href="http://css-live.ru/teoriya" class="meta__category-link meta__category-link_type_javascript">Теория</a>,
+                    <a href="http://css-live.ru/tricks" class="meta__category-link meta__category-link_type_javascript">Трюки</a>
+                </div>
+                <div class="meta__tags">
+                    <a href="http://css-live.ru/tag/css-display-module-level-3" class="meta__tag-link meta__tag-link_type_javascript">CSS Display module level 3</a>,
+                    <a href="http://css-live.ru/tag/inline-block" class="meta__tag-link meta__tag-link_type_javascript">inline-block</a>
+                </div>
+            </div>
+        </div>
+        <div class="meta__comments">
+            Ком&shy;мен&shy;та&shy;ри&shy;ев: <a href="#comments" class="meta__coment-link">4</a>
+        </div>
+    </div>
 </header>
 
 <p>Эта статья задумана как начало цикла про загадки, сюрпризы, малоизученные особенности и маленькие полезные секреты самого могущественного, пожалуй, свойства в CSS — свойства <code>display</code>. У нас уже были статьи про новинки этого свойства — значения <code>contents</code> (<a href="http://css-live.ru/articles/display-contents-practice.html">что это вообще</a>, <a href="http://css-live.ru/css/paradoksy-displaycontents-i-budushhee-teksta-v-css.html">его сюрпризы</a>, <a href="http://css-live.ru/articles/bolee-dostupnaya-razmetka-s-displaycontents.html">преимущества</a> и <a href="http://css-live.ru/articles/display-contents-ne-css-sbros.html">подводные камни</a> для доступности) и <code>flow-root</code>. Но и старые, давно знакомые (казалось бы) значения этого свойства таят в себе немало сюрпризов, подводных камней и удивительных открытий. Прежде всего, пожалуй, это значения с «приставкой» <code>inline-</code>: <code>inline-flex</code>, <code>inline-grid</code>, <code>inline-table</code>, и, наконец, наш старый <i>знакомый</i> <code>inline-block</code>.</p>
@@ -517,7 +591,7 @@ iframe {
 
 </main>
 
-<section class="comments">
+<section class="comments" id="comments">
     <h2 class="article-comments__title">Комментарии (4 шт.)</h2>
 
     <div class="article-comments__main" id="article-comments__main">
