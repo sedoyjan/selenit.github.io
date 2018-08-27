@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>CSS-live.ru</title>
-<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Montserrat:500|Anonymous+Pro:400&amp;subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Montserrat:500|Anonymous+Pro&amp;subset=cyrillic" rel="stylesheet">
 <style>
 html {
     font-size: 50%;
@@ -61,19 +61,18 @@ a, strong, em, i, b, code, span {
 a {
     color: #1485CC;
     text-decoration: none;
-    background: linear-gradient(to right, rgba(28,148,198,.4), rgba(28,148,198,.4) 34%, #0e4a63 50%, #fc6d00 67%, #fc6d00) 0% 1em no-repeat;
+    background: linear-gradient(to right, rgba(28,148,198,.4), rgba(28,148,198,.4) 34%, #0e4a63 50%, #fc6d00 67%, #fc6d00) 0% 1.05em no-repeat;
     background-size: 300% 1px;
     padding-bottom: .3em;
     transition: all .5s ease;
 }
 
 a:hover, a:focus {
-    background-position: 100% 1em;
+    background-position: 100% 1.05em;
 }
 
 code {
     font-family: 'Anonymous Pro', monospace;
-    font-size: 0.9em;
     color: #600;
 }
 
@@ -304,6 +303,11 @@ iframe {
 
 .article__meta {
     position: relative;
+    line-height: 3rem;
+}
+
+.article__meta a, .meta__date {
+    font-size: .8em;
 }
 
 .meta {
@@ -413,14 +417,14 @@ iframe {
     }
 
     main {
-        background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 .4rem;
+        background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 .3rem;
         background-size: 100% 3rem;
     }
 
     .comments-list__content {
         padding: 0 1rem;
         margin: 0 -1rem;
-        background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.6rem;
+        background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem;
         background-size: 100% 3rem;
     }
 
