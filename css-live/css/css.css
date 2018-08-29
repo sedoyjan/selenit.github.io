@@ -163,7 +163,7 @@ iframe {
     --s-column12: 2;
     --s-column13: 3;
     --s-column15: 5;
-    grid: 2rem repeat(7, 4rem) 2rem  repeat(7, 4rem) 2rem / 2rem repeat(4, 4rem) 1fr repeat(4, 4rem) var(--last-gap);
+    grid: 2rem repeat(7, 4rem) 2rem  repeat(7, 4rem) 4rem / 2rem repeat(4, 4rem) 1fr repeat(4, 4rem) var(--last-gap);
 }
 
 @media (min-width: 32em) {
@@ -325,7 +325,7 @@ iframe {
 @media (min-width: 32em) and (max-width: 49.99em) {
     .forms {
         display: flex;
-        margin-bottom: 14rem;
+        margin-bottom: 9rem;
         justify-content: center;
     }
 }
@@ -343,7 +343,7 @@ iframe {
     .search {
         grid: 0 4rem 2rem / 2rem 1fr 2px;
         --input-w: 7.6rem;
-        --input-fw: 28rem;
+        --input-fw: 37.4rem;
     }
 }
 
@@ -352,6 +352,7 @@ iframe {
         position:relative;
         grid: 14rem 4rem 8rem / auto 1fr 2rem;
         --input-col: 1;
+        --input-fw: 28rem;
     }
 }
 
@@ -383,7 +384,6 @@ iframe {
 @media (min-width: 32em) and (max-width: 49.99em) {
     .search__field {
         display: flex;
-        margin-bottom: 14rem;
         border-radius: 2rem .3rem .3rem 2rem;
     }
 }
@@ -487,9 +487,10 @@ iframe {
     .decor {
         writing-mode: horizontal-tb;
         transform: none;
-        top: 40rem;
-        left: 8rem;
-        right: 8rem;
+        top: 39rem;
+        left: 18rem;
+        right: 18rem;
+        font-size: 10rem;
     }
 }
 
@@ -537,7 +538,7 @@ iframe {
 @media (min-width: 32em) and (max-width: 49.99em) {
     .email__text {
         --email-w: 15.6rem;
-        --email-fw: 28rem;
+        --email-fw: 45rem;
         border-radius: .3rem 2rem 2rem .3rem;
     }
 }
