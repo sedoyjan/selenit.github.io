@@ -668,7 +668,7 @@ iframe {
     display: flex;
     flex-flow: column;
     align-items: flex-end;
-    margin: .1rem 0 -100%;
+    margin: .1rem 0 -9rem;
 }
 
 .meta__coment-link {
