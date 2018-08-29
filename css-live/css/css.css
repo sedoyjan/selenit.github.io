@@ -43,7 +43,7 @@ main {
     margin: 0 3rem;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 44em) {
     main {
         max-width: 78rem;
         margin: auto;
