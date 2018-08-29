@@ -7,6 +7,13 @@ body {
     margin: 0;
 }
 
+/* TODO: сделать нормально */
+@media (max-width: 31.99em) {
+    body {
+        overflow-x: hidden;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -48,6 +55,17 @@ main {
         max-width: 78rem;
         margin: auto;
     }
+}
+
+#showmenu:checked ~ main::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,.6);
+    z-index: 2;
 }
 
 
@@ -93,9 +111,103 @@ iframe {
      S I T E    H E A D E R
 */
 
+.menu-button {
+    width: 7rem;
+    height: 9rem;
+    background: #F26E21;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    border-radius: 1rem;
+    z-index: 30;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all .3s .2s, opacity .2s .3s;
+    transform-origin: 50% 0;
+    cursor: pointer;
+}
+
+@media (min-width: 32em) {
+    .menu-button {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.menu-button::before, .menu-button::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    height: 1em;
+    width: 1em;
+    bottom: 50%;
+    border-radius: 50%;
+}
+
+.menu-button::before {
+    box-shadow: #fff 0 0 1px, #fff 0 0.8em 0, #F26E21 0.5em 0.4em 0;
+    left: -1em;
+    clip: rect(0.5em, 1em, 1.5em, .7em);
+}
+
+.menu-button::after {
+    box-shadow: #fff 0 0 1px, #fff 0 0.8em 0, #F26E21 -0.5em 0.4em 0;
+    right: -1em;
+    clip: rect(0.5em, 1em, 1.5em, -.7em);
+    z-index: -1;
+}
+
+.logo-collapsed {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.logo-collapsed span {
+    line-height: 1em;
+    transition: all .5s;
+}
+
+#showmenu:checked ~ .top-header .menu-button {
+    transform: scale(5);
+    opacity: 0;
+    z-index: 9;
+}
+
+#showmenu:checked ~ .top-header .logo-collapsed__txt {
+    transform: scale(.1);
+    transition: all .2s;
+}
+
+#showmenu:checked ~ .top-header .logo-collapsed__c {
+    transform: scale(2) translate(1ex, .5ex);
+}
+
+#showmenu:checked ~ .top-header .logo-collapsed__s1 {
+    transform: scale(2) translate(0, 2ex);
+}
+
+#showmenu:checked ~ .top-header .logo-collapsed__s2 {
+    transform: scale(2) translate(-1ex, -1ex);
+}
 
 .top-header {
     overflow-x: hidden;
+    margin-top: 12rem;
+}
+
+@media (min-width: 32em) {
+    .top-header {
+        margin-top: 0;
+    }
 }
 
 .top-nav {
@@ -105,12 +217,28 @@ iframe {
     margin: 2rem auto 3rem;
     background: #F26E21;
     border-radius: 4rem;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.4);
+    transform-origin: 50% 0;
+    transform: scale(.1, .05);
+    z-index: 10;
+    transition: transform .25s .25s;
+}
+
+#showmenu:checked ~ .top-header .top-nav {
+    transform: none;
 }
 
 @media (min-width: 32em) {
     .top-nav {
         width: 58rem;
+        position: relative;
+        transform: none;
+        box-shadow: none;
+        transition: none;
     }
 }
 
@@ -142,6 +270,37 @@ iframe {
     right: -3em;
     clip: rect(1.5em, 1em, 4.5em, -2em);
     z-index: -1;
+}
+
+.closemenu-button {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+}
+
+.closemenu-button::before, .closemenu-button::after {
+    content: '';
+    position: absolute;
+    top: 1.8rem;
+    width: 100%;
+    border-bottom: solid .4rem #fff;
+}
+
+.closemenu-button::before {
+    transform: rotate(45deg);
+}
+
+.closemenu-button::after {
+    transform: rotate(-45deg);
+}
+
+@media (min-width: 32em) {
+    .closemenu-button {
+        display: none;
+    }
 }
 
 /*

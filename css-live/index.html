@@ -9,8 +9,14 @@
     <link rel="stylesheet" type="text/css" href="css/css.css">
   </head>
   <body>
+  <input type="checkbox" class="visually-hidden" id="showmenu">
   <header class="top-header">
-    <h1 class="visually-hidden">CSS-live.ru</h1>
+    <label for="showmenu" class="menu-button">
+      <span class="logo-collapsed" role="presentation">
+        <span class="logo-collapsed__txt">меню</span>
+        <span class="logo-collapsed__c">C</span><span class="logo-collapsed__s1">S</span><span class="logo-collapsed__s2">S</span><span class="logo-collapsed__txt">live</span>
+      </span>
+    </label>
     <nav class="top-nav">
       <p class="visually-hidden">Навигация по сайту</p>
       <ul class="nav nav-list">
@@ -77,6 +83,9 @@
         </label>
       </form>
     </div>
+    <label for="showmenu" class="closemenu-button">
+        <span class="visually-hidden">Скрыть меню</span>
+    </label>
   </nav>
 
   </header>
