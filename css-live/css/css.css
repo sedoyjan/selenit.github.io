@@ -443,6 +443,10 @@ iframe {
     width: 28rem;
 }
 
+.email__text:focus::-webkit-input-placeholder {
+    color: #888;
+}
+
 .email__text:focus::placeholder {
     color: #888;
 }
