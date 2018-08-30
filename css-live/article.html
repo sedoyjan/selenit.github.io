@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>CSS-live.ru</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Montserrat:500|Anonymous+Pro&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="icon" href="http://css-live.ru/wp-content/uploads/2018/01/favicon.png" sizes="32x32" />
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+  </head>
+  <body>
+  <input type="checkbox" class="visually-hidden" id="showmenu">
+  <header class="top-header">
+    <nav class="top-nav" aria-labeledby="menulabel">
+      <label for="showmenu" class="menu-button">
+          <span class="logo-collapsed" role="presentation">
+            <span class="logo-collapsed__css">CSS</span><span class="logo-collapsed__live">live</span>
+          </span>
+          <span class="visually-hidden">Открыть/закрыть</span>
+          <span class="menu-button__menu">меню</span>
+          <span class="menu-button__close"></span>
+      </label>
+      <ul class="nav nav-list hidden-when-compacted">
+      <li class="nav__item item-html item-c"><a href="http://css-live.ru/category/html5" class="nav__link">HTML5</a></li>
+      <li class="nav__item item-css item-vertical item-c"><a href="http://css-live.ru/category/css" class="nav__link">CSS</a></li>
+      <li class="nav__item item-js item-vertical item-c"><a href="http://css-live.ru/category/javascript" class="nav__link">JavaScript</a></li>
+      <li class="nav__item item-grid item-c"><a href="http://css-live.ru/tag/css3-grid-layout" class="nav__link">Grid</a></li>
+      <li class="nav__item item-svg item-c"><a href="http://css-live.ru/category/svg" class="nav__link">SVG</a></li>
+      <li class="nav__item item-theory item-s"><a href="http://css-live.ru/category/teoriya" class="nav__link">Теория</a></li>
+      <li class="nav__item item-tricks item-vertical item-s"><a href="http://css-live.ru/category/tricks" class="nav__link">Трюки</a></li>
+      <li class="nav__item item-practice item-s"><a href="http://css-live.ru/praktika" class="nav__link">Практика</a></li>
+      <li class="nav__item item-faq item-vertical item-s"><a href="http://css-live.ru/faq" class="nav__link">FAQ</a></li>
+      <li class="nav__item item-secrets item-s"><a href="http://css-live.ru/cssjssvg-s-podvypodvertom" class="nav__link">Примеры</a></li>
+      <li class="nav__item item-news"><a href="http://css-live.ru/category/vecssti-s-polej" class="nav__link">Новости</a></li>
+      <li class="nav__item item-archive item-vertical"><a href="http://css-live.ru/category/tajny-css2-1" class="nav__link">Архив</a></li>
+      <li class="nav__item item-about"><a href="http://css-live.ru/o-nas" class="nav__link">О нас</a></li>
+      <li class="nav__item item-home"><a href="http://css-live.ru/" class="nav__link link-home" title="На главную"><span class="hidden-if-grid">На главную</span></a></li>
+      <li class="nav__item item-social">
+        <p class="hidden-if-grid">Социальные сети и потоки</p>
+        <ul class="social__list">
+          <li class="social__item">
+            <a href="http://feeds.feedburner.com/css-live" class="social__link social__link_type_rss">
+              <img src="http://css-live.ru/wp-content/themes/happenstance/img/rss.svg" class="social__img" alt="rss">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://twitter.com/#!/cssliveru" class="social__link social__link_type_tw">
+              <img src="http://css-live.ru/wp-content/themes/happenstance/img/twitter.svg" class="social__img" alt="twitter">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="https://t.me/css_live" class="social__link social__link_type_telegram">
+              <img src="http://css-live.ru/wp-content/themes/happenstance/img/if_telegram.svg" class="social__img" alt="telegram">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="http://www.facebook.com/csslive" class="social__link social__link_type_fb">
+              <img src="http://css-live.ru/wp-content/themes/happenstance/img/facebook.svg" class="social__img" alt="Facebook">
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="http://vk.com/club36238567" class="social__link social__link_type_vk">
+              <img src="http://css-live.ru/wp-content/themes/happenstance/img/vk.svg" class="social__img" alt="vkontakte">
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="forms hidden-when-compacted">
+      <form class="search" action="http://css-live.ru/">
+        <p class="visually-hidden">Форма поиска</p>
+        <input type="search" id="search" class="field search__field" placeholder="&nbsp;" name="s">
+        <button class="search__button " tabindex="-1"><span class="hidden-if-grid">Найти</span></button>
+        <label for="search" class="search__label">Поиск</label>
+        <span class="decor hidden-if-nogrid" role="presentation"><span>l</span><span>i</span><span>v</span><span>e</span></span>
+      </form>
+      <form class="email">
+        <p class="hidden-if-grid">Хотите подписаться на нашу email-рассылку?</p>
+        <input class="field email__text" placeholder="Ваш email" type="email" id="subscribe">
+        <button class="email__submit" type="submit" tabindex="-1">Да</button>
+        <label for="subscribe" class="email__label hidden-if-nogrid">
+          <span class="email__label-part email-part0">Email-рассылка</span>
+          <span class="email__label-part email-part1">Хотите подписаться?</span>
+        </label>
+      </form>
+    </div>
+  </nav>
+
+  </header>
+
+  <main>
+    <article class="post">
+      <header>
+        <div class="meta post__meta">
+          <div class="meta__autor-photo">
+            <img src="http://css-live.ru/wp-content/uploads/2018/01/selenit-photo-150x150.jpg" alt="SelenIT" class="meta__photo avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo"> 
+          </div>
+          <div class="meta__info">
+            <a href="http://css-live.ru//author/selenit/" class="meta__name" title="SelenIT">SelenIT</a>
+            <time class="meta__date">24.07.2018</time>
+          </div>
+          <div class="meta__tags-wrap">
+            <div class="meta__categories">
+              <a href="http://css-live.ru/css" class="meta__category-link meta__category-link_type_javascript">CSS</a>,
+              <a href="http://css-live.ru/articles-css" class="meta__category-link meta__category-link_type_javascript">Статьи по CSS</a>,
+              <a href="http://css-live.ru/teoriya" class="meta__category-link meta__category-link_type_javascript">Теория</a>,
+              <a href="http://css-live.ru/tricks" class="meta__category-link meta__category-link_type_javascript">Трюки</a>
+            </div>
+            <div class="meta__tags">
+              <a href="http://css-live.ru/tag/css-display-module-level-3" class="meta__tag-link meta__tag-link_type_javascript">CSS Display module level 3</a>,
+              <a href="http://css-live.ru/tag/inline-block" class="meta__tag-link meta__tag-link_type_javascript">inline-block</a>
+            </div>
+          </div>
+          <div class="meta__comments">
+            Комментариев: <a href="#comments" class="meta__coment-link">4</a>
+          </div>
+        </div>
+        <h1>Удивительный и неизвестный inline-block</h1>
+      </header>
+
+      <p>Эта статья задумана как начало цикла про загадки, сюрпризы, малоизученные особенности и маленькие полезные секреты самого могущественного, пожалуй, свойства в CSS — свойства <code>display</code>. У нас уже были статьи про новинки этого свойства — значения <code>contents</code> (<a href="http://css-live.ru/articles/display-contents-practice.html">что это вообще</a>, <a href="http://css-live.ru/css/paradoksy-displaycontents-i-budushhee-teksta-v-css.html">его сюрпризы</a>, <a href="http://css-live.ru/articles/bolee-dostupnaya-razmetka-s-displaycontents.html">преимущества</a> и <a href="http://css-live.ru/articles/display-contents-ne-css-sbros.html">подводные камни</a> для доступности) и <code>flow-root</code>. Но и старые, давно знакомые (казалось бы) значения этого свойства таят в себе немало сюрпризов, подводных камней и удивительных открытий. Прежде всего, пожалуй, это значения с «приставкой» <code>inline-</code>: <code>inline-flex</code>, <code>inline-grid</code>, <code>inline-table</code>, и, наконец, наш старый <i>знакомый</i> <code>inline-block</code>.</p>
+      <p>С него-то мы и начнем наш экскурс в фундаментальные глубины CSS образца 2018 года, в конце которого у нас должно сложиться целостное представление обо всех существующих механизмах раскладки в браузере. Готовы к сюрпризам?<span id="more-22152"></span></p>
+      <h2>Чуть-чуть истории</h2>
+      <p>Для молодых верстальщиков и фронтендеров инлайн-блоки — что-то очень древнее. Но ни в CSS1, ни в CSS2 никакого <code>inline-block</code> не было. Появился он только в CSS2.1, а стандартом CSS2.1 стал лишь в 2011-м, в эпоху «CSS3». В Firefox до 3-й версии (а версии тогда «жили» не по полтора месяца, а годами) <code>inline-block</code> приходилось эмулировать через <code>-moz-inline-box</code>, который был не чем иным, как… мозилловской реализацией старой версии флексбоксов (да-да, <i>инлайн-блоки эмулировали флексбоксами</i>, вот так ирония!). Как ни странно, IE это значение поддерживал (в нем оно впервые и появилось!), но… только для элементов с дефолтным <code>inline</code> (впрочем, это ограничение обходилось простым хаком). В общем, веселое было время:)</p>
+      <p>В начале 2010-х инлайн-блоки пережили всплеск популярности как основа для сеток. Они давали намного больше простора для разных вариантов выравнивания, чем надоевшие флоаты, и при этом не нуждались ни в каких «клиарфиксах». И по сей день они — один из самых популярных фолбэков для нормальных систем раскладки (флексбоксов и гридов).</p>
+      <p>Но как и флоаты, инлайн-блоки не были предназначены для раскладки блоков, так что своих хитрых хаков и тут хватало. Не случайно две <a href="http://css-live.ru/articles/zagadochnye-otstupy-mezhdu-inlajn-blokami.html">статьи</a> про <a href="http://css-live.ru/articles-css/ravnomernoe-vyravnivanie-blokov-po-shirine.html">такие хаки</a> до сих пор у нас в числе самых популярных.</p>
+      <h2>Не <code>inline</code> и не <code>block</code></h2>
+      <p>Во многих учебниках и руководствах для новичков про <code>inline-block</code> пишут, что он «строчный и блочный одновременно». Это <i>неправда</i>.</p>
+      <p><code>Inline-block</code> — не inline-элемент (который может разрываться между строками, для которого вертикальные <code>padding</code>-и и <code>border</code>-ы не влияют на его положение, который игнорирует <code>width</code> и <code>height</code> и т.д.). И не блочный элемент (который пытается заполнить всю доступную ширину контейнера, <code>margin</code>-ы которого схлопываются с <code>margin</code>-ами соседей и даже потомков, в который могут вторгаться флоаты и т.д.). У него есть <i>отдельные черты</i> того и другого, но…</p>
+      <p>Пожалуй, проще всего понять, что такое <code>inline-block</code> на самом деле, обратившись к новой спецификации <a href="https://drafts.csswg.org/css-display/">CSS Display 3 уровня</a>.</p>
+      <p>Постоянные читатели нашего сайта уже знают, что по новой спецификации свойство <code>display</code> отвечает <a href="https://drafts.csswg.org/css-display/#display-type">за две вещи</a> (на самом деле не только, но пока хватит этого):</p>
+      <ol>
+      <li>Внешнее поведение элемента — как он взаимодействует с соседями, т.е. <i>в каком контексте форматирования</i> он сам находится (или, как говорит спецификация, <i>участвует</i>);</li>
+      <li>Внутреннее поведение элемента — как он влияет на размещение своих потомков, т.е. <i>какой контекст форматирования</i> действует в нем самом.</li>
+      </ol>
+      <p>Для каждого поведения теперь есть отдельный набор ключевых слов, так что значения свойства display по новому стандарту будут составными. А старые значения с дефисом будут псевдонимами, алиасами для некоторых из таких комбинаций (говорю «будут», потому что браузеры еще не понимают составных значений, но в стандарт это уже заложено).</p>
+      <p>Какому же составному значению будет псевдонимом наш <code>inline-block</code>? Думаете, «inline block» («инлайновый снаружи, блочный внутри»)? Вот и нет! <a href="https://drafts.csswg.org/css-display/#legacy-display">На самом деле</a> его полное значение вот какое:</p>
+      <h2><code>inline flow-root</code></h2>
+      <p>Иначе говоря, он участник инлайнового контекста снаружи и <a href="http://css-live.ru/faq/displayflow-root-not-clearfix.html">начало нового блочного контекста форматирования</a> внутри. Неожиданно! Но логично.</p>
+      <p>В инлайновом контексте форматирования ничего блочного быть не может. По построению. Как только в контейнере появляется что-то с <code>display:block</code>, контейнер по волшебству — то есть <i>по стандарту</i> — превращается из <i>контейнера текста</i> в <i>контейнер блоков</i>, и у нового блока появляются <a href="http://css-live.ru/articles/mysterious-css-anonymous-boxes.html">анонимные блочные соседи</a>. Поэтому, чтобы вставить блочное содержимое в инлайновый контекст, нужен некий «переходник». <i>Начало блочного контекста форматирования</i>, ведущее себя как элемент строки — это он и есть. По-видимому, редакторы спецификаций сами поняли это только с появлением самого <code>flow-root</code>. Из-за этого «запоздалого прозрения» пришлось спешно решать еще одну проблему&#8230; но о ней чуть позже, в продолжениях.</p>
+      <p>То, что он сам участвует в инлайновом контексте — ключевая особенность <i>инлайн</i>-блока. Из нее вытекают и многие его преимущества, и почти все раздражающие недостатки. Они, кстати, будут и у <code>inline-table</code>, <code>inline-flex</code> и <code>inline-grid</code>, так что это знание пригодится во многих ситуациях.</p>
+      <h2>Атомарный элемент строки</h2>
+      <p>За одним редким исключением (о нем в другой раз), все «переходники» между инлайновым и каким-либо другим контекстами форматирования ведут себя как сплошные прямоугольники, при этом встроенные в строку текста, как буквы или эмодзи. Кстати, так же себя ведут и «переходники» между текстом и чем-то, вообще не относящимся к CSS — <i>замещаемые элементы</i> (картинки, видео&#8230;) и <i>виджеты</i> (напр. <a href="http://css-live.ru/articles-css/spisok-psevdoelementov-dlya-stilizacii-elementov-upravleniya-formy.html">элементы форм</a>), как их <a href="https://html.spec.whatwg.org/#toc-rendering">называют</a> в HTML5. CSS называет такие неделимые прямоугольники <i>атомарными</i> <i>элементами строки (atomic inline boxes)</i>.</p>
+      <p>Ключевой момент здесь то, что это <i>элементы строки</i>. А значит, подчиняются непростым для понимания <a href="http://css-live.ru/css/metriki-shrifta-line-height-vertical-align.html">правилам инлайнового контекста</a>:</p>
+      <p class="codepen" data-height="270" data-theme-id="light" data-slug-hash="ZjWNwj" data-default-tab="result" data-user="SelenIT" data-embed-version="2" data-pen-title="Приключения инлайн-блоков в строчном контексте форматирования">See the Pen <a href="https://codepen.io/SelenIT/pen/ZjWNwj/">Приключения инлайн-блоков в строчном контексте форматирования</a> by Ilya Streltsyn (<a href="https://codepen.io/SelenIT">@SelenIT</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      <p><script async src="https://static.codepen.io/assets/embed/ei.js"></script></p>
+      <p>Вот несколько особенностей, которые, по моим наблюдениям, вызывают больше всего проблем и недоразумений на практике.</p>
+      <h3>Минимальное пространство по высоте</h3>
+      <p>Любой инлайн-блок, даже самый маленький, заставляет браузер использовать <i>целый контейнер строки</i>, минимальная высота которого определяется свойством <code>line-height</code> <i>родителя</i>. Увеличить (распереть) эту высоту инлайн-блок может, но уменьшить — нет. А поскольку высота строки складывается из двух частей — над базовой линией и под ней, возможна ситуация, когда инлайн-блок «распирает» верхнюю часть, «отпихивая» собой базовую линию от «потолка» контейнера строки (как пустой инлайн-блок в нашем примере), но пространство <i>под</i> ним остается! Даже если крошечный инлайн-блок будет <i>единственным потомком</i> родителя, он всё равно займет <i>целую</i> строку.</p>
+      <p>Так что, если у крошечной кнопки или иконки вдруг появились «непонятные отступы», которых не видно даже в браузерном отладчике (!), просто вспомните про эту особенность. Побороть ее можно, задав контейнеру очень маленькую <code>line-height</code> (вплоть до <code>0</code>). Но лучше сразу использовать для таких вещей не инлайн-блоки, а обычные блоки или флексбоксы — там ни с чем <i>бороться</i> не надо.</p>
+      <h3>Пробелы имеют значение</h3>
+      <p>Про эту «проблему», думаю, читатели нашего сайт давно знают (см. вторую по популярности <a href="http://css-live.ru/articles/zagadochnye-otstupy-mezhdu-inlajn-blokami.html">статью</a>:). Но упомянуть ее надо. Коротко: в инлайновом контексте любые пробельные символы подряд (сами пробелы, табуляции и переводы строки, в т.ч. <i>между тегами</i>) внутри текста, при дефолтном white-space: normal, отображаются на экране как один пробел. В примере выше видно, почему это <i>не баг:</i> ведь инлайн-блоки <i>вписываются в текст</i>. А значит, отделяются пробелами от соседних слов на общих основаниях и прижимаются вплотную к знакам препинания и другим символам, если надо. Если нужно другое поведение, лучшее решение — использовать что-то другое. Не инлайн-блоки, а, например, те же флексбоксы.</p>
+      <p>Здесь же стоит упомянуть, что по умолчанию инлайн-блок может переноситься на новую строку, даже если перед ним <i>нет</i> пробела. Так сложилось исторически. Если нужно «приклеить» инлайн-блок к соседнему слову, чтоб они переносились только вместе (например, иконку к ссылке), можно, например, обернуть их в общий <code>&lt;span&gt;</code> с <code>white-space: nowrap</code>.</p>
+      <h3>«Странное» действие <code>middle</code></h3>
+      <p>В последней строке примера видно, что второй инлайн-блок, с <code>vertical-align: middle</code>, не выровнен по середине контейнера строки, а стоит гораздо ниже. Можно подумать, что <code>vertical-align</code> вообще не сработало, но если присмотреться, видно, что текст в нем на пиксель <i>ниже</i> общей базовой линии.</p>
+      <p>Разгадка в том, что <code>middle</code> выравнивает середину высоты инлайн-блока с серединой <i>высоты строчных букв</i> текста родительского элемента. Т.е. ставит ее на <code>0.5ex</code> выше базовой линии. Середина контейнера строки с этой точкой обычно не совпадает. Поэтому такое выравнивание сдвигает инлайн-блок и, как часто бывает в строчном контексте, может дополнительно «распереть» контейнер строки и вызвать <i>еще один</i> непонятный отступ над (или под) элементом. Будьте начеку!</p>
+      <h2>Уникальная базовая линия</h2>
+      <p>Эту особенность я даже вынес в отдельный раздел, потому что она (на сегодняшний день) уникальна именно для инлайн-блоков: их базовой линией, по которой они выравниваются относительно окружающего текста, считается базовая линия <i>последней</i> строки текста внутри них. Это видно на примере «инлайн-блока в две строки» выше. У элементов с другими <code>display: inline-что-то</code> (о них мы позже поговорим отдельно) базовая линия берется не по последней, а по <i>первой</i> строке. Чуть ниже мы увидим, как эта уникальность может нам пригодиться.</p>
+      <p>Важный нюанс: если контента в инлайн-блоке нет, то базовой линией считается нижняя граница его внешнего отступа (см. последний инлайн-блок в примере). Если его <code>overflow</code> не равно <code>visible</code> — тоже. Так что если под пустыми или обрезанными инлайн-блоками появляется больше пустого места, чем под непустыми — это не баг (если мешает, можно просто поменять <code>vertical-align</code>). Уникален ли <i>этот</i> нюанс для инлайн-блоков, или другие <code>display: inline-*</code> должны его перенять — <a href="https://github.com/w3c/csswg-drafts/issues/2902">было неясно</a>, но <em>(добавлено 22.08.2018)</em> оказалось, что да, это тоже исключение из правила.</p>
+      <h2><code>inline-block</code> в роли блока</h2>
+      <p>И всё же многим атомарный элемент строки очень похож на блок. У него есть все элементы боксовой модели (<code>margin</code>/<code>border</code>/<code>padding</code>), и все они работают предсказуемо, увеличивая занимаемое элементом место (как мы опять же видели в примере). У него есть размеры. В частности, ему можно задать <code>width: 100%</code> (минус боковые <code>padding</code>-и, если надо) — и он растянется на всю доступную ширину контейнера. И внутри у него может быть полноценное блочное содержимое — заголовки, абзацы, даже флоаты и таблицы (если надо). Чем не блок? Но всё же существенная разница есть.</p>
+      <h3>Неуправляемая анонимная блочная обертка</h3>
+      <p>Контейнер строки, в котором живет инлайн-блок и который нельзя сделать ниже определенного минимального размера, никуда не девается. И если рядом с этим контейнером строки оказывается что-то блочное, то он оборачивается в <a href="http://css-live.ru/articles/mysterious-css-anonymous-boxes.html">анонимный блок</a>. То есть на самом деле у нас получается этакая «матрёшка»: снаружи анонимный обычный блок (с параметрами по умолчанию — на всю доступную ширину родителя, отступы по нулям и т.п.). В нем — строка «виртуального» текста, со свойствами, унаследованными от родительского контейнера. Внутри этой строки — атомарный элемент на всю ее ширину. И только внутри него — отдельный блочный контекст форматирования со своим блочным содержимым.</p>
+      <p>Анонимный блок всегда продолжает родительский контекст форматирования, поэтому «ужиматься», чтобы разместиться рядом с флоатом, не умеет. Сам инлайн-блок — атомарный элемент строки, как длинное неразрывное слово — тоже. Поэтому, если контента в нем много, инлайн-блок будет стремиться заполнить<i> всю</i> ширину родителя, а не только свободное место рядом с флоатом. Это еще одно важное отличие инлайн-блока от <a href="http://css-live.ru/faq/displayflow-root-not-clearfix.html">обычного, блочного flow-root</a>.</p>
+      <p class="codepen" data-height="300" data-theme-id="light" data-slug-hash="oMZNKr" data-default-tab="result" data-user="SelenIT" data-embed-version="2" data-pen-title="Сравнение обычного flow-root и инлайн-блока (inline flow-root) в блочном окружении">See the Pen <a href="https://codepen.io/SelenIT/pen/oMZNKr/">Сравнение обычного flow-root и инлайн-блока (inline flow-root) в блочном окружении</a> by Ilya Streltsyn (<a href="https://codepen.io/SelenIT">@SelenIT</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      <h3>Много строк внутри — одна строка снаружи</h3>
+      <p>Еще раз отметим, что с точки зрения родительского блочного контейнера инлайн-блок в своей анонимной блочной обертке считается <i>единственной строкой</i> «призрачного» текста. В некоторых случаях это бывает полезно (см. ниже).</p>
+      <h2>Полезные применения <code>inline-block</code></h2>
+      <h3>Тривиальное</h3>
+      <p>Прямое назначение инлайн-блоков — вставка чего-то «блокоподобного» (кнопки, текстовые иконки, теги, беджи и т.п.) прямо в текст.</p>
+      <p class="codepen" data-height="180" data-theme-id="light" data-slug-hash="wxdavy" data-default-tab="result" data-user="SelenIT" data-embed-version="2" data-pen-title="wxdavy">See the Pen <a href="https://codepen.io/SelenIT/pen/wxdavy/">wxdavy</a> by Ilya Streltsyn (<a href="https://codepen.io/SelenIT">@SelenIT</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      <h3>Хак: фолбэк для флексбоксов (и гридов)</h3>
+      <p>С оговорками, но всё же у текста в CSS есть аналоги многих возможностей флексбоксов. Включая <i>многие</i> виды горизонтального (влево, вправо, центр, <a href="http://css-live.ru/articles-css/ravnomernoe-vyravnivanie-blokov-po-shirine.html">по ширине</a>) и вертикального (по базовой линии, по верхнему или нижнему краю контейнера строки&#8230;) выравнивания. Поэтому инлайн-блоки издавна используют как своего рода «флексбоксы (а то и <a href="http://css-live.ru/articles/krasivoe-vyravnivanie-blokov-po-rezinovoj-setke.html">гриды</a>) для бедных».</p>
+      <p>Но они не владеют главным «волшебством» самого свойства <code>flex</code> (автоматический размер) и не умеют подстраиваться к высоте соседей. И, наверное, не стоит тратить время и силы, пытаясь воспроизвести <i>в фолбэке</i> <b>все</b> красоты современного решения. Если в ископаемом браузере, который к тому же наверняка работает на ископаемом же «железе», блоки просто выстроены по горизонтали в цепочку, и макет не разваливается — его неизбалованному пользователю этого достаточно.</p>
+      <h3>Хак: еще одна альтернатива клиарфиксу</h3>
+      <p>Как любой элемент, создающий блочный контекст форматирования, <code>inline-block</code> не выпускает наружу ни «плавающих» потомков, ни margin-ов обычных, всегда охватывая их по габаритам. Поэтому его <i>в принципе можно</i> использовать «вместо клиарфикса». Но помните об издержках неуправляемой анонимной обертки. И лучше используйте «нормальный», блочный <code>flow-root</code>. А где его нет — подбирайте наиболее подходящий для вас вариант <a href="http://css-live.ru/articles-css/clearfix-block-formatting-context-methods-cheatsheet.html">из сравнительной таблицы</a> (мой фаворит — <code>column-count: 1;</code>).</p>
+      <h3>Хак: запрет переноса строк в колонках</h3>
+      <p>В <a href="http://css-live.ru/articles-css/rukovodstvo-po-vnedreniyu-css-kolonok-v-adaptivnyj-dizajn.html">многоколоночной раскладке</a> по умолчанию блоки могут разрываться и переноситься в новую колонку по частям. Обычно так и надо, но иногда нужно какой-то блок перенести только целиком. Есть давний хак, когда для этого таким блокам меняют <code>display</code> на <code>inline-block</code>. Теперь вы знаете, благодаря чему он работает: ведь для блочного контекста весь анонимный блок с инлайн-блоком внутри — это <i>одна </i>строка!</p>
+      <h3>Хак: выравнивание флекс- или грид-элементов по последней строке заголовка</h3>
+      <p>Бывают задачи, которые пока не под силу даже могучим <a href="http://css-live.ru/articles-css/box-alignment-guide-cheatcheet.html">свойствам для выравнивания всего</a>, но решаются благодаря уникальной базовой линии инлайн-блоков. <i>Иногда</i> они могут <i>почти</i> заменить <a href="http://css-live.ru/articles/mysli-vslux-o-podsetkax-v-css-grid-layout.html">подсетки</a>:</p>
+      <p class="codepen" data-height="480" data-theme-id="light" data-slug-hash="MBmwRw" data-default-tab="result" data-user="SelenIT" data-embed-version="2" data-pen-title="MBmwRw">See the Pen <a href="https://codepen.io/SelenIT/pen/MBmwRw/">MBmwRw</a> by Ilya Streltsyn (<a href="https://codepen.io/SelenIT">@SelenIT</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      <p>Допустим, маркетолог вот такого каталога требует, чтобы товары в нем были непременно выровнены по низу заголовков (или по верху описаний, что то же самое). Первое, что приходит на ум — таблица, либо грид с разбивкой заголовка и текста в разные грид-элементы. Но если сделать весь <code>header</code> каждого товара инлайн-блоком, этот инлайн-блок окажется единтственным содержимым первой как-бы-текстовой строки, и ее базовая линия пройдет по последней строке этого инлайн-блока. Теперь достаточно выровнять сами товары по этой базовой линии, т.е. <code>align-items: baseline</code> — и вуаля.</p>
+      <blockquote><p><em>Примечание:</em> к сожалению, в Firefox с выравниванием в гриде нашелся <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1477964">странный баг</a>. Я долго не мог воспроизвести его отдельно, потому что задавал заголовку явную ширину (чтоб форсировать перенос на новую строку), а оказалось, что эта ширина (не в процентах, и не больше 100% по факту) тот баг&#8230; почему-то фиксит:). Так что в примере как раз применен этот «фикс», но возможности метода это изрядно ограничивает.  <em>Добавлено:</em> похожая проблема в iOS Safari, но там даже «фикс» не помогает:(</p>
+      <p>Зато со флексбоксами никаких подобных проблем пока не нашлось, что радует.</p></blockquote>
+      <h2>Миф об «инлайн-блочных элементах в HTML»</h2>
+      <p>Напоследок — небольшой курьез. С развитием CSS старинное деление HTML-элементов по внешнему виду, на <a href="http://css-live.ru/articles/blochnyx-i-strochnyx-elementov-v-html-bolshe-net.html">«блочные» и «строчные»</a>, стало порождать домыслы о том, что другим видам CSS-отображения тоже могут соответствовать какие-то свои категории контента в HTML. Так, видимо, родился миф об «инлайн-блочных элементах <i>в HTML»</i>. Чаще всего в таковые «записывают» элемент <code>&lt;button&gt;</code>, реже <code>&lt;img&gt;</code> и др. Так вот, это <i>ерунда</i>.</p>
+      <p><i>В HTML</i> не было и нет такой категории элементов, и выделять ее нет смысла, полезной информации она не даст. Классифицируйте элементы по их логической роли: структурные, заголовочные, текстовые, интерактивные и т.д., как это делают <a href="https://html.spec.whatwg.org/#kinds-of-content">современные</a> <a href="https://w3c.github.io/html/dom.html#kinds-of-content">стандарты</a>. Эта классификация сразу даст вам подсказку, для чего элемент может использоваться (например, структурный — для разметки крупных логических блоков страницы, чтобы пользователю скринридера было удобно легко переходить между ними, поэтому их не должно быть на странице слишком много) и что в него можно вкладывать (скажем, интерактивные элементы обычно нельзя вкладывать друг в друга, чтобы браузер не запутался, чьё действие выполнять). А внешний вид любому (ну, почти) элементу можно придать любой — с помощью CSS. В том числе и вид инлайн-блока.</p>
+      <p>В CSS — и в этой статье — термины «блок» и «строчный элемент»/«элемент строки» относятся исключительно к внешнему виду, и могут относиться вообще не к <i>элементу</i> DOM, а к <i>псевдо</i>элементу. Общего с устаревшей классификацией элементов из HTML 4 у них не больше, чем у JavaScript и Java. Не дайте себя запутать, <i>и да пребудет с вами CSSила! :)</i></p>
+    </article>
+
+    <section class="comments" id="comments">
+      <h2 class="article-comments__title">Комментарии (4 шт.)</h2>
+
+      <div class="article-comments__main" id="article-comments__main">
+        <div class="article-comments__list">
+          <ol class="comments-list">
+            <li class="comment even thread-even depth-1 comments-list__item" id="li-comment-333832">
+              <div id="comment-333832" class="comment" data-id="333832">
+                <div class="comments-list__metas">
+                  <img src="http://css-live.ru/wp-content/themes/happenstance/img/nophoto_comments.svg"
+                    class="comments-list__pic">
+                  <h3 class="comments-list__user-name">Lev Solntsev</h3>
+                  <div class="comments-list__dates">
+                    <time class="comments-list__date" datetime="2018-07-24T19:08:37+00:00">24.07.2018 в 19:08
+                    </time>
+                  </div>
+                </div>
+
+                <div class="comments-list__content">
+
+                  <blockquote><p><i>Иногда</i>&nbsp;они могут&nbsp;<i>почти</i>&nbsp;заменить&nbsp;<a
+                    href="http://css-live.ru/articles/mysli-vslux-o-podsetkax-v-css-grid-layout.html">подсетки</a>:
+                  </p></blockquote>
+                  <p>Забавно, но в Сафари (iPad) пример не работает. Выравнивание по верху.</p>
+                  <div class="comments-list__fields">
+                    <button type="button" class="comments-list__fields-btn" data-id="333832">
+                      <span>Ответить</span>
+                    </button>
+
+                  </div>
+                  <div class="reply">
+                    <p class="edit-link"><a class="comment-edit-link"
+                      href="http://css-live.ru/wp-admin/comment.php?action=editcomment&amp;c=333832">Изменить</a>
+                    </p>
+                  </div>
+                </div>
+
+                <ol class="children">
+                  <li class="comment byuser comment-author-selenit bypostauthor odd alt depth-2 comments-list__item"
+                    id="li-comment-333833">
+                    <div id="comment-333833" class="comment" data-id="333833">
+                      <div class="comments-list__metas">
+                        <img src="http://css-live.ru/wp-content/uploads/2018/01/selenit-photo-150x150.jpg"
+                          alt="SelenIT"
+                          class="comments-list__pic avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo">
+                        <h3 class="comments-list__user-name"><b class="fn">SelenIT</b>
+                          <span>(Автор записи)</span></h3>
+                        <div class="comments-list__dates">
+                          <time class="comments-list__date" datetime="2018-07-24T20:07:57+00:00">
+                            24.07.2018 в 20:07
+                          </time>
+                        </div>
+                      </div>
+
+                      <div class="comments-list__content">
+
+                        <p>Упс, моя недоработка, увлекся борьбой с Фоксом и поленился проверить(. А с
+                          флексбоксами (верхний пример в <a href="http://jsfiddle.net/qf15s3zv/3/"
+                            rel="nofollow">http://jsfiddle.net/qf15s3zv/3/</a>) работает?</p>
+                        <div class="comments-list__fields">
+                          <button type="button" class="comments-list__fields-btn" data-id="333833">
+                            <span>Ответить</span>
+                          </button>
+
+                        </div>
+                        <div class="reply">
+                          <p class="edit-link"><a class="comment-edit-link"
+                            href="http://css-live.ru/wp-admin/comment.php?action=editcomment&amp;c=333833">Изменить</a>
+                          </p>
+                        </div>
+                      </div>
+
+                      <ol class="children">
+                        <li class="comment even depth-3 comments-list__item" id="li-comment-333834">
+                          <div id="comment-333834" class="comment" data-id="333834">
+                            <div class="comments-list__metas">
+                              <img
+                                src="http://css-live.ru/wp-content/themes/happenstance/img/nophoto_comments.svg"
+                                class="comments-list__pic">
+                              <h3 class="comments-list__user-name"><b class="fn">Lev Solntsev</b></h3>
+                              <div class="comments-list__dates">
+                                <time class="comments-list__date"
+                                  datetime="2018-07-24T20:13:48+00:00">24.07.2018 в 20:13
+                                </time>
+                              </div>
+                            </div>
+                            
+                            <div class="comments-list__content">
+
+                              <p>Там да.</p>
+                              <div class="comments-list__fields">
+                                <button type="button" class="comments-list__fields-btn"
+                                  data-id="333834">
+                                  <span>Ответить</span>
+                                </button>
+
+                              </div>
+                              <div class="reply">
+                                <p class="edit-link"><a class="comment-edit-link"
+                                  href="http://css-live.ru/wp-admin/comment.php?action=editcomment&amp;c=333834">Изменить</a>
+                                </p>
+                              </div>
+                            </div>
+
+                          </div>
+                        </li>
+                      </ol>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </li>
+            <li class="comment odd alt thread-odd thread-alt depth-1 comments-list__item" id="li-comment-333836">
+              <div id="comment-333836" class="comment" data-id="333836">
+                <div class="comments-list__metas">
+                  <img src="http://css-live.ru/wp-content/themes/happenstance/img/nophoto_comments.svg"
+                    class="comments-list__pic">
+                  <h3 class="comments-list__user-name"><b class="fn">Алексей</b></h3>
+                  <div class="comments-list__dates">
+                    <time class="comments-list__date" datetime="2018-07-26T13:33:04+00:00">26.07.2018 в 13:33
+                    </time>
+                  </div>
+                </div>
+
+
+                <div class="comments-list__content">
+
+                  <p>Полезная статья. Спасибо!</p>
+                  <div class="comments-list__fields">
+                    <button type="button" class="comments-list__fields-btn" data-id="333836">
+                      <span>Ответить</span>
+                    </button>
+                  </div>
+                  <div class="reply">
+                    <p class="edit-link"><a class="comment-edit-link"
+                      href="http://css-live.ru/wp-admin/comment.php?action=editcomment&amp;c=333836">Изменить</a>
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+  
+</html>
