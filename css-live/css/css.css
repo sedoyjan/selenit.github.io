@@ -1021,47 +1021,38 @@ img {
         width: auto;
         max-width: none;
         display: grid;
-        grid: auto / repeat(auto-fit, 1px 28em);
+        grid: auto / repeat(auto-fit, minmax(23em, 1fr));
         align-items: baseline;
-        justify-content: center;
+        grid-gap: 0 4em;
+        padding: 0 4em;
     }
 
-    .home::before {
-        content: 'Здесь могут быть новости и т.п.';
-        order: 0;
-        grid-column: span 2;
-        margin-left: 3em;
-    }
-}
-
-.home .article {
-    order: 1;
-}
-
-@media (min-width: 57em) {
     .home .article {
-        max-width: 33em;
+        max-width: 39em;
         margin: 0 auto;
-        padding: 0 3em 3em;
     }
-}
-
-.home :first-of-type {
-    order: -1;
 }
 
 .home h2 {
     display: inline-block;
+    width: 46rem;
 }
 
-.home hr {
-    align-self: start;
-    width: 25em;
-    border: none;
-    border-top: #F26E21 dashed 1px;
-    margin-left: 3em;
-    order: 1;
+.meta--home {
+    flex-wrap: wrap;
 }
+
+.meta--home .meta__tags-wrap {
+    order: 2;
+    min-width: 90%;
+    margin: 0 0 0 -3rem;
+}
+
+.meta--home .meta__comments {
+    order: 1;
+    margin: .1rem 0 0 auto;
+}
+
 
 /* Служебные штуки */
 
