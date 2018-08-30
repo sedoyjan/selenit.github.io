@@ -11,30 +11,31 @@
   <body>
   <input type="checkbox" class="visually-hidden" id="showmenu">
   <header class="top-header">
-    <label for="showmenu" class="menu-button">
+    <nav class="top-nav" aria-labeledby="menulabel">
       <span class="logo-collapsed" role="presentation">
-        <span class="logo-collapsed__txt">меню</span>
-        <span class="logo-collapsed__c">C</span><span class="logo-collapsed__s1">S</span><span class="logo-collapsed__s2">S</span><span class="logo-collapsed__txt">live</span>
+        <span class="logo-collapsed__css">CSS</span><span class="logo-collapsed__live">live</span>
       </span>
-    </label>
-    <nav class="top-nav">
-      <p class="visually-hidden">Навигация по сайту</p>
-      <ul class="nav nav-list">
-      <li class="nav__item item-html"><a href="http://css-live.ru/category/html5" class="nav__link">HTML5</a></li>
-      <li class="nav__item item-css item-vertical"><a href="http://css-live.ru/category/css" class="nav__link">CSS</a></li>
-      <li class="nav__item item-js item-vertical"><a href="http://css-live.ru/category/javascript" class="nav__link">JavaScript</a></li>
-      <li class="nav__item item-svg"><a href="http://css-live.ru/category/svg" class="nav__link">SVG</a></li>
-      <li class="nav__item item-a11y"><a href="http://css-live.ru/tag/a11y" class="nav__link">A11y</a></li>
-      <li class="nav__item item-theory"><a href="http://css-live.ru/category/teoriya" class="nav__link">Теория</a></li>
-      <li class="nav__item item-tricks item-vertical"><a href="http://css-live.ru/category/tricks" class="nav__link">Трюки</a></li>
-      <li class="nav__item item-practice"><a href="http://css-live.ru/praktika" class="nav__link">Практика</a></li>
-      <li class="nav__item item-faq item-vertical"><a href="http://css-live.ru/faq" class="nav__link">FAQ</a></li>
-      <li class="nav__item item-secrets"><a href="http://css-live.ru/cssjssvg-s-podvypodvertom" class="nav__link">Примеры</a></li>
+      <label for="showmenu" class="menu-button">
+          <span class="visually-hidden">Открыть/закрыть</span>
+          <span class="menu-button__menu">меню</span>
+          <span class="menu-button__close"></span>
+      </label>
+      <ul class="nav nav-list hidden-when-compacted">
+      <li class="nav__item item-html item-c"><a href="http://css-live.ru/category/html5" class="nav__link">HTML5</a></li>
+      <li class="nav__item item-css item-vertical item-c"><a href="http://css-live.ru/category/css" class="nav__link">CSS</a></li>
+      <li class="nav__item item-js item-vertical item-c"><a href="http://css-live.ru/category/javascript" class="nav__link">JavaScript</a></li>
+      <li class="nav__item item-svg item-c"><a href="http://css-live.ru/category/svg" class="nav__link">SVG</a></li>
+      <li class="nav__item item-grid item-c"><a href="http://css-live.ru/tag/css3-grid-layout" class="nav__link">Grid</a></li>
+      <li class="nav__item item-theory item-s"><a href="http://css-live.ru/category/teoriya" class="nav__link">Теория</a></li>
+      <li class="nav__item item-tricks item-vertical item-s"><a href="http://css-live.ru/category/tricks" class="nav__link">Трюки</a></li>
+      <li class="nav__item item-practice item-s"><a href="http://css-live.ru/praktika" class="nav__link">Практика</a></li>
+      <li class="nav__item item-faq item-vertical item-s"><a href="http://css-live.ru/faq" class="nav__link">FAQ</a></li>
+      <li class="nav__item item-secrets item-s"><a href="http://css-live.ru/cssjssvg-s-podvypodvertom" class="nav__link">Примеры</a></li>
       <li class="nav__item item-news"><a href="http://css-live.ru/category/vecssti-s-polej" class="nav__link">Новости</a></li>
       <li class="nav__item item-archive item-vertical"><a href="http://css-live.ru/category/tajny-css2-1" class="nav__link">Архив</a></li>
       <li class="nav__item item-about"><a href="http://css-live.ru/o-nas" class="nav__link">О нас</a></li>
       <li class="nav__item item-home"><a href="http://css-live.ru/" class="nav__link link-home" title="На главную"><span class="visually-hidden">На главную</span></a></li>
-      <li class="item-social">
+      <li class="nav__item item-social">
         <p class="visually-hidden">Социальные сети и потоки</p>
         <ul class="social__list">
           <li class="social__item">
@@ -65,11 +66,11 @@
         </ul>
       </li>
     </ul>
-    <div class="forms">
+    <div class="forms hidden-when-compacted">
       <form class="search" action="http://css-live.ru/">
         <p class="visually-hidden">Форма поиска</p>
         <input type="search" id="search" class="field search__field" placeholder="&nbsp;" name="s">
-        <button class="search__button" tabindex="-1"><span class="visually-hidden">Найти</span></button>
+        <button class="search__button " tabindex="-1"><span class="visually-hidden">Найти</span></button>
         <label for="search" class="search__label">Поиск</label>
         <span class="decor" role="presentation"><span>l</span><span>i</span><span>v</span><span>e</span></span>
       </form>
@@ -83,9 +84,6 @@
         </label>
       </form>
     </div>
-    <label for="showmenu" class="closemenu-button">
-        <span class="visually-hidden">Скрыть меню</span>
-    </label>
   </nav>
 
   </header>
