@@ -1016,19 +1016,38 @@ img {
 
 /* Главная страница */
 
-.home {
-    width: auto;
-    max-width: none;
-    margin: 0 6rem;
-    display: grid;
-    grid: auto / repeat(auto-fit, 1px minmax(25em, 1fr));
-    align-items: baseline;
+@media (min-width: 57em) {
+    .home {
+        width: auto;
+        max-width: none;
+        display: grid;
+        grid: auto / repeat(auto-fit, 1px 28em);
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    .home::before {
+        content: 'Здесь могут быть новости и т.п.';
+        order: 0;
+        grid-column: span 2;
+        margin-left: 3em;
+    }
 }
 
 .home .article {
-    max-width: 33em;
-    margin: 0 auto;
-    padding: 0 3em 3em;
+    order: 1;
+}
+
+@media (min-width: 57em) {
+    .home .article {
+        max-width: 33em;
+        margin: 0 auto;
+        padding: 0 3em 3em;
+    }
+}
+
+.home :first-of-type {
+    order: -1;
 }
 
 .home h2 {
@@ -1041,6 +1060,7 @@ img {
     border: none;
     border-top: #F26E21 dashed 1px;
     margin-left: 3em;
+    order: 1;
 }
 
 /* Служебные штуки */
