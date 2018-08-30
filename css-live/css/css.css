@@ -3,7 +3,8 @@ html {
 }
 
 body {
-    font: 2rem/1.5 Lora, serif;
+    font: 16px/1.5 Lora, serif;
+    font-size: 2rem;
     margin: 0;
 }
 
