@@ -144,7 +144,11 @@ iframe {
         --clip: -2em;
         z-index: -1;
     }
-    
+
+    #showmenu:focus ~ .top-header .top-nav {
+        transform: scale(.3, .24);
+    }
+
     #showmenu:checked ~ .top-header .top-nav {
         transform: none;
     }
@@ -196,7 +200,7 @@ iframe {
     }
 
     @media (min-width: 36em) {
-        .menu-button {
+        .menu-button, #showmenu {
             display: none;
         }
     }
@@ -220,16 +224,21 @@ iframe {
 
     .menu-button__close {
         position: absolute;
-        top: 2rem;
-        left: 2rem;
-        width: 4rem;
-        height: 4rem;
+        top: 1.8rem;
+        left: 1.8rem;
+        width: 4.4rem;
+        height: 4.4rem;
         cursor: pointer;
         visibility: hidden;
+        transform: scale(.9);
     }
 
     #showmenu:checked ~ .top-header .menu-button__close {
         visibility: visible;
+    }
+    
+    #showmenu:focus ~ .top-header .menu-button__close {
+        transform: none;
     }
 
     .menu-button__close::before, .menu-button__close::after {
@@ -237,7 +246,7 @@ iframe {
         position: absolute;
         top: 1.8rem;
         width: 100%;
-        border-bottom: solid .4rem #fff;
+        border-bottom: solid .4rem currentcolor;
     }
 
     .menu-button__close::before {
