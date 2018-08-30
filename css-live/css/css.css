@@ -146,7 +146,16 @@ iframe {
     
     #showmenu:checked ~ .top-header .top-nav {
         transform: none;
-        margin-bottom: 3rem;
+    }
+
+    @media (max-width: 35.99em) {
+        main {
+            transition: transform .3s;
+        }
+
+        #showmenu:not(:checked) ~ main {
+            transform: translateY(-48rem);
+        }
     }
 }
 
@@ -154,6 +163,7 @@ iframe {
     .top-nav {
         width: auto;
         max-width: 82rem;
+        margin: 2rem 3rem 3rem;
         transform: none;
         transition: none;
     }
