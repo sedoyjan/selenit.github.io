@@ -89,6 +89,10 @@ iframe {
     display: block;
 }
 
+img {
+    max-width: 100%;
+}
+
 * {
     opacity: inherit; /* for edge bug with grid items */
 }
@@ -848,6 +852,10 @@ iframe {
     }
 }
 
+.meta--home {
+    margin: 3rem;
+}
+
 .meta__autor-photo {
     margin: -.6rem 2rem 0 -3rem;
 }
@@ -1005,6 +1013,37 @@ iframe {
         transform: none;
     }
 }
+
+/* Главная страница */
+
+.home {
+    width: auto;
+    max-width: none;
+    margin: 0 6rem;
+    display: grid;
+    grid: auto / repeat(auto-fit, 1px minmax(25em, 1fr));
+    align-items: baseline;
+}
+
+.home .article {
+    max-width: 33em;
+    margin: 0 auto;
+    padding: 0 3em 3em;
+}
+
+.home h2 {
+    display: inline-block;
+}
+
+.home hr {
+    align-self: start;
+    width: 25em;
+    border: none;
+    border-top: #F26E21 dashed 1px;
+    margin-left: 3em;
+}
+
+/* Служебные штуки */
 
 .visually-hidden {
     position: absolute !important;
