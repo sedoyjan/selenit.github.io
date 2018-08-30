@@ -96,6 +96,78 @@ iframe {
      S I T E    H E A D E R
 */
 
+.top-header {
+    overflow: hidden;
+}
+
+.top-nav {
+    width: 38rem;
+    margin: 2rem auto 3rem;
+    border-radius: 4rem;
+    column-count: 3;
+}
+
+@supports (grid-gap:0) {
+    .top-nav {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        background: #F26E21;
+        border-radius: 4rem;
+        transform-origin: 50% 0;
+        transform: scale(.25, .2);
+        transition: all .3s;
+    }
+
+    .top-nav::before, .top-nav::after {
+        content: '';
+        position: absolute;
+        background: #fff;
+        height: 3em;
+        width: 3em;
+        bottom: 50%;
+        border-radius: 50%;
+        box-shadow: #fff 0 0 1px, #fff 0 2.8em 0, #F26E21 var(--shift) 1.4em 0;
+        clip: rect(1.5em, 3em, 4.5em, var(--clip));
+    }
+
+    .top-nav::before {
+        --shift: 1.5em;
+        --clip: 2em;
+        left: -3em;
+    }
+
+    .top-nav::after {
+        --shift: -1.5em;
+        right: -3em;
+        --clip: -2em;
+        z-index: -1;
+    }
+    
+    #showmenu:checked ~ .top-header .top-nav {
+        transform: none;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (min-width: 36em) {
+    .top-nav {
+        width: auto;
+        max-width: 82rem;
+        transform: none;
+        transition: none;
+    }
+}
+
+@media (min-width: 44em) {
+    .top-nav {
+        width: 82rem;
+        margin: 2rem auto 3rem;
+        flex-wrap: nowrap;
+    }
+}
+
+
 @supports (grid-gap:0) {
 
     .menu-button {
@@ -226,71 +298,6 @@ iframe {
             opacity: 1;
             transition: opacity .15s;
         }
-    }
-
-    .top-header {
-        overflow: hidden;
-    }
-
-    .top-nav {
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
-        width: 38rem;
-        margin: 2rem auto -46rem;
-        background: #F26E21;
-        border-radius: 4rem;
-        transform-origin: 50% 0;
-        transform: scale(.25, .2);
-        transition: all .3s;
-    }
-
-    #showmenu:checked ~ .top-header .top-nav {
-        transform: none;
-        margin-bottom: 3rem;
-    }
-
-    @media (min-width: 36em) {
-        .top-nav {
-            width: auto;
-            margin: 2rem 3rem 3rem;
-            max-width: 82rem;
-            transform: none;
-            transition: none;
-        }
-    }
-
-    @media (min-width: 44em) {
-        .top-nav {
-            width: 82rem;
-            margin: 2rem auto 3rem;
-            flex-wrap: nowrap;
-        }
-    }
-
-    .top-nav::before, .top-nav::after {
-        content: '';
-        position: absolute;
-        background: #fff;
-        height: 3em;
-        width: 3em;
-        bottom: 50%;
-        border-radius: 50%;
-        box-shadow: #fff 0 0 1px, #fff 0 2.8em 0, #F26E21 var(--shift) 1.4em 0;
-        clip: rect(1.5em, 3em, 4.5em, var(--clip));
-    }
-
-    .top-nav::before {
-        --shift: 1.5em;
-        --clip: 2em;
-        left: -3em;
-    }
-
-    .top-nav::after {
-        --shift: -1.5em;
-        right: -3em;
-        --clip: -2em;
-        z-index: -1;
     }
 
     .nav-list {
@@ -844,7 +851,7 @@ iframe {
 @media (max-width: 35.99em) {
     .meta__tags-wrap {
         order: 2;
-        min-width: 50%;
+        min-width: 90%;
         margin: 0 0 0 -3rem;
     }
 }
@@ -984,4 +991,25 @@ iframe {
     height: 1px; width: 1px;
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
+}
+
+.hidden-if-nogrid {
+    display: none;
+}
+
+.hidden-if-grid {
+    margin: 0;
+}
+
+@supports (grid-gap: 0) {
+    .hidden-if-nogrid {
+        display: flex;
+    }
+    
+    .hidden-if-grid {
+        position: absolute !important;
+        height: 1px; width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+    }
 }

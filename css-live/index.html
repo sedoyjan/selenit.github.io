@@ -34,9 +34,9 @@
       <li class="nav__item item-news"><a href="http://css-live.ru/category/vecssti-s-polej" class="nav__link">Новости</a></li>
       <li class="nav__item item-archive item-vertical"><a href="http://css-live.ru/category/tajny-css2-1" class="nav__link">Архив</a></li>
       <li class="nav__item item-about"><a href="http://css-live.ru/o-nas" class="nav__link">О нас</a></li>
-      <li class="nav__item item-home"><a href="http://css-live.ru/" class="nav__link link-home" title="На главную"><span class="visually-hidden">На главную</span></a></li>
+      <li class="nav__item item-home"><a href="http://css-live.ru/" class="nav__link link-home" title="На главную"><span class="hidden-if-grid">На главную</span></a></li>
       <li class="nav__item item-social">
-        <p class="visually-hidden">Социальные сети и потоки</p>
+        <p class="hidden-if-grid">Социальные сети и потоки</p>
         <ul class="social__list">
           <li class="social__item">
             <a href="http://feeds.feedburner.com/css-live" class="social__link social__link_type_rss">
@@ -70,15 +70,15 @@
       <form class="search" action="http://css-live.ru/">
         <p class="visually-hidden">Форма поиска</p>
         <input type="search" id="search" class="field search__field" placeholder="&nbsp;" name="s">
-        <button class="search__button " tabindex="-1"><span class="visually-hidden">Найти</span></button>
+        <button class="search__button " tabindex="-1"><span class="hidden-if-grid">Найти</span></button>
         <label for="search" class="search__label">Поиск</label>
-        <span class="decor" role="presentation"><span>l</span><span>i</span><span>v</span><span>e</span></span>
+        <span class="decor hidden-if-nogrid" role="presentation"><span>l</span><span>i</span><span>v</span><span>e</span></span>
       </form>
       <form class="email">
-        <p class="visually-hidden">Хотите подписаться на нашу email-рассылку?</p>
+        <p class="hidden-if-grid">Хотите подписаться на нашу email-рассылку?</p>
         <input class="field email__text" placeholder="Ваш email" type="email" id="subscribe">
         <button class="email__submit" type="submit" tabindex="-1">Да</button>
-        <label for="subscribe" class="email__label">
+        <label for="subscribe" class="email__label hidden-if-nogrid">
           <span class="email__label-part email-part0">Email-рассылка</span>
           <span class="email__label-part email-part1">Хотите подписаться?</span>
         </label>
