@@ -91,6 +91,15 @@ iframe {
 
 img {
     max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    vertical-align: bottom;
+}
+
+.post a[href^="https://codepen.io/"] img {
+    width: 100%;
+    display: block;
+    background: none
 }
 
 * {
@@ -1033,9 +1042,18 @@ img {
     }
 }
 
-.home h2 {
+.post-entry-headline {
     display: inline-block;
     width: 46rem;
+}
+
+.article__link {
+    background: none;
+    color: #F26E21;
+}
+
+.article__link:hover, .article__link:focus {
+    color: #1485CC;
 }
 
 .meta--home {

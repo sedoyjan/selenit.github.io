@@ -703,5 +703,20 @@
       </article>
 
   </main>
+  <script>
+let fixVerticalRhytm = function() {
+    let step = parseInt(getComputedStyle(document.body).lineHeight);
+    let objects = document.querySelectorAll('.post img');
+    [...objects].map(el => {
+        el.style.paddingBottom = 0;
+        let h = el.getBoundingClientRect().height;
+        el.style.paddingBottom = step - (h % step) + 'px';
+    });
+}
+onresize = onload = function() {
+    clearTimeout(fixVerticalRhytm.timer);
+    fixVerticalRhytm.timer = setTimeout(fixVerticalRhytm, 20);
+};
+  </script>
   
 </html>
