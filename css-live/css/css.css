@@ -1125,7 +1125,7 @@ img {
 
 .article__read-more {
   display: flex;
-  font: 500 1.25em/3rem Montserrat, sans-serif;
+  font: 500 1em/3rem Montserrat, sans-serif;
   align-items: baseline;
 }
 
