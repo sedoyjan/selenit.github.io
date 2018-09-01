@@ -88,6 +88,89 @@
 
   </header>
 
+  <aside class="activity">
+    <h2 class="visually-hidden">Текущая активность на сайте</h2>
+    <section class="activity__section activity__section--left news">
+      <h3 class="activity__content news-content">Свежие новости</h3>
+
+      <ul class="activity__content activity__list news news-content">
+        <li class="news__item" id="post-22262">
+            <b class="news__date">28.08.2018</b>
+            <a href="http://css-live.ru/vecssti-s-polej/novye-kandidaty-v-rekomendacii-w3c-css-display-i-css-cascading-3-i-4.html" class="news__link">Новые кандидаты в рекомендации W3C: CSS Display и CSS Cascading 3 и 4</a>
+        </li>
+
+        <li class="news__item" id="post-22250">
+            <b class="news__date">24.08.2018</b>
+            <a href="http://css-live.ru/vecssti-s-polej/inogda-oni-vozvrashhayutsya-psevdoelementy-s-prefiksom-webkit-stanut-validnymi-v-firefox.html" class="news__link">Иногда они возвращаются: псевдоэлементы с префиксом -webkit- станут валидными в Firefox</a>
+        </li>
+
+        <li class="news__item" id="post-22202">
+            <b class="news__date">15.08.2018</b>
+            <a href="http://css-live.ru/vecssti-s-polej/pervyj-publichnyj-chernovik-modulya-velichin-i-edinic-css-4-urovnya.html" class="news__link">Первый публичный черновик модуля величин и единиц CSS 4 уровня</a>
+        </li>
+
+        <li class="news__item" id="post-22190">
+            <b class="news__date">05.08.2018</b>
+            <a href="http://css-live.ru/vecssti-s-polej/svezhie-obnovleniya-css-chernovikov-perepolnenie-3-urovnya-strochnaya-raskladka-3-urovnya-gridy-2-urovnya.html" class="news__link">Свежие обновления CSS-черновиков: переполнение 3 уровня, строчная раскладка 3 уровня, гриды 2 уровня</a>
+        </li>
+
+        <li class="news__item" id="post-21989">
+            <b class="news__date">31.05.2018</b>
+            <a href="http://css-live.ru/vecssti-s-polej/algebra-v-calc-novaya-specifichnost-selektorov-4-urovnya-i-drugie-majskie-novinki-css.html" class="news__link">Алгебра в calc(), новая специфичность селекторов 4 уровня и другие майские новинки CSS</a>
+        </li>
+      </ul>
+    </section>
+    <section class="activity__section activity__section--right last-comments">
+      <h3 class="activity__content comments-content">Последние комментарии</h3>
+
+      <ul class="activity__content activity__list  comments-content">
+        <li class="comments__item" id="comment_id-">
+          <b class="comments__autor">SelenIT</b>
+          к
+          <a href="http://css-live.ru/articles/resheno-s-pomoshhyu-css-logicheskaya-stilizaciya-na-osnove-chisla-elementov.html" class="comments__article">Решено с помощью CSS…</a>:
+          <q class="comments__text">Это выберет все элементы, кроме первого (если у этого первого…</q>
+        </li>
+
+        <li class="comments__item" id="comment_id-">
+          <b class="comments__autor comments__autor_not_user">Qwerty Wasd</b>
+
+          к
+          <a href="http://css-live.ru/articles/resheno-s-pomoshhyu-css-logicheskaya-stilizaciya-na-osnove-chisla-elementov.html" class="comments__article">Решено с помощью CSS…</a>:
+
+          <q class="comments__text">Все не читал, но первое что бросилось в глаза -&nbsp;:first-child:nth-last-child(n+3)~*{}…</q>
+        </li>
+
+        <li class="comments__item" id="comment_id-">
+
+          <b class="comments__autor">SelenIT</b>
+          к
+          <a href="http://css-live.ru/css/metriki-shrifta-line-height-vertical-align.html" class="comments__article">Неизведанные глубины CSS…</a>:
+
+          <q class="comments__text">Прошу прощения за задержку комментария (ссылки на примеры ошибочно насторожили…</q>
+        </li>
+
+        <li class="comments__item" id="comment_id-">
+
+          <b class="comments__autor comments__autor_not_user">Александр</b>
+
+          к
+          <a href="http://css-live.ru/css/metriki-shrifta-line-height-vertical-align.html" class="comments__article">Неизведанные глубины CSS…</a>:
+
+          <q class="comments__text">Приветствую! Мне понравилась ваша статья. Благодарю. 1. Но пробелы все…</q>
+        </li>
+
+        <li class="comments__item" id="comment_id-">
+
+          <b class="comments__autor">SelenIT</b>
+          к
+          <a href="http://css-live.ru/articles/resheno-s-pomoshhyu-css-logicheskaya-stilizaciya-na-osnove-chisla-elementov.html" class="comments__article">Решено с помощью CSS…</a>:
+
+          <q class="comments__text">Похоже, что так! Возможно, он механически остался от другой задачи…</q>
+        </li>
+        </ul>
+    </section>
+  </aside>
+
   <main class="home">
 
        <article class="article">
@@ -238,14 +321,15 @@
         <header class="post__header">
 
           <div class="post__date date">
-            <time class="date__value">25.08.2018</time>
+            <time class="date__value">31.07.2018</time>
           </div>
 
           <ul class="post__categories meta-list">
-            <li class="meta-list__item"><a href="http://css-live.ru/articles" class="meta__category-link">Статьи</a></li>
+            <li class="meta-list__item"><a href="/javascript" class="meta__category-link">JavaScript</a></li>
+<li class="meta-list__item"><a href="//css-live.ru/articles" class="meta__category-link">Статьи</a></li>
           </ul>
 
-          <h2 class="post-entry-headline"><a href="http://css-live.ru/articles/resheno-s-pomoshhyu-css-logicheskaya-stilizaciya-na-osnove-chisla-elementov.html" class="article__link">Решено с помощью CSS! Логическая стилизация на основе числа элементов</a></h2>
+          <h2 class="post-entry-headline"><a href="http://css-live.ru/articles/vvedenie-v-api-mutationobserver-iz-javascript.html" class="article__link">Введение в API MutationObserver из JavaScript</a></h2>
 
           <div class="post__author">
             <img src="http://1.gravatar.com/avatar/a38f2e5fcf32562436d03bcf74428196?s=150&amp;d=monsterid&amp;r=g" alt="" class="post__author-avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo">
@@ -255,35 +339,6 @@
           <div class="post__comments-bubble"><a href="http://css-live.ru/articles/resheno-s-pomoshhyu-css-logicheskaya-stilizaciya-na-osnove-chisla-elementov.html#comments" class="post__coment-link">4</a>
           </div>
         </header>
-				<div class="article__head">
-
-        <h2 class="post-entry-headline"><a href="http://css-live.ru/articles/vvedenie-v-api-mutationobserver-iz-javascript.html" class="article__link">Введение в API MutationObserver из JavaScript</a></h2>
-
-
-
-<div class="meta post__meta meta--home">
-							<div class="meta__autor-photo">
-                <img src="http://1.gravatar.com/avatar/a38f2e5fcf32562436d03bcf74428196?s=150&amp;d=monsterid&amp;r=g" alt="" class="meta__photo avatar avatar-thumbnailwp-user-avatar wp-user-avatar-thumbnail alignnone photo avatar-default">
-							</div>
-							<div class="meta__info">
-								<a href="/author/psywalker/" class="meta__name" title="Максим Усачев">Максим Усачев</a>
-								<a href="http://css-live.ru/articles/vvedenie-v-api-mutationobserver-iz-javascript.html" class="meta__date">31.07.2018</a>
-							</div>
-							<div class="meta__tags-wrap">
-                								<div class="meta__categories">
-                  									<a href="/javascript" class="meta__category-link">JavaScript</a></li>
-<li class="meta-list__item"><a href="//css-live.ru/articles" class="meta__category-link">Статьи</a>
-								</div>
-                								<div class="meta__tags">
-                  									    <a href="/tag/mutationobserver" class="meta__tag-link">MutationObserver</a>
-								</div>
-                                							</div>
-												<div class="meta__comments">
-							<a href="http://css-live.ru/articles/vvedenie-v-api-mutationobserver-iz-javascript.html#comments" class="meta__coment-link">4</a>
-						</div>
-            					</div>
-
-				</div>
                 <div class="article__post">
 					<div class="post">
             						<p><em>Перевод статьи&nbsp;<a href="https://benfrain.com/an-introduction-to-the-javascript-mutationobserver-api/">An introduction to the JavaScript MutationObserver API</a>&nbsp;с сайта&nbsp;<a href="http://benfrain.com/">benfrain.com</a>, автор —&nbsp;<a href="https://plus.google.com/107588612045728705538?rel=author">Бен Фрейн</a></em>.</p>
@@ -299,10 +354,7 @@
 						<a href="http://css-live.ru/articles/vvedenie-v-api-mutationobserver-iz-javascript.html" class="article__read-more">читать дальше</a>
 					</div>
           <ul class="post__tags meta-list">
-            <li class="meta-list__item"><a href="/tag/webkit-background-clip-text" class="meta__tag-link">-webkit-background-clip: text</a></li>
-<li class="meta-list__item"><a href="//css-live.ru/tag/webkit-text-fill-color" class="meta__tag-link">-webkit-text-fill-color</a></li>
-<li class="meta-list__item"><a href="//css-live.ru/tag/sovmestimost" class="meta__tag-link">совместимость</a></li>
-<li class="meta-list__item"><a href="//css-live.ru/tag/standarty" class="meta__tag-link">стандарты</a></li>
+            <li class="meta-list__item"><a href="/tag/mutationobserver" class="meta__tag-link">MutationObserver</a></li>
           </ul>
         </footer>
       </article>
@@ -800,6 +852,11 @@
   </main>
   <script>
 let fixVerticalRhytm = function() {
+    /* TEMP fix for Fx bug  */
+    if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+
+      [...document.querySelectorAll('.post__header')].map(el => { el.style.width = '0'; el.style.width = el.parentNode.clientWidth + 'px' });
+    }
     let step = parseInt(getComputedStyle(document.body).lineHeight);
     let objects = document.querySelectorAll('.post img');
     [...objects].map(el => {
@@ -811,10 +868,6 @@ let fixVerticalRhytm = function() {
 onresize = onload = function() {
     clearTimeout(fixVerticalRhytm.timer);
     fixVerticalRhytm.timer = setTimeout(fixVerticalRhytm, 20);
-    /* TEMP fix for Fx bug  */
-    if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-      [...document.querySelectorAll('.post__header')].map(el => el.style.width = el.parentNode.clientWidth + 'px');
-    }
 };
   </script>
 
