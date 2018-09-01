@@ -629,7 +629,7 @@ img {
         width: var(--input-w);
         padding: 0 3.6rem 0 1rem;
         border-radius: 2rem;
-        transition: width .5s;
+        transition: width .3s;
     }
 
     @media (min-width: 36em) and (max-width: 43.99em) {
@@ -641,7 +641,6 @@ img {
 
     .search__field:focus {
         width: var(--input-fw);
-        transition: width .2s;
         outline: none;
         cursor: text;
     }
@@ -731,7 +730,7 @@ img {
     }
 
     .decor > span {
-        transition: all .2s .1s;
+        transition: all .3s .1s;
         transform: rotate(-90deg);
     }
 
@@ -765,17 +764,17 @@ img {
 
         .search__field:focus ~ .decor > span:nth-child(2) {
             transform: translate(.8rem, .5rem) rotate(-80deg);
-            transition: all .2s;
+            transition: all .3s;
         }
 
         .search__field:focus ~ .decor > span:nth-child(3) {
             transform: translate(-1.6rem, -3.5rem) rotate(-125deg);
-            transition: all .2s;
+            transition: all .3s;
         }
 
         .search__field:focus ~ .decor > span:nth-child(4) {
             transform: translate(-8.5rem, 6rem) rotate(-179deg);
-            transition: all .2s;
+            transition: all .3s;
         }
     }
 
@@ -823,6 +822,7 @@ img {
 
     .email__text:focus {
         width: var(--email-fw);
+        cursor: text;
     }
 
     .email__text:focus::-webkit-input-placeholder {
@@ -844,6 +844,7 @@ img {
         border: none;
         transition: all .2s .1s;
         opacity: 0;
+        cursor: pointer;
     }
 
     .email__text:focus ~ .email__submit {
@@ -876,6 +877,7 @@ img {
 
     .email__text:focus ~ .email__label > .email-part0 {
       opacity: 0;
+      pointer-events: none;
     }
 
     .email-part0:hover,
