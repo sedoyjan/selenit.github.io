@@ -419,6 +419,7 @@ img {
         transform: translate(var(--shiftX), var(--shiftY)) rotate(var(--rotate));
         display: flex;
         transition: transform .3s;
+        z-index: 10;
     }
     #showmenu:checked ~ .top-header .nav__item { --shiftX: 1rem; --shiftY: 0; }
     .top-header:focus-within .nav__item { --shiftX: 1rem; --shiftY: 0; }
@@ -586,6 +587,7 @@ img {
         --input-col: 2;
         --input-w: 33.6rem;
         --input-fw: 33.6rem;
+        z-index: 10;
     }
 
     @media (min-width: 36em) {
@@ -781,6 +783,7 @@ img {
         position: relative;
         float: right;
         margin-bottom: 2rem;
+        z-index: 10;
     }
 
     .email__text {
@@ -1117,8 +1120,8 @@ img {
 @media (min-width: 44em) {
     .activity {
         display: flex;
-        margin: -22rem 6rem 3rem;
-        padding-bottom: 3rem;
+        margin: -20rem 6rem 3rem;
+        padding: 0 0 3rem;
     }
 }
 
@@ -1136,15 +1139,18 @@ img {
 @media (min-width: 44em) {
   .activity__section::before {
       content: '';
-      width: 48rem;
-      height: 23rem;
+      width: 47rem;
+      height: 20rem;
+      shape-outside: ellipse(7rem 11rem at var(--shape-x) 9rem);
   }
 
   .activity__section--left::before {
       float: right;
+      --shape-x: 7rem;
   }
   .activity__section--right::before {
       float: left;
+      --shape-x: 40rem;
   }
 }
 
@@ -1152,27 +1158,34 @@ img {
     font-size: 2rem;
     color: #666;
     margin-bottom: 2rem;
+    margin-top: 3rem;
 }
 
-.activity__section h3::before {
-    content: '';
-    display: block;
-    overflow: hidden;
-    border-top: 1px solid #F26E21;
-    min-width: 28rem;
-    padding-bottom: 3rem;
-    margin: 3rem 0 -1px;
+@media (min-width: 44em) {
+    .activity__section h3 {
+        padding-top: 10px;
+        margin-top: 0;
+    }
+  
+    .activity__section h3::before {
+        content: '';
+        display: block;
+        overflow: hidden;
+        border-top: 1px solid #F26E21;
+        min-width: 26rem;
+        padding-bottom: 3rem;
+    }
 }
 
 .news__item {
-    padding-left: 10rem;
+    padding-left: 9.5rem;
 }
 
 .news__date {
     float: left;
-    line-height: 3rem;
-    width: 9.5rem;
-    margin-left: -10rem;
+    line-height: 1.5;
+    width: 9rem;
+    margin-left: -9.5rem;
 }
 
 @media (min-width: 44em) {
