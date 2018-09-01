@@ -24,7 +24,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 4rem;
     line-height: 6rem;
-    padding-bottom: 3rem;
     position: relative;
     top: .9rem;
     color: #333;
@@ -114,6 +113,11 @@ img {
 
 * {
     opacity: inherit; /* for edge bug with grid items */
+}
+
+[class] {
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -895,20 +899,20 @@ img {
 
 .post__header {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-block;
+    width: 100%;
 }
 
 .post__date {
+    display: inline-block;
     font: 500 1em/3rem Montserrat, sans-serif;
     margin-right: 3rem;
 }
 
 .meta-list {
+    display: inline;
     list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: .8;
+    font-size: .8em;
     font-style: italic;
 }
 
@@ -923,6 +927,7 @@ img {
 .post__author {
     font: 500 1em/3rem Montserrat, sans-serif;
     align-items: baseline;
+    margin-top: 3rem;
 }
 
 .post__author a {
@@ -940,10 +945,9 @@ img {
 
 .post__comments-bubble {
     font-size: 1.6rem;
-    display: flex;
-    flex-flow: column;
-    align-items: flex-end;
-    margin: -3rem 0 -9rem auto;
+    position: absolute;
+    right: 0;
+    margin-top: -4rem;
 }
 
 .post__coment-link {
@@ -973,8 +977,7 @@ img {
     right: .6em;
 }
 
-.post__tags::before { content: '{теги: ' }
-.post__tags::after { content: '}' }
+.post__tags::before { content: 'теги: ' }
 
 .comments {
     margin-top: 6rem;
@@ -982,19 +985,19 @@ img {
 
 .comments-list {
     margin-top: 3rem;
-    padding: 0;
 }
 
 .comments-list__item {
     list-style: none;
+    margin-top: 3rem;
 }
 
 .comments-list__metas {
 }
 
 .comments-list__pic {
-    width: 42px;
-    height: 42px;
+    width: 4.2rem;
+    height: 4.2rem;
     margin: 0 2rem 0 -3rem;
     float: left;
     border-radius: 50%;
@@ -1030,7 +1033,7 @@ img {
 }
 
 .comments .children {
-    padding-left: 52px;
+    margin-left: 3rem;
 }
 
 @media (min-width: 70em) {
@@ -1052,6 +1055,18 @@ img {
 
 /* Главная страница */
 
+.home {
+    margin: auto;
+}
+
+.article__head {
+  display: none;
+}
+
+.home .article {
+    margin: 0 3rem 6rem;
+}
+
 @media (min-width: 57em) {
     .home {
         width: auto;
@@ -1064,51 +1079,67 @@ img {
     }
 
     .home .article {
+      width: 100%;
         max-width: 39em;
-        margin: 0 auto;
+        margin: 0 auto 6rem;
     }
 }
 
 .post-entry-headline {
-    display: inline-block;
-    width: 46rem;
-    max-width: 100%;
+    margin-top: 0;
 }
 
-.article__link, .post__read-more {
-    display: inline-block;
-    line-height: inherit;
-    max-width: 100%;
+.article__link, .article__read-more {
     background: none;
     color: #F26E21;
-    border-bottom: 1px solid;
 }
 
-.post__read-more {
-  width: 46rem;
+@media (max-width: 35.99em) {
+    .article__post {
+        max-height: 24rem;
+        overflow: hidden;
+        position: relative;
+        transition: max-height .4s ease-out;
+    }
+
+    .article__post:active {
+        max-height: 120em;
+        transition: max-height .4s ease-in;
+    }
+
+    .article__post::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 9rem;
+        width: 100%;
+        background: linear-gradient(rgba(255,255,255,0), #fff);
+        transform: opacity .3s;
+        pointer-events: none;
+    }
+    
+    .article__post:active::after {
+        opacity: 0;
+    }
+}
+
+.article__read-more {
+  display: flex;
   font: 500 1.25em/3rem Montserrat, sans-serif;
+  align-items: baseline;
+}
+
+.article__read-more::after {
+  content: '';
+  margin-left: 1ex;
+  border-bottom: 1px solid;
+  flex: 1;
 }
 
 .article__link:hover, .article__link:focus,
 .post__read-more:hover, .post__read-more:focus {
     color: #1485CC;
 }
-
-.meta--home {
-    flex-wrap: wrap;
-}
-
-.meta--home .meta__tags-wrap {
-    order: 2;
-    min-width: 90%;
-    margin: 0 0 0 -3rem;
-}
-
-.meta--home .meta__comments {
-    order: 1;
-    margin: .1rem 0 0 auto;
-}
-
 
 /* Служебные штуки */
 
