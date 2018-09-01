@@ -90,32 +90,28 @@
 
   <main>
     <article class="post">
-      <header>
-        <div class="meta post__meta">
-          <div class="meta__autor-photo">
-            <img src="http://css-live.ru/wp-content/uploads/2018/01/selenit-photo-150x150.jpg" alt="SelenIT" class="meta__photo avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo"> 
-          </div>
-          <div class="meta__info">
-            <a href="http://css-live.ru//author/selenit/" class="meta__name" title="SelenIT">SelenIT</a>
-            <time class="meta__date">24.07.2018</time>
-          </div>
-          <div class="meta__tags-wrap">
-            <div class="meta__categories">
-              <a href="http://css-live.ru/css" class="meta__category-link meta__category-link_type_javascript">CSS</a>,
-              <a href="http://css-live.ru/articles-css" class="meta__category-link meta__category-link_type_javascript">Статьи по CSS</a>,
-              <a href="http://css-live.ru/teoriya" class="meta__category-link meta__category-link_type_javascript">Теория</a>,
-              <a href="http://css-live.ru/tricks" class="meta__category-link meta__category-link_type_javascript">Трюки</a>
-            </div>
-            <div class="meta__tags">
-              <a href="http://css-live.ru/tag/css-display-module-level-3" class="meta__tag-link meta__tag-link_type_javascript">CSS Display module level 3</a>,
-              <a href="http://css-live.ru/tag/inline-block" class="meta__tag-link meta__tag-link_type_javascript">inline-block</a>
-            </div>
-          </div>
-          <div class="meta__comments">
-            Комментариев: <a href="#comments" class="meta__coment-link">4</a>
-          </div>
+      <header class="post__header">
+
+        <div class="post__date date">
+          <time class="date__value">24.07.2018</time>
         </div>
+
+        <ul class="post__categories meta-list">
+          <li class="meta-list__item"><a href="http://css-live.ru/css" class="meta-list__link">CSS</a></li>
+          <li class="meta-list__item"><a href="http://css-live.ru/articles-css" class="meta__category-link">Статьи по CSS</a></li>
+          <li class="meta-list__item"><a href="http://css-live.ru/teoriya" class="meta__category-link">Теория</a></li>
+          <li class="meta-list__item"><a href="http://css-live.ru/tricks" class="meta__category-link">Трюки</a></li>
+        </ul>
+
         <h1>Удивительный и неизвестный inline-block</h1>
+
+        <div class="post__author">
+          <img src="http://css-live.ru/wp-content/uploads/2018/01/selenit-photo-150x150.jpg" alt="SelenIT" class="post__author-avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo"> 
+          <a href="http://css-live.ru//author/selenit/" class="meta__name" title="SelenIT">SelenIT</a>
+        </div>
+        
+        <div class="post__comments-bubble"><a href="#comments" class="post__coment-link">4</a>
+        </div>
       </header>
 
       <p>Эта статья задумана как начало цикла про загадки, сюрпризы, малоизученные особенности и маленькие полезные секреты самого могущественного, пожалуй, свойства в CSS — свойства <code>display</code>. У нас уже были статьи про новинки этого свойства — значения <code>contents</code> (<a href="http://css-live.ru/articles/display-contents-practice.html">что это вообще</a>, <a href="http://css-live.ru/css/paradoksy-displaycontents-i-budushhee-teksta-v-css.html">его сюрпризы</a>, <a href="http://css-live.ru/articles/bolee-dostupnaya-razmetka-s-displaycontents.html">преимущества</a> и <a href="http://css-live.ru/articles/display-contents-ne-css-sbros.html">подводные камни</a> для доступности) и <code>flow-root</code>. Но и старые, давно знакомые (казалось бы) значения этого свойства таят в себе немало сюрпризов, подводных камней и удивительных открытий. Прежде всего, пожалуй, это значения с «приставкой» <code>inline-</code>: <code>inline-flex</code>, <code>inline-grid</code>, <code>inline-table</code>, и, наконец, наш старый <i>знакомый</i> <code>inline-block</code>.</p>
@@ -186,6 +182,14 @@
       <p>Напоследок — небольшой курьез. С развитием CSS старинное деление HTML-элементов по внешнему виду, на <a href="http://css-live.ru/articles/blochnyx-i-strochnyx-elementov-v-html-bolshe-net.html">«блочные» и «строчные»</a>, стало порождать домыслы о том, что другим видам CSS-отображения тоже могут соответствовать какие-то свои категории контента в HTML. Так, видимо, родился миф об «инлайн-блочных элементах <i>в HTML»</i>. Чаще всего в таковые «записывают» элемент <code>&lt;button&gt;</code>, реже <code>&lt;img&gt;</code> и др. Так вот, это <i>ерунда</i>.</p>
       <p><i>В HTML</i> не было и нет такой категории элементов, и выделять ее нет смысла, полезной информации она не даст. Классифицируйте элементы по их логической роли: структурные, заголовочные, текстовые, интерактивные и т.д., как это делают <a href="https://html.spec.whatwg.org/#kinds-of-content">современные</a> <a href="https://w3c.github.io/html/dom.html#kinds-of-content">стандарты</a>. Эта классификация сразу даст вам подсказку, для чего элемент может использоваться (например, структурный — для разметки крупных логических блоков страницы, чтобы пользователю скринридера было удобно легко переходить между ними, поэтому их не должно быть на странице слишком много) и что в него можно вкладывать (скажем, интерактивные элементы обычно нельзя вкладывать друг в друга, чтобы браузер не запутался, чьё действие выполнять). А внешний вид любому (ну, почти) элементу можно придать любой — с помощью CSS. В том числе и вид инлайн-блока.</p>
       <p>В CSS — и в этой статье — термины «блок» и «строчный элемент»/«элемент строки» относятся исключительно к внешнему виду, и могут относиться вообще не к <i>элементу</i> DOM, а к <i>псевдо</i>элементу. Общего с устаревшей классификацией элементов из HTML 4 у них не больше, чем у JavaScript и Java. Не дайте себя запутать, <i>и да пребудет с вами CSSила! :)</i></p>
+      
+      <footer class="post__footer">
+        <ul class="post__tags meta-list">
+          <li class="meta-list__item"><a href="/tag/css-display-module-level-3" class="meta__tag-link">CSS Display module level 3</a></li>
+          <li class="meta-list__item"><a href="/tag/inline-block" class="meta__tag-link">inline-block</a></li>
+        </ul>
+      </footer>
+      
     </article>
 
     <section class="comments" id="comments">

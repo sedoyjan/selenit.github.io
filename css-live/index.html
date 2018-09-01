@@ -258,35 +258,30 @@
 				</div>
       </article>
 <article class="article">
-				<div class="article__head">
-          					
+
+        <header class="post__header">
+
+        <div class="post__date date">
+          <time class="date__value">24.07.2018</time>
+        </div>
+
+        <ul class="post__categories meta-list">
+          <li class="meta-list__item"><a href="http://css-live.ru/css" class="meta-list__link">CSS</a></li>
+          <li class="meta-list__item"><a href="http://css-live.ru/articles-css" class="meta__category-link">Статьи по CSS</a></li>
+          <li class="meta-list__item"><a href="http://css-live.ru/teoriya" class="meta__category-link">Теория</a></li>
+          <li class="meta-list__item"><a href="http://css-live.ru/tricks" class="meta__category-link">Трюки</a></li>
+        </ul>
+
         <h2 class="post-entry-headline"><a href="article.html" class="article__link">Удивительный и неизвестный inline-block</a></h2>
-        
 
+        <div class="post__author">
+          <img src="http://css-live.ru/wp-content/uploads/2018/01/selenit-photo-150x150.jpg" alt="SelenIT" class="post__author-avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo"> 
+          <a href="http://css-live.ru//author/selenit/" class="meta__name" title="SelenIT">SelenIT</a>
+        </div>
         
-<div class="meta post__meta meta--home">
-							<div class="meta__autor-photo">
-                <img src="http://css-live.ru/wp-content/uploads/2018/01/selenit-photo-150x150.jpg" alt="SelenIT" class="meta__photo avatar avatar-thumbnail wp-user-avatar wp-user-avatar-thumbnail alignnone photo"> 
-							</div>
-							<div class="meta__info">
-								<a href="/author/selenit/" class="meta__name" title="SelenIT">SelenIT</a>
-								<a href="http://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html" class="meta__date">24.07.2018</a>
-							</div>
-							<div class="meta__tags-wrap">
-                								<div class="meta__categories">
-                  									<a href="/css" class="meta__category-link meta__category-link_type_javascript">CSS</a>,                  									<a href="/articles-css" class="meta__category-link meta__category-link_type_javascript">Статьи по CSS</a>,                  									<a href="/teoriya" class="meta__category-link meta__category-link_type_javascript">Теория</a>,                  									<a href="/tricks" class="meta__category-link meta__category-link_type_javascript">Трюки</a>                   
-								</div>
-                								<div class="meta__tags">
-                  									    <a href="/tag/css-display-module-level-3" class="meta__tag-link meta__tag-link_type_javascript">CSS Display module level 3</a>,                  									    <a href="/tag/inline-block" class="meta__tag-link meta__tag-link_type_javascript">inline-block</a>                    
-								</div>
-                                							</div>
-												<div class="meta__comments">
-							<a href="http://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html#comments" class="meta__coment-link">4</a>
-						</div>
-            					</div> 
-
-				</div>
-                <div class="article__post">
+        <div class="post__comments-bubble"><a href="#comments" class="post__coment-link">4</a>
+        </div>
+      </header>
 					<div class="post">
             						<p>Эта статья задумана как начало цикла про загадки, сюрпризы, малоизученные особенности и маленькие полезные секреты самого могущественного, пожалуй, свойства в CSS — свойства <code>display</code>. У нас уже были статьи про новинки этого свойства — значения <code>contents</code> (<a href="http://css-live.ru/articles/display-contents-practice.html">что это вообще</a>, <a href="http://css-live.ru/css/paradoksy-displaycontents-i-budushhee-teksta-v-css.html">его сюрпризы</a>, <a href="http://css-live.ru/articles/bolee-dostupnaya-razmetka-s-displaycontents.html">преимущества</a> и <a href="http://css-live.ru/articles/display-contents-ne-css-sbros.html">подводные камни</a> для доступности) и <code>flow-root</code>. Но и старые, давно знакомые (казалось бы) значения этого свойства таят в себе немало сюрпризов, подводных камней и удивительных открытий. Прежде всего, пожалуй, это значения с «приставкой» <code>inline-</code>: <code>inline-flex</code>, <code>inline-grid</code>, <code>inline-table</code>, и, наконец, наш старый <i>знакомый</i> <code>inline-block</code>.</p>
 <p>С него-то мы и начнем наш экскурс в фундаментальные глубины CSS образца 2018 года, в конце которого у нас должно сложиться целостное представление обо всех существующих механизмах раскладки в браузере. Готовы к сюрпризам?</p>
