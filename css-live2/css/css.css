@@ -1364,7 +1364,7 @@ img {
 }
 
 /* FOOTER */
-footer {
+.site-footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -1376,7 +1376,7 @@ footer {
 
 @supports (grid-gap: 0) {
     @media (min-width: 56em) {
-        footer { margin: 3rem 6rem 1rem; };
+        .site-footer { margin: 3rem 6rem 1rem; };
     }
 }
 
