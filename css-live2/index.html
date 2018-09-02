@@ -11,6 +11,7 @@
   <body>
   <input type="checkbox" class="visually-hidden" id="showmenu" tabindex="-1">
   <header class="top-header">
+    <h1 class="visually-hidden">CSS-live.ru</h1>
     <nav class="top-nav" aria-labeledby="menulabel">
       <label for="showmenu" class="menu-button">
           <span class="hidden-logo" role="presentation">
@@ -88,7 +89,10 @@
 
   </header>
 
-  <main class="home">
+  <div class="home">
+
+    <main>
+      <h2 class="section-title nospace"><span class="visually-hidden">Последние статьи</span></h2>
 
        <article class="article">
 
@@ -304,11 +308,10 @@
           <div class="post__comments-bubble"><a href="#comments" class="post__coment-link">4</a>
           </div>
         </header>
-                <div class="article__post">
-            						<p>Эта статья задумана как начало цикла про загадки, сюрпризы, малоизученные особенности и маленькие полезные секреты самого могущественного, пожалуй, свойства в CSS — свойства <code>display</code>. У нас уже были статьи про новинки этого свойства — значения <code>contents</code> (<a href="http://css-live.ru/articles/display-contents-practice.html">что это вообще</a>, <a href="http://css-live.ru/css/paradoksy-displaycontents-i-budushhee-teksta-v-css.html">его сюрпризы</a>, <a href="http://css-live.ru/articles/bolee-dostupnaya-razmetka-s-displaycontents.html">преимущества</a> и <a href="http://css-live.ru/articles/display-contents-ne-css-sbros.html">подводные камни</a> для доступности) и <code>flow-root</code>. Но и старые, давно знакомые (казалось бы) значения этого свойства таят в себе немало сюрпризов, подводных камней и удивительных открытий. Прежде всего, пожалуй, это значения с «приставкой» <code>inline-</code>: <code>inline-flex</code>, <code>inline-grid</code>, <code>inline-table</code>, и, наконец, наш старый <i>знакомый</i> <code>inline-block</code>.</p>
-<p>С него-то мы и начнем наш экскурс в фундаментальные глубины CSS образца 2018 года, в конце которого у нас должно сложиться целостное представление обо всех существующих механизмах раскладки в браузере. Готовы к сюрпризам?</p>
-					</div>
-				</div>
+        <div class="article__post">
+            <p>Эта статья задумана как начало цикла про загадки, сюрпризы, малоизученные особенности и маленькие полезные секреты самого могущественного, пожалуй, свойства в CSS — свойства <code>display</code>. У нас уже были статьи про новинки этого свойства — значения <code>contents</code> (<a href="http://css-live.ru/articles/display-contents-practice.html">что это вообще</a>, <a href="http://css-live.ru/css/paradoksy-displaycontents-i-budushhee-teksta-v-css.html">его сюрпризы</a>, <a href="http://css-live.ru/articles/bolee-dostupnaya-razmetka-s-displaycontents.html">преимущества</a> и <a href="http://css-live.ru/articles/display-contents-ne-css-sbros.html">подводные камни</a> для доступности) и <code>flow-root</code>. Но и старые, давно знакомые (казалось бы) значения этого свойства таят в себе немало сюрпризов, подводных камней и удивительных открытий. Прежде всего, пожалуй, это значения с «приставкой» <code>inline-</code>: <code>inline-flex</code>, <code>inline-grid</code>, <code>inline-table</code>, и, наконец, наш старый <i>знакомый</i> <code>inline-block</code>.</p>
+            <p>С него-то мы и начнем наш экскурс в фундаментальные глубины CSS образца 2018 года, в конце которого у нас должно сложиться целостное представление обо всех существующих механизмах раскладки в браузере. Готовы к сюрпризам?</p>
+        </div>
         <footer class="post__footer">
 					<div class="read-more-wrap">
 						<a href="article.html" class="article__read-more">читать дальше</a>
@@ -689,7 +692,7 @@
           <div class="post__comments-bubble"><a href="http://css-live.ru/cssjssvg-s-podvypodvertom/ezhenedelnaya-podborka-krasivyx-effektov-na-css-svg-js-79.html#respond" class="post__coment-link">0</a>
           </div>
         </header>
-                <div class="article__post">
+        <div class="article__post">
 					<div class="post">
             						<h2>Подборка свежих эффектов, интересных идей и&nbsp;полезных наработок.</h2>
 <div>
@@ -704,7 +707,7 @@
 <hr>
   </div><p></p>
 					</div>
-					</div>
+          </div>
          <footer class="post__footer">
 					<div class="read-more-wrap">
 						<a href="http://css-live.ru/cssjssvg-s-podvypodvertom/ezhenedelnaya-podborka-krasivyx-effektov-na-css-svg-js-79.html" class="article__read-more">читать дальше</a>
@@ -766,10 +769,75 @@
         </footer>
     </article>
 
-      
-      
-      
-      
+    <nav class="pagination">
+
+      <h3>Страница <b>2</b> из <b>30</b></h3>
+
+      <div class="pagination__list">
+        <p class="pagination__item pagination__item--prev"><a href="http://css-live.ru/page/1" class="pagination__link">Предыдущая</a></p>
+        <ol class="pagination__numbers">
+          <li class="pagination__point pagination__point--current">
+            <ol class="pagination__group pagination__group--current">
+              <li class="pagination__item"><a href="http://css-live.ru/page/1" class="pagination__link">1</a></li>
+              <li class="pagination__item"><a class="pagination__link pagination__link--current">2</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/3" class="pagination__link">3</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/4" class="pagination__link">4</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/5" class="pagination__link">5</a></li>
+            </ol>
+          </li>
+          <li class="pagination__point">
+            <ol class="pagination__group">
+              <li class="pagination__item"><a href="http://css-live.ru/page/6" class="pagination__link">6</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/7" class="pagination__link">7</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/8" class="pagination__link">8</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/9" class="pagination__link">9</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/10" class="pagination__link">10</a></li>
+            </ol>
+          </li>
+          <li class="pagination__point">
+            <ol class="pagination__group">
+              <li class="pagination__item"><a href="http://css-live.ru/page/11" class="pagination__link">11</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/12" class="pagination__link">12</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/13" class="pagination__link">13</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/14" class="pagination__link">14</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/15" class="pagination__link">15</a></li>
+            </ol>
+          </li>
+          <li class="pagination__point">
+            <ol class="pagination__group">
+              <li class="pagination__item"><a href="http://css-live.ru/page/16" class="pagination__link">16</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/17" class="pagination__link">17</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/18" class="pagination__link">18</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/19" class="pagination__link">19</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/20" class="pagination__link">20</a></li>
+            </ol>
+          </li>
+          <li class="pagination__point">
+            <ol class="pagination__group">
+              <li class="pagination__item"><a href="http://css-live.ru/page/11" class="pagination__link">21</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/12" class="pagination__link">22</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/13" class="pagination__link">23</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/14" class="pagination__link">24</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/15" class="pagination__link">25</a></li>
+            </ol>
+          </li>
+          <li class="pagination__point">
+            <ol class="pagination__group">
+              <li class="pagination__item"><a href="http://css-live.ru/page/16" class="pagination__link">26</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/17" class="pagination__link">27</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/18" class="pagination__link">28</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/19" class="pagination__link">29</a></li>
+              <li class="pagination__item"><a href="http://css-live.ru/page/20" class="pagination__link">30</a></li>
+            </ol>
+          </li>
+        </ol>
+        <p class="pagination__item pagination__item--next"><a href="http://css-live.ru/page/3" class="pagination__link">Следующая</a></p>
+      </div>
+
+    </nav>
+
+    </main>
+
     <aside class="activity">
       <h2 class="visually-hidden">Текущая активность на сайте</h2>
       <section class="activity__section activity__section--left news">
@@ -852,8 +920,35 @@
           </ul>
       </section>
     </aside>
-      
-  </main>
+
+    <aside class="partnership">
+      <h2 class="visually-hidden">Помощь проекту</h2>
+      <div class="textwidget">
+        <h3>Наши партнеры</h3>
+        <a href="https://skyeng.ru/?source_type=partners&amp;utm_source=inhouse_csslive" style="display: block;"><img class="aligncenter size-large wp-image-22051" src="http://css-live.ru/Primer/skyeng/banner.png" alt="" style="display: block; max-width: 100%;"></a>
+      </div>
+
+      <div class="textwidget">
+          <div class="donate">
+            <h3>Поддержите проект</h3>
+            <p>Можно перечислить 100₽ через Яндекс.Деньги</p>
+            <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?account=410011391625255&quickpay=small&yamoney-payment-type=on&button-text=06&button-size=m&button-color=black&targets=%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83&default-sum=100&successURL=http%3A%2F%2Fcss-live.ru%2F" style="height: 40px; width: 200px"></iframe>
+
+            <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?account=410011391625255&quickpay=small&any-card-payment-type=on&button-text=06&button-size=m&button-color=black&targets=%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83&default-sum=100&successURL=http%3A%2F%2Fcss-live.ru%2F" style="height: 40px; width: 200px"></iframe> 
+
+            <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?account=410011391625255&quickpay=small&mobile-payment-type=on&button-text=06&button-size=m&button-color=black&targets=%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83&default-sum=100&successURL=http%3A%2F%2Fcss-live.ru%2F" style="height: 40px; width: 200px"></iframe>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <footer>
+    <p class="copyright">© CSS-live 2011—2018</p>
+    <p class="feedback"><a href="mailto:psywalker09@gmail.com" class="feedback__link">Связаться с нами</a></p>
+  </footer>
   <script>
 let fixVerticalRhytm = function() {
     /* TEMP fix for Fx bug  */
@@ -873,6 +968,12 @@ onresize = onload = function() {
     clearTimeout(fixVerticalRhytm.timer);
     fixVerticalRhytm.timer = setTimeout(fixVerticalRhytm, 20);
 };
+
+/* ugly workaround for Edge objecting to implement display:contents */
+if (CSS && !CSS.supports('display','contents')) {
+    let main = document.querySelector('.home > main');
+    main.outerHTML = main.innerHTML;
+}
   </script>
 
 </html>
