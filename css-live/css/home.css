@@ -10,11 +10,11 @@
     max-width: 78rem;
 }
 
-.home main {
-    display: contents;
-}
-
 @supports (grid-gap: 0) {
+    .home main {
+        display: contents;
+    }
+  
     @media (min-width: 56em) {
         .home {
             margin: 0;
@@ -28,12 +28,12 @@
 
     @media (min-width: 98em) {
         .home {
-            margin: -21.7rem 0 0;
+            margin: -21.5rem 0 0;
         }
         .home::before {
             content: '';
             grid-area: 1 / 1 / 2 / -1;
-            margin-bottom: 21.7rem;
+            margin-bottom: 21.5rem;
         }
     }
 }
@@ -245,7 +245,7 @@
             overflow: hidden;
             border-top: 1px solid var(--theme-color);
             min-width: 22rem;
-            padding-bottom: 1.5rem;
+            padding-bottom: 1rem;
         }
     }
 }
