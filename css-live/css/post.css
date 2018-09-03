@@ -1,0 +1,159 @@
+.post a[href^="https://codepen.io/"] img {
+    width: 100%;
+    display: block;
+    background: none
+}
+
+.post__header {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.post__date {
+    display: inline-block;
+    font: 500 1em/3rem Montserrat, sans-serif;
+    margin-right: 3rem;
+}
+
+.meta-list {
+    display: inline;
+    font-size: .9em;
+    font-style: italic;
+}
+
+.meta-list__item {
+    display: inline;
+}
+
+.meta-list__item:not(:last-child):after {
+    content: ',';
+}
+
+.post__author {
+    font: 500 1em/3rem Montserrat, sans-serif;
+    align-items: baseline;
+    margin-top: 3rem;
+}
+
+.post__author a {
+    background: none;
+}
+
+.post__author-avatar {
+    display: block;
+    max-width: 6rem;
+    max-height: 6rem;
+    border-radius: 50%;
+    float: left;
+    margin: -1.5rem 2rem 1.5rem 0;
+}
+
+.post__comments-bubble {
+    font-size: 1.6rem;
+    position: absolute;
+    right: 0;
+    margin-top: -4rem;
+}
+
+.post__coment-link {
+    font-size: 3rem;
+    line-height: 4.3rem;
+    margin: .7rem 0 0 0;
+    padding: 0 1em;
+    border: 1px solid var(--theme-color);
+    border-radius: 2rem;
+    position: relative;
+    background: #fff;
+}
+
+@media (max-width: 35.99em) {
+    .post__coment-link {
+        margin: 2.2rem 0 0 -3rem;
+    }
+}
+
+.post__coment-link::before {
+    content: '';
+    border-width: 0 .9rem 1.5rem 0;
+    border-color: transparent transparent var(--theme-color) transparent;
+    border-style: solid;
+    position: absolute;
+    bottom: 100%;
+    right: .6em;
+}
+
+.post__tags::before { content: 'теги: ' }
+
+.comments {
+    margin-top: 6rem;
+}
+
+.comments-list {
+    margin-top: 3rem;
+}
+
+.comments-list__item {
+    margin-top: 3rem;
+}
+
+.comments-list__metas {
+}
+
+.comments-list__pic {
+    width: 4.2rem;
+    height: 4.2rem;
+    margin: 0 2rem 0 -3rem;
+    float: left;
+    border-radius: 50%;
+}
+
+.comments-list__user-name {
+    font: inherit;
+    font-weight: 700;
+    margin: 0;
+    float: left;
+    top: .1rem;
+}
+
+.comments-list__dates {
+    text-align: right;
+    font-style: italic;
+    background: linear-gradient(var(--theme-color), var(--theme-color) 1px, transparent 1px) repeat 0 -.7rem;
+    margin: 0 0 3rem 3rem;
+}
+
+.comments-list__fields {
+    float: left;
+    margin-right: 4rem;
+}
+
+.comments-list__fields-btn {
+    background: none;
+    padding: 0 2rem;
+    background: #f0f0f0;
+    color: #1485CC;
+    border: 1px dashed #ccc;
+    font: inherit;
+}
+
+.comments .children {
+    margin-left: 3rem;
+}
+
+@media (min-width: 70em) {
+    @supports (grid-gap: 0) {
+        .post {
+            background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem;
+            background-size: 100% 3rem;
+        }
+
+        .comments-list__content {
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem;
+            background-size: 100% 3rem;
+        }
+
+    }
+}

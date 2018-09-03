@@ -1,0 +1,123 @@
+html {
+    font-size: 50%;
+    --theme-color: #f26e21;
+}
+
+@media (min-width: 70em) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+body {
+    font: 16px/1.5 Lora, serif;
+    font-size: 2rem;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 6rem;
+    position: relative;
+    top: .9rem;
+    color: #333;
+}
+
+@media (max-width: 35.99em) {
+    h1 {
+        font-size: 2.8rem;
+        line-height: 3rem;
+        color: #000;
+    }
+}
+
+h2 {
+    margin-top: 3rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    position: relative;
+    top: -.3rem;
+    color: #333;
+}
+
+h3 {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    position: relative;
+    top: -2px;
+}
+
+
+main {
+    display: block;
+    margin: 0 3rem;
+}
+
+@media (min-width: 44em) {
+    main {
+        max-width: 78rem;
+        margin: auto;
+    }
+}
+
+p, ul, ol {
+    margin: 0 0 3rem;
+}
+
+a, strong, em, i, b, code, span {
+    line-height: .5;
+}
+
+a {
+    color: #1485CC;
+    text-decoration: none;
+    background: linear-gradient(to right, rgba(28,148,198,.4), rgba(28,148,198,.4) 34%, #0e4a63 50%, #fc6d00 67%, #fc6d00) 0% 1.06em no-repeat;
+    background-size: 300% 1px;
+    padding-bottom: .3em;
+    transition: all .5s ease;
+}
+
+a:hover, a:focus {
+    background-position: 100% 1.05em;
+}
+
+code {
+    font-family: 'Anonymous Pro', monospace;
+    color: #600;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0 3rem;
+    background: linear-gradient(var(--theme-color),var(--theme-color)) no-repeat 0 0, linear-gradient(var(--theme-color),var(--theme-color)) no-repeat 100% 0;
+    background-size: 3px calc(100% - .7rem);
+}
+
+iframe {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    vertical-align: bottom;
+}
+
+* {
+    opacity: inherit; /* for edge bug with grid items */
+}
+
+[class] {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
