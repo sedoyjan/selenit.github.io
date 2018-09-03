@@ -127,7 +127,6 @@ img {
 
 .top-header {
     overflow: hidden;
-   // contain: paint;
 }
 
 @supports (grid-gap:0) {
@@ -353,7 +352,6 @@ img {
     .nav-list {
         padding: 0;
         margin: 0;
-        list-style: none;
         display: grid;
         width: 38rem;
         --last-gap: 2rem;
@@ -508,7 +506,6 @@ img {
     }
 
     .social__list {
-        list-style: none;
         display: grid;
         grid: repeat(2, 1fr) / repeat(4, 1fr);
         margin: 0;
@@ -914,7 +911,6 @@ img {
 
 .meta-list {
     display: inline;
-    list-style: none;
     font-size: .9em;
     font-style: italic;
 }
@@ -991,7 +987,6 @@ img {
 }
 
 .comments-list__item {
-    list-style: none;
     margin-top: 3rem;
 }
 
@@ -1162,10 +1157,7 @@ img {
 .pagination {
     align-self: end;
     justify-self: center;
-}
-
-@media (min-width: 56em) {
-   .pagination { grid-area: auto / -3 / auto / -1; }
+    grid-area: auto / -3 / auto / -1;
 }
 
 .pagination__list {
@@ -1271,25 +1263,20 @@ img {
 
 @supports (grid-gap: 0) {
     @media (min-width: 98em) {
-        
-        .activity__section {
-            padding-bottom: 2rem;
-        }
 
         .activity__section::before {
             content: '';
             width: 45rem;
             height: 21rem;
-            shape-outside: ellipse(8rem 16rem at var(--shape-x) 5rem);
+            shape-outside: polygon(0 0, 100% 0, 97% 10%, 97% 53%, 93% 84%, 80% 100%, 21% 100%, 8% 81%, 3% 53%, 3% 7%);
+            float: var(--side);
         }
 
-        .activity__section--left::before {
-            float: right;
-            --shape-x: 8rem;
+        .activity__section--left {
+            --side: right;
         }
-        .activity__section--right::before {
-            float: left;
-            --shape-x: 37rem;
+        .activity__section--right {
+            --side: left;
         }
     }
 }
@@ -1327,9 +1314,6 @@ img {
     margin-left: -10rem;
 }
 
-.activity__section li {
-    list-style: none;
-}
 .activity__section a {
     background: none;
 }
@@ -1352,7 +1336,6 @@ img {
             align-self: stretch;
             flex-flow: column;
             margin: 0 0 6rem;
-            padding: 6rem;
             grid-area: 3 / 1 / 4 / 2;
             border-width: 1px;
         }
