@@ -110,7 +110,7 @@
 }
 
 .pagination__list {
-    margin: 0 calc(-2px - .3rem);
+    margin: 7rem calc(-2px - .3rem);
 }
 
 @media (min-width: 44em) {
@@ -125,17 +125,43 @@
 }
 
 .pagination__item {
-    display: inline-block;
+    transform: translate(var(--x),var(--y)) scale(var(--size));
+    transition: transform .2s;
+}
+
+.pagination__item:first-child { --size: .5; --x: -.75ch; --y: 7rem; }
+.pagination__item:nth-child(2):nth-last-child(4) { --size: .1; --x: -.25ch; --y: 3.5rem; }
+.pagination__item:nth-child(2):nth-last-child(3) { --size: .1; --x: -.17ch; --y: 2.34rem; }
+.pagination__item:nth-child(2):nth-last-child(2),
+.pagination__item:nth-child(3):nth-last-child(3) { --size: .1; --x: 0; --y: 0; }
+.pagination__item:nth-child(3):nth-last-child(2) { --size: .1; --x: .17ch; --y: -2.34rem; }
+.pagination__item:nth-child(4):nth-last-child(2) { --size: .1; --x: .25ch; --y: -3.5rem; }
+.pagination__item:last-child   { --size: .5; --x: .75ch; --y: -7rem; }
+
+.pagination__item:only-child   { margin-top: 7rem; --size: .5; --x: 0; --y: 0; }
+
+.pagination__group--current .pagination__item,
+.pagination__item--next,
+.pagination__item--prev,
+.pagination__point:hover > .pagination__group > .pagination__item,
+.pagination__disclose:focus + .pagination__group > .pagination__item {
+    transform: none !important;
+}
+
+.pagination__group:focus-within > .pagination__item {
+    transform: none;
 }
 
 .pagination__numbers {
     display: flex;
     flex-flow: row;
     align-items: center;
+    margin: 0 1rem;
 }
 
 .pagination__point {
     position: relative;
+    height: 3rem;
 }
 
 .pagination__disclose {
@@ -145,40 +171,34 @@
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.pagination__disclose::before {
-    content: '•';
-    font: 700 1em/calc(15rem + 20px), sans-serif;
-    color: #1485CC;
-    visibility: visible;
-    transition: opacity .3s .3s;
+    overflow: hidden;
 }
 
 .pagination__disclose:focus {
-    visibility: hidden;
+    height: 0;
+    transition: height .0s .3s;
 }
 
-.pagination__point:hover > .pagination__disclose::before {
-    visibility: hidden;
-    opacity: 0;
+.pagination__point:hover > .pagination__disclose {
+    height: 0;
 }
 
 .pagination__group {
     display: flex;
     flex-flow: column;
-    transform: scale(.1, .02);
-    transition: transform .2s .2s;
+    justify-content: space-between;
+    margin-top: -7rem;
+    height: 17.51rem;
 }
 
 .pagination__group--current {
     flex-flow: row;
-    transform: none;
+    margin-top: 0;
 }
 
 .pagination__link {
     display: block;
-    margin: 2px;
+    margin: .25rem;
     padding: 0 .5rem;
     border-radius: .3rem;
     text-align: center;
