@@ -323,7 +323,7 @@
 @supports (grid-gap: 0) {
     @media (min-width: 56em) {
         .partnership {
-            border: 0;
+            border-width: 0;
         }
 
         .partnership--home {
