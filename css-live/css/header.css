@@ -22,7 +22,7 @@
     width: 38rem;
     margin: 2rem auto 3rem;
     border-radius: 4rem;
-    column-count: 3;
+    column-width: 10em;
     contain: layout;
 }
 

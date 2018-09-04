@@ -17,7 +17,8 @@
     @media (min-width: 56em) {
         .site-footer {
             margin: 3rem 6rem 1rem;
-            border-top: 1px solid var(--theme-color);
+            border-top: 1px solid #f26e21;
+            border-color: var(--theme-color);
         }
     }
 }

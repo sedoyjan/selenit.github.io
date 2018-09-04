@@ -61,7 +61,8 @@
     line-height: 4.3rem;
     margin: .7rem 0 0 0;
     padding: 0 1em;
-    border: 1px solid var(--theme-color);
+    border: 1px solid #f26e21;
+    border-color: var(--theme-color);
     border-radius: 2rem;
     position: relative;
     background: #fff;
@@ -76,7 +77,7 @@
 .post__coment-link::before {
     content: '';
     border-width: 0 .9rem 1.5rem 0;
-    border-color: transparent transparent var(--theme-color) transparent;
+    border-color: transparent transparent #f26e21 transparent;
     border-style: solid;
     position: absolute;
     bottom: 100%;
@@ -87,6 +88,7 @@
 
 .comments {
     margin-top: 6rem;
+    column-count: 1;
 }
 
 .comments-list {
@@ -143,16 +145,8 @@
 
 @media (min-width: 70em) {
     @supports (grid-gap: 0) {
-        .post {
-            background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem;
-            background-size: 100% 3rem;
-        }
-
-        .comments-list__content {
-            padding: 0;
-            margin: 0;
-            background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem;
-            background-size: 100% 3rem;
+        .ready .post, .ready .comments-list__content {
+            background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem / 100% 3rem;
         }
 
     }
