@@ -101,6 +101,15 @@ blockquote {
     background-size: 3px calc(100% - .7rem);
 }
 
+hr {
+    background: none;
+    border: none;
+    text-align: center;
+}
+hr::before {
+    content: '* * *';
+}
+
 iframe {
     display: block;
 }

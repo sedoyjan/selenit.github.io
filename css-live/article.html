@@ -461,7 +461,10 @@ let fixVerticalRhytm = function() {
     [...objects].map(el => {
         el.style.paddingBottom = 0;
         let h = el.getBoundingClientRect().height;
-        el.style.paddingBottom = step - (h % step) + 'px';
+        let reminder = h % step;
+        if (reminder > Number.EPSYLON) {
+            el.style.paddingBottom = step - reminder + 'px';
+        }
     });
     if (!document.body.classList.contains('ready')) document.body.classList.add('ready');
 }
