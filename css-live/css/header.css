@@ -426,19 +426,6 @@
         transition: all .3s;
     }
 
-    @media (max-width: 35.99em) {
-        .social__img { opacity: 0; transition: opacity .3s; }
-        #showmenu:checked ~ .top-header .social__img { opacity: 1; }
-        .top-header:focus-within .social__img { opacity: 1; }
-    }
-
-    @media (min-width: 70em) {
-        .social__img {
-            transform: none;
-        }
-    }
-
-
     /*
           F O R M S
     */

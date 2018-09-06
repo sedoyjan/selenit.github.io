@@ -1,0 +1,217 @@
+<style>
+.player {
+  position: relative;
+  width: 500px;
+  height: 48px;
+  margin: 20px;
+  opacity: .1;
+  transition: opacity .3s;
+  pointer-events: none;
+  cursor: wait;
+}
+
+.player.ready {
+  opacity: 1;
+  cursor: auto;
+  pointer-events: all;
+}
+
+.player__timer {
+  position: absolute;
+  right: 137px;
+  top: 5px;
+  font: 500 16px/1 sans-serif;
+  color: #aac;
+  width: 50px;
+  text-align: right;
+  border: 0;
+  background: none;
+}
+
+.player__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  border: 0;
+  background: #9319f9;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  outline: none;
+}
+
+.player__icon {
+  position: absolute;
+}
+.player__icon--play {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+}
+.player__icon--pause {
+  width: 6px;
+  height: 14px;
+  border: solid #fff;
+  border-width: 0 1px;
+  top: 12px;
+  left: 15px;
+}
+.play > .player__icon--pause,
+:not(.play) > .player__icon--play {
+  display: none;
+}
+
+.player__timeline {
+   min-width: 0;
+   position: absolute;
+   width: 308px;
+   height: 20px;
+   bottom: 0;
+   left: 58px;
+   opacity: 0;
+}
+.player__progress-track {
+   position: absolute;
+   width: 297px;
+   height: 2px;
+   bottom: 9px;
+   left: 64px;
+   background: #eee;
+}
+
+.player__volume {
+   position: absolute;
+   width: 91px;
+   height: 20px;
+   bottom: 0;
+   left: 385px;
+   opacity: 0;
+}
+
+.player__volume-track {
+   position: absolute;
+   width: 80px;
+   height: 2px;
+   bottom: 9px;
+   left: 391px;
+}
+
+.player__progress-value,
+.player__progress-thumb,
+.player__volume-value,
+.player__volume-thumb {
+  position: absolute;
+  background: #9319f9;
+  top: 0;
+  left: 0;
+}
+
+.player__progress-value, .player__volume-value {
+  height: 2px;
+}
+.player__progress-thumb, .player__volume-thumb {
+  height: 10px;
+  width: 10px;
+  margin: -4px;
+  border-radius: 50%;
+}
+
+</style>
+
+
+
+<div class="player">
+  <audio src="https://thenewcode.com/assets/audio/24-ghosts-III.mp3" id="audiotrack" preload="auto" class="player__track"></audio>
+  <button class="player__button play">
+    <svg class="player__icon player__icon--play" viewBox="1 1 38 38"><path d="M19,14L24,20L19,26Z"></svg>
+    <span class="player__icon player__icon--pause"></span>
+  </button>
+  <div class="player__progress-track">
+      <div class="player__progress-value"></div>
+      <div class="player__progress-thumb"></div>
+  </div>
+  <input type="range" class="player__timeline" min="0" value="0">
+  <div class="player__volume-track">
+      <div class="player__volume-value"></div>
+      <div class="player__volume-thumb"></div>
+  </div>
+  <input type="range" class="player__volume" min="0" max="100" value="100">
+  <div class="player__timer">0:00</div>
+</div>
+
+<img src="https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmonosnap.com%2Ffacebook%2Fgenerate_image_preview%3Fid%3D1tnwK2gSBLnKJ6pd7NoZLaZMnh2qK9">
+  
+<button onclick="document.querySelector('.player__track').src='https://stopmusic.net/_ld/55/5501_Clean_Bandit-So.mp3'">Сменить пластинку</button>
+
+<script>
+var player = () => {
+  const element=  document.querySelector('.player');
+  const timer =   element.querySelector('.player__timer');
+  const track=     element.querySelector('.player__track');
+  const timeline=  element.querySelector('.player__timeline');
+  const timelineWidth = 297;
+  const progressValue= element.querySelector('.player__progress-value');
+  const progressThumb= element.querySelector('.player__progress-thumb');
+  const volume= element.querySelector('.player__volume');
+  const volumeWidth = 80;
+  const volumeValue= element.querySelector('.player__volume-value');
+  const volumeThumb= element.querySelector('.player__volume-thumb');
+  const button= element.querySelector('.player__button');
+  let isProgressDragging = false;
+  let isVolumeDragging = false;
+
+  const toggle= () => {
+    button.classList.toggle('play');
+    if (track.paused) {
+      track.play();
+    } else {
+      track.pause();
+    }
+  }
+  
+  const syncTrack = () =>  {
+    if (!isProgressDragging) {
+      timeline.max = track.duration;
+      timeline.value = track.currentTime;
+    }
+    var curPos = timeline.value / track.duration * timelineWidth;
+    progressValue.style.width = progressThumb.style.left = curPos + 'px';
+    var curVolume = volume.value / 100 * volumeWidth;
+    volumeValue.style.width = volumeThumb.style.left = curVolume + 'px';
+    var minutes = Math.floor(timeline.value / 60);
+    var seconds = Math.floor(timeline.value - minutes * 60);
+    timer.textContent = [minutes, ':', (seconds > 9 ? '' : '0'), seconds].join('');
+    requestAnimationFrame(syncTrack);
+  }
+  
+  const setVolume = () =>  { track.volume = volume.value / 100; }
+  
+  const init = () => {
+    button.addEventListener('click', toggle);
+    timeline.addEventListener('mouseup', () => { isProgressDragging = false; });
+    timeline.addEventListener('mousedown', () => { isProgressDragging = true; });
+    timeline.addEventListener('change', () =>  { track.currentTime = timeline.value; });
+    volume.addEventListener('mouseup', () =>  { isVolumeDragging = false; });
+    volume.addEventListener('mousedown', () =>  { isVolumeDragging = true; });
+    volume.addEventListener('change', setVolume);
+    syncTrack();
+    setVolume();
+    element.classList.add('ready');
+  }
+  
+  track.addEventListener('canplay', init);
+  track.addEventListener('emptied', () => {
+    if(!button.classList.contains('play')) button.classList.add('play');
+    element.classList.remove('ready'); }
+  );
+
+}
+
+player();
+</script>
