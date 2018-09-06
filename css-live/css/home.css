@@ -296,11 +296,11 @@
 
 @supports (grid-gap: 0) {
     @media (min-width: 98em) {
-        .activity__section h3 {
+        .home .activity__section h3 {
             margin: .5em 0 1rem;
         }
 
-        .activity__section h3::before {
+        .home .activity__section h3::before {
             content: '';
             display: block;
             overflow: hidden;

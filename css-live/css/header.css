@@ -480,6 +480,7 @@
         border: none;
         outline: none;
         cursor: pointer;
+        transition: width .25s .07s;
     }
 
     .field:focus {
@@ -491,7 +492,6 @@
         width: var(--input-w);
         padding: 0 3.6rem 0 1rem;
         border-radius: 2rem;
-        transition: width .3s;
     }
 
     @media (min-width: 36em) and (max-width: 43.99em) {
@@ -654,7 +654,6 @@
         margin: 2px calc(2rem + 2px) 2px auto;
         padding: 0 3.6rem 0 1rem;
         border-radius: 2rem;
-        transition: width .3s;
     }
 
     @media (min-width: 36em) and (max-width: 43.99em) {
