@@ -28,7 +28,7 @@ onresize = onload = function() {
 };
 
 /* ugly workaround for Edge objecting to implement display:contents */
-if (CSS && !CSS.supports('display','contents')) {
+if (CSS && CSS.supports('display','grid') && !CSS.supports('display','contents')) {
     let main = document.querySelector('.home > main');
     main.outerHTML = main.innerHTML;
 }
