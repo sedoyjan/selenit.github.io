@@ -2,12 +2,6 @@
 
 .home {
     margin: 0 3rem;
-    max-width: none;
-}
-
-.home .article {
-    margin: 0 auto 6rem;
-    max-width: 78rem;
 }
 
 @supports (grid-gap: 0) {
@@ -67,7 +61,7 @@
     margin: 0;
 }
 
-.post-entry-headline {
+.post__headline {
     margin-top: 0;
 }
 
@@ -245,13 +239,13 @@
     align-self: stretch;
 }
 
-.activity--home {
+.home .activity {
     margin: 0 -3rem;
 }
 
 @supports (grid-gap: 0) {
     @media (min-width: 56em) and (max-width: 97.99em) {
-        .activity--home {
+        .home .activity {
             margin: 0 0 6rem;
             line-height: 3rem;
             grid-area: 2 / -2 / 3 / -1;
@@ -260,7 +254,7 @@
     }
 
     @media (min-width: 98em) {
-        .activity--home {
+        .home .activity {
             grid-area: 1 / 1 / 2 / -1;
             padding: 0;
             font-size: .75em;
@@ -278,7 +272,7 @@
 
 @supports (grid-gap: 0) {
     @media (min-width: 98em) {
-        .activity--home .activity__section::before {
+        .home .activity .activity__section::before {
             content: '';
             width: 45rem;
             height: 21rem;
@@ -350,7 +344,7 @@
             border-width: 0;
         }
 
-        .partnership--home {
+        .home .partnership {
             align-self: stretch;
             flex-flow: column;
             margin: 0 0 6rem;
@@ -361,7 +355,7 @@
     }
 
     @media (min-width: 98em) {
-        .partnership--home {
+        .home .partnership {
             grid-area: 2 / -2 / 4 / -1;
         }
     }

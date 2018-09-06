@@ -1,3 +1,8 @@
+.post {
+    margin: 0 auto 6rem;
+    max-width: 78rem;
+}
+
 .post a[href^="https://codepen.io/"] img {
     width: 100%;
     display: block;
@@ -87,8 +92,9 @@
 .post__tags::before { content: 'теги: ' }
 
 .comments {
-    margin-top: 6rem;
+    margin: 6rem auto 3rem;
     column-count: 1;
+    max-width: 78rem;
 }
 
 .comments-list {
@@ -145,7 +151,7 @@
 
 @media (min-width: 70em) {
     @supports (grid-gap: 0) {
-        .ready .post, .ready .comments-list__content {
+        .ready .post__content, .ready .comments-list__content {
             background: linear-gradient(to top, #f0f0ff 1px, transparent 1px) repeat 0 -.7rem / 100% 3rem;
         }
 
