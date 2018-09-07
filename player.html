@@ -1,3 +1,4 @@
+<!doctype html><meta charset="utf-8">
 <style>
 .player {
   position: relative;
@@ -8,6 +9,10 @@
   transition: opacity .3s;
   pointer-events: none;
   cursor: wait;
+  --timelineWidth: 297px;
+  --timelineLeft: 64px;
+  --volumeWidth: 80px;
+  --volumeLeft: 391px;
 }
 
 .player.ready {
@@ -70,15 +75,15 @@
 .player__timeline {
    min-width: 0;
    position: absolute;
-   width: 308px;
+   width: calc(var(--timelineWidth) + 11px);
    height: 20px;
    bottom: 0;
-   left: 58px;
+   left: calc(var(--timelineLeft) - 6px);
    opacity: 0;
 }
 .player__progress-track {
    position: absolute;
-   width: 297px;
+   width: var(--timelineWidth);
    height: 2px;
    bottom: 9px;
    left: 64px;
@@ -87,16 +92,16 @@
 
 .player__volume {
    position: absolute;
-   width: 91px;
+   width: calc(var(--volumeWidth) + 11px);
    height: 20px;
    bottom: 0;
-   left: 385px;
+   left: calc(var(--volumeLeft) - 6px);
    opacity: 0;
 }
 
 .player__volume-track {
    position: absolute;
-   width: 80px;
+   width: var(--volumeWidth);
    height: 2px;
    bottom: 9px;
    left: 391px;
@@ -125,9 +130,18 @@
 </style>
 
 
+<audio src="https://thenewcode.com/assets/audio/24-ghosts-III.mp3" controls preload="auto" autoplay></audio>
 
-<div class="player">
-  <audio src="https://thenewcode.com/assets/audio/24-ghosts-III.mp3" id="audiotrack" preload="auto" class="player__track"></audio>
+<img src="https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmonosnap.com%2Ffacebook%2Fgenerate_image_preview%3Fid%3D1tnwK2gSBLnKJ6pd7NoZLaZMnh2qK9">
+  
+<button onclick="document.querySelector('audio').src='https://stopmusic.net/_ld/55/5501_Clean_Bandit-So.mp3'">Сменить пластинку</button>
+
+<script>
+var player = (track) => {
+  // создаем заготовку UI
+  const element=  document.createElement('div');
+  element.className = 'player';
+  element.innerHTML = `
   <button class="player__button play">
     <svg class="player__icon player__icon--play" viewBox="1 1 38 38"><path d="M19,14L24,20L19,26Z"></svg>
     <span class="player__icon player__icon--pause"></span>
@@ -142,70 +156,93 @@
       <div class="player__volume-thumb"></div>
   </div>
   <input type="range" class="player__volume" min="0" max="100" value="100">
-  <div class="player__timer">0:00</div>
-</div>
+  <div class="player__timer">0:00</div>`;
 
-<img src="https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmonosnap.com%2Ffacebook%2Fgenerate_image_preview%3Fid%3D1tnwK2gSBLnKJ6pd7NoZLaZMnh2qK9">
-  
-<button onclick="document.querySelector('.player__track').src='https://stopmusic.net/_ld/55/5501_Clean_Bandit-So.mp3'">Сменить пластинку</button>
+  // вставляем заготовку рядом с исходным аудио и делаем сам аудио невидимым
+  track.parentNode.insertBefore(element, track);
+  track.controls = false;
 
-<script>
-var player = () => {
-  const element=  document.querySelector('.player');
-  const timer =   element.querySelector('.player__timer');
-  const track=     element.querySelector('.player__track');
+  const timer = element.querySelector('.player__timer');
   const timeline=  element.querySelector('.player__timeline');
-  const timelineWidth = 297;
+  const timelineWidth = parseInt(getComputedStyle(element).getPropertyValue('--timelineWidth'));
   const progressValue= element.querySelector('.player__progress-value');
   const progressThumb= element.querySelector('.player__progress-thumb');
   const volume= element.querySelector('.player__volume');
-  const volumeWidth = 80;
+  const volumeWidth = parseInt(getComputedStyle(element).getPropertyValue('--volumeWidth'));
   const volumeValue= element.querySelector('.player__volume-value');
   const volumeThumb= element.querySelector('.player__volume-thumb');
   const button= element.querySelector('.player__button');
-  let isProgressDragging = false;
-  let isVolumeDragging = false;
 
+  // функциональность кнопки плей/пауза
   const toggle= () => {
-    button.classList.toggle('play');
     if (track.paused) {
       track.play();
     } else {
       track.pause();
     }
   }
-  
+
+  // что бы ни происходило с аудио, синхронизируем важные для нас аспекты
+  // его состояния (плей/пауза, текущая позиция, громкость) с интерфейсом
   const syncTrack = () =>  {
-    if (!isProgressDragging) {
+    // синхронизируем состояние кнопки с состоянием аудио
+    button.classList.toggle('play', track.paused);
+
+    // синхронизируем состояние настоящих ползунков с состоянием самого аудио
+    if (!timeline.isDragging) {
       timeline.max = track.duration;
       timeline.value = track.currentTime;
     }
-    var curPos = timeline.value / track.duration * timelineWidth;
+    if (!volume.isDragging) {
+      volume.value = track.volume * 100;
+    }
+
+    // синхронизируем состояние фейковых ползунков с состоянием настоящих
+    let curPos = timeline.value / track.duration * timelineWidth;
     progressValue.style.width = progressThumb.style.left = curPos + 'px';
-    var curVolume = volume.value / 100 * volumeWidth;
+    let curVolume = volume.value / 100 * volumeWidth;
     volumeValue.style.width = volumeThumb.style.left = curVolume + 'px';
-    var minutes = Math.floor(timeline.value / 60);
-    var seconds = Math.floor(timeline.value - minutes * 60);
-    timer.textContent = [minutes, ':', (seconds > 9 ? '' : '0'), seconds].join('');
+
+    // синхронизируем таймер
+    let minutes = Math.floor(timeline.value / 60);
+    let seconds = Math.floor(timeline.value - minutes * 60);
+    timer.textContent = `${minutes}:${(seconds > 9 ? '' : '0')}${seconds}`;
+
+    // и повторяем это каждый кадр анимации
     requestAnimationFrame(syncTrack);
   }
-  
+
+  // установка громкости
   const setVolume = () =>  { track.volume = volume.value / 100; }
-  
+
+  // инициализация
   const init = () => {
+    // по клику на кнопку запускаем/паузим
     button.addEventListener('click', toggle);
-    timeline.addEventListener('mouseup', () => { isProgressDragging = false; });
-    timeline.addEventListener('mousedown', () => { isProgressDragging = true; });
+
+    // отличаем, когда ползунок ползет сам, а когда его тянет пользователь
+    timeline.addEventListener('mouseup', () => { timeline.isDragging = false; });
+    timeline.addEventListener('mousedown', () => { timeline.isDragging = true; });
+    volume.addEventListener('mouseup', () => { volume.isDragging = false; });
+    volume.addEventListener('mousedown', () => { volume.isDragging = true; });
+
+    // навешиваем обработчики на сами ползунки
     timeline.addEventListener('change', () =>  { track.currentTime = timeline.value; });
-    volume.addEventListener('mouseup', () =>  { isVolumeDragging = false; });
-    volume.addEventListener('mousedown', () =>  { isVolumeDragging = true; });
-    volume.addEventListener('change', setVolume);
+    volume.addEventListener('change', () =>  { track.volume = volume.value / 100; });
+
+    // запускаем синхронизацию
     syncTrack();
-    setVolume();
+
+    // всё готово, можно делать интерфейс доступным для юзера
     element.classList.add('ready');
   }
-  
+
+  // по событию загрузки аудиофайла инициализируем интерфейс заново,
+  // обновляя длительность и т.п.
   track.addEventListener('canplay', init);
+
+  // если в плеере больше нет аудиофайла (напр. src поменяли на новый и он пока грузится),
+  // временно делаем интерфейс недоступным для юзера (напр. полупрозрачным и некликабельным)
   track.addEventListener('emptied', () => {
     if(!button.classList.contains('play')) button.classList.add('play');
     element.classList.remove('ready'); }
@@ -213,5 +250,8 @@ var player = () => {
 
 }
 
-player();
+
+// вызов: передаем в функу ссылку на элемент <audio>,
+// который мы хотим превратить в гламурный плеер
+player(document.querySelector('audio'));
 </script>
