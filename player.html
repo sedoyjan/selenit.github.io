@@ -130,11 +130,11 @@
 </style>
 
 
-<audio src="https://thenewcode.com/assets/audio/24-ghosts-III.mp3" controls preload="auto" autoplay></audio>
+<audio src="" controls preload="auto"></audio>
 
-<img src="https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmonosnap.com%2Ffacebook%2Fgenerate_image_preview%3Fid%3D1tnwK2gSBLnKJ6pd7NoZLaZMnh2qK9">
-  
-<button onclick="document.querySelector('audio').src='https://stopmusic.net/_ld/55/5501_Clean_Bandit-So.mp3'">Сменить пластинку</button>
+<button onclick="document.querySelector('audio').src='https://thenewcode.com/assets/audio/24-ghosts-III.mp3'">Трек 1</button>
+<button onclick="document.querySelector('audio').src='https://voximplant.xyz:8443/api/v2/file/getStreamFile?id=7492'">Трек 2</button>
+<button onclick="document.querySelector('audio').src='https://stopmusic.net/_ld/55/5501_Clean_Bandit-So.mp3'">Трек 3</button>
 
 <script>
 var player = (track) => {
@@ -189,11 +189,19 @@ var player = (track) => {
     button.classList.toggle('play', track.paused);
 
     // синхронизируем состояние настоящих ползунков с состоянием самого аудио
-    if (!timeline.isDragging) {
+    if (timeline.isDragging) {
+      track.muted = true;
+      track.currentTime = timeline.value;
+    }
+    else {
+      track.muted = false;
       timeline.max = track.duration;
       timeline.value = track.currentTime;
     }
-    if (!volume.isDragging) {
+    if (volume.isDragging) {
+      track.volume = volume.value / 100;
+    }
+    else {
       volume.value = track.volume * 100;
     }
 
@@ -211,30 +219,26 @@ var player = (track) => {
     // и повторяем это каждый кадр анимации
     requestAnimationFrame(syncTrack);
   }
+  
+  // по клику на кнопку запускаем/паузим
+  button.addEventListener('click', toggle);
 
-  // установка громкости
-  const setVolume = () =>  { track.volume = volume.value / 100; }
+  // отличаем, когда ползунок ползет сам, а когда его тянет пользователь
+  timeline.addEventListener('mouseup', () => { timeline.isDragging = false; });
+  timeline.addEventListener('mousedown', () => { timeline.isDragging = true; });
+  volume.addEventListener('mouseup', () => { volume.isDragging = false; });
+  volume.addEventListener('mousedown', () => { volume.isDragging = true; });
 
   // инициализация
   const init = () => {
-    // по клику на кнопку запускаем/паузим
-    button.addEventListener('click', toggle);
-
-    // отличаем, когда ползунок ползет сам, а когда его тянет пользователь
-    timeline.addEventListener('mouseup', () => { timeline.isDragging = false; });
-    timeline.addEventListener('mousedown', () => { timeline.isDragging = true; });
-    volume.addEventListener('mouseup', () => { volume.isDragging = false; });
-    volume.addEventListener('mousedown', () => { volume.isDragging = true; });
-
-    // навешиваем обработчики на сами ползунки
-    timeline.addEventListener('change', () =>  { track.currentTime = timeline.value; });
-    volume.addEventListener('change', () =>  { track.volume = volume.value / 100; });
-
-    // запускаем синхронизацию
-    syncTrack();
-
-    // всё готово, можно делать интерфейс доступным для юзера
-    element.classList.add('ready');
+    if (player.wasReloaded) {
+      // всё готово, можно делать интерфейс доступным для юзера
+      element.classList.add('ready');
+      // запускаем проигрывание
+      track.play();
+      // и сбрасываем флаг первой загрузки
+      player.wasReloaded = false;
+    }
   }
 
   // по событию загрузки аудиофайла инициализируем интерфейс заново,
@@ -244,9 +248,15 @@ var player = (track) => {
   // если в плеере больше нет аудиофайла (напр. src поменяли на новый и он пока грузится),
   // временно делаем интерфейс недоступным для юзера (напр. полупрозрачным и некликабельным)
   track.addEventListener('emptied', () => {
-    if(!button.classList.contains('play')) button.classList.add('play');
+    player.wasReloaded = true;
     element.classList.remove('ready'); }
   );
+
+  // ставим флаг первой загрузки
+  player.wasReloaded = true;
+
+  // запускаем синхронизацию
+  syncTrack();
 
 }
 
