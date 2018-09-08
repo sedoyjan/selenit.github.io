@@ -16,13 +16,13 @@
         }
 
         .single .post__header {
-            width: calc(39rem + 49vw) !important;
+            width: calc(34rem + 49vw) !important;
             position: static;
             padding-bottom: 3rem;
         }
 
         .single .post h2, .single .post h3, .single .post h4 {
-            width: calc(39rem + 49vw);
+            width: calc(34rem + 49vw);
         }
 
         .single .post blockquote::before,
@@ -43,33 +43,24 @@
             --bl: 3px;
         }
 
-        .single .prettyprint::before,
-        .single .prettyprint::after {
-            content: attr(rel);
-            white-space: normal;
-            font: 500 3rem/1 'Montserrat', sans-serif;
-            min-width: 24rem;
-            box-sizing: border-box;
-            opacity: .5;
-            padding: 0 var(--pr) 0 var(--pl);
-            border-width: 1px var(--br) 1px var(--bl);
-        }
-        .single .prettyprint::before {
-            right: 100%;
-            left: auto;
-            text-align: right;
-            --pr: 3rem;
-            --pl: 0;
-            --br: 3px;
-            --bl: 0;
+        .single .prettyprint.prettyprint {
+            display: inline-block;
+            max-width: calc(34rem + 49vw);
+            padding: .8rem 0 0 25rem;
+            margin: -.8rem 0 0 -24rem;
+            overflow-y: hidden;
         }
 
-        .single .prettyprint::after {
-            left: 100%;
-            --pr: 0;
-            --pl: 3rem;
-            --br: 0;
-            --bl: 3px;
+        .single .prettyprint::before {
+            top: 0;
+            content: attr(rel);
+            white-space: normal;
+            font: 500 3.6rem/1 'Montserrat', sans-serif;
+            width: 24rem;
+            box-sizing: border-box;
+            text-align: right;
+            opacity: .3;
+            padding-right: 2rem;
         }
 
         .single .post__categories,
@@ -119,6 +110,10 @@
 
         .single .post__author-avatar {
             margin-right: 0;
+        }
+        
+        .single .meta__name {
+            line-height: inherit;
         }
 
         .single .post__comments-bubble {

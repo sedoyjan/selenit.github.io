@@ -5,7 +5,7 @@ let fixVerticalRhytm = function() {
     }
 
     let step = parseInt(getComputedStyle(document.body).lineHeight);
-    let imgs = document.querySelectorAll('.post__content img');
+    let imgs = document.querySelectorAll('.post__content img, .post__content pre');
     [...imgs].map(el => {
         el.style.paddingBottom = 0;
         let h = el.getBoundingClientRect().height;

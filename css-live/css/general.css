@@ -91,9 +91,11 @@ pre.prettyprint.prettyprint {
     border: 0;
     padding: 0 0 0 2rem;
     position: relative;
+    max-width: 100%;
+    overflow: auto;
 }
 
-pre.prettyprint::before, pre.prettyprint::after {
+pre.prettyprint::before {
     content: '';
     position: absolute;
     top: -.7rem;
