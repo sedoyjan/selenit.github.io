@@ -1,4 +1,6 @@
-<!doctype html><meta charset="utf-8">
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <style>
 .player {
   position: relative;
@@ -13,6 +15,7 @@
   --timelineLeft: 64px;
   --volumeWidth: 80px;
   --volumeLeft: 391px;
+  --color: green;
 }
 
 .player.ready {
@@ -27,7 +30,6 @@
   top: 5px;
   font: 500 16px/1 sans-serif;
   color: #aac;
-  width: 50px;
   text-align: right;
   border: 0;
   background: none;
@@ -39,7 +41,7 @@
   left: 0;
   padding: 0;
   border: 0;
-  background: #9319f9;
+  background: var(--color);
   border-radius: 50%;
   width: 38px;
   height: 38px;
@@ -112,7 +114,7 @@
 .player__volume-value,
 .player__volume-thumb {
   position: absolute;
-  background: #9319f9;
+  background: var(--color);
   top: 0;
   left: 0;
 }
@@ -156,7 +158,7 @@ var player = (track) => {
       <div class="player__volume-thumb"></div>
   </div>
   <input type="range" class="player__volume" min="0" max="100" value="100">
-  <div class="player__timer">0:00</div>`;
+  <output class="player__timer">`;
 
   // вставляем заготовку рядом с исходным аудио и делаем сам аудио невидимым
   track.parentNode.insertBefore(element, track);
@@ -164,11 +166,11 @@ var player = (track) => {
 
   const timer = element.querySelector('.player__timer');
   const timeline=  element.querySelector('.player__timeline');
-  const timelineWidth = parseInt(getComputedStyle(element).getPropertyValue('--timelineWidth'));
+  const timelineWidth = timeline.offsetWidth - 11;
   const progressValue= element.querySelector('.player__progress-value');
   const progressThumb= element.querySelector('.player__progress-thumb');
   const volume= element.querySelector('.player__volume');
-  const volumeWidth = parseInt(getComputedStyle(element).getPropertyValue('--volumeWidth'));
+  const volumeWidth = volume.offsetWidth - 11;
   const volumeValue= element.querySelector('.player__volume-value');
   const volumeThumb= element.querySelector('.player__volume-thumb');
   const button= element.querySelector('.player__button');
@@ -180,6 +182,14 @@ var player = (track) => {
     } else {
       track.pause();
     }
+  }
+
+  // форматирование времени
+  const formatTime = time => {
+    if (isNaN(time)) time = 0;
+    let minutes = ~~(time / 60);
+    let seconds = ~~(time - minutes * 60);
+    return `${minutes}:${(seconds > 9 ? '' : '0')}${seconds}`;
   }
 
   // что бы ни происходило с аудио, синхронизируем важные для нас аспекты
@@ -212,9 +222,8 @@ var player = (track) => {
     volumeValue.style.width = volumeThumb.style.left = curVolume + 'px';
 
     // синхронизируем таймер
-    let minutes = Math.floor(timeline.value / 60);
-    let seconds = Math.floor(timeline.value - minutes * 60);
-    timer.textContent = `${minutes}:${(seconds > 9 ? '' : '0')}${seconds}`;
+    
+    timer.value = `${formatTime(timeline.value)} / ${formatTime(track.duration)}`;
 
     // и повторяем это каждый кадр анимации
     requestAnimationFrame(syncTrack);
@@ -223,11 +232,19 @@ var player = (track) => {
   // по клику на кнопку запускаем/паузим
   button.addEventListener('click', toggle);
 
+  const setDragState = function(obj, state) {
+    return () => { obj.isDragging = state; }
+  }
+
   // отличаем, когда ползунок ползет сам, а когда его тянет пользователь
-  timeline.addEventListener('mouseup', () => { timeline.isDragging = false; });
-  timeline.addEventListener('mousedown', () => { timeline.isDragging = true; });
-  volume.addEventListener('mouseup', () => { volume.isDragging = false; });
-  volume.addEventListener('mousedown', () => { volume.isDragging = true; });
+  timeline.addEventListener('mouseup', setDragState(timeline, false));
+  timeline.addEventListener('mousedown', setDragState(timeline, true));
+  timeline.addEventListener('touchend', setDragState(timeline, false));
+  timeline.addEventListener('touchstart', setDragState(timeline, true));
+  volume.addEventListener('mouseup', setDragState(volume, false));
+  volume.addEventListener('mousedown', setDragState(volume, true));
+  volume.addEventListener('touchend', setDragState(volume, false));
+  volume.addEventListener('touchstart', setDragState(volume, true));
 
   // инициализация
   const init = () => {
