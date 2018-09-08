@@ -81,9 +81,32 @@ a:hover, a:focus {
     background-position: 100% 1.05em;
 }
 
-code {
+code, pre {
     font-family: 'Anonymous Pro', monospace;
     color: #600;
+    font-size: 1em;
+}
+
+pre.prettyprint.prettyprint {
+    border: 0;
+    padding: 0 0 0 2rem;
+    position: relative;
+}
+
+pre.prettyprint::before, pre.prettyprint::after {
+    content: '';
+    position: absolute;
+    top: -.7rem;
+    height: 100%;
+    border: solid;
+}
+pre.prettyprint::before {
+    left: 0;
+    border-width: 0 3px 0 0;
+}
+pre.prettyprint::after {
+    right: 0;
+    border-width: 0 0 0 3px;
 }
 
 blockquote {
@@ -99,7 +122,6 @@ blockquote::before, blockquote::after {
     height: 100%;
     border: solid var(--theme-color);
 }
-
 blockquote::before {
     left: 0;
     border-width: 0 3px 0 0;

@@ -549,6 +549,7 @@
         opacity: 1;
         cursor: pointer;
         pointer-events: all;
+        outline: none;
     }
 
     .search__label {
@@ -706,6 +707,10 @@
         transition: all .2s .1s;
         opacity: 0;
         cursor: pointer;
+    }
+
+    .email__submit:focus {
+        outline: none;
     }
 
     .email__text:focus ~ .email__submit {

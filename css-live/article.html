@@ -40,7 +40,7 @@
         <ul class="social__list">
           <li class="social__item">
             <a href="http://feeds.feedburner.com/css-live" class="social__link social__link_type_rss">
-              <svg aria-label="RSS" class="social__img" width="30" height="30" viewBox="-18 -20 130 130"><path fill="#F26E21" d="M11,1a80,80 0 0,1 80,80a8,8 0 0,1 -16,0a64,64 0 0,0-64,-64a8,8 0 0,1 0,-16M11,33a48,48 0 0,1 48,48a8,8 0 0,1 -16,0a32,32 0 0,0 -32,-32a8,8 0 0,1 0,-16M3,76a12,12 0 1,1 0,.5Z"/></svg>
+              <svg aria-label="RSS" class="social__img" width="30" height="30" viewBox="-18 -20 130 130"><path fill="#F26E21" d="M11,1a80,80 0 0,1 80,80a8,8 0 0,1-16,0a64,64 0 0,0-64,-64a8,8 0 0,1 0,-16M11,33a48,48 0 0,1 48,48a8,8 0 0,1-16,0a32,32 0 0,0-32,-32a8,8 0 0,1 0,-16M3,76a12,12 0 1,1 0,.5Z"/></svg>
             </a>
           </li>
           <li class="social__item">
@@ -55,7 +55,7 @@
           </li>
           <li class="social__item">
             <a href="http://www.facebook.com/csslive" class="social__link social__link_type_fb">
-              <svg aria-label="facebook" class="social__img" width="30" height="30" viewBox="-4 -2 56 56"><path fill="#3b5998" d="M22,7c2-2,4-2,6-2c2-0,5-0,7-0c0,2,0,5-0,7c-2-0-3,0-4-0c-1-0-2,1-2,2c-0,2-0,3-0,5c2,0,4-0,7,0c-0,2-0,5-1,7c-2,0-4-0-6,0c-0,7,0,14-0,21c-3,0-6-0-9,0c-0-7,0-14-0-21c-1-0-3,0-4-0c0-2,0-5,0-7c1-0,3,0,4-0c0-2-0-5,0-7C20,10,21,8,22,7z"></path></svg>
+              <svg aria-label="facebook" class="social__img" width="30" height="30" viewBox="-22 -6 72 72"><path fill="#3b5998" d="M2,30h6v26h12v-26h7l2,-9h-9v-5a3,3 0 0 1 3-3h5v-9h-11a9,9 0 0 0-9,9v8h-6z"></path></svg>
             </a>
           </li>
           <li class="social__item">
@@ -120,6 +120,21 @@
 
               <p>Эта статья задумана как начало цикла про загадки, сюрпризы, малоизученные особенности и маленькие полезные секреты самого могущественного, пожалуй, свойства в CSS — свойства <code>display</code>. У нас уже были статьи про новинки этого свойства — значения <code>contents</code> (<a href="http://css-live.ru/articles/display-contents-practice.html">что это вообще</a>, <a href="http://css-live.ru/css/paradoksy-displaycontents-i-budushhee-teksta-v-css.html">его сюрпризы</a>, <a href="http://css-live.ru/articles/bolee-dostupnaya-razmetka-s-displaycontents.html">преимущества</a> и <a href="http://css-live.ru/articles/display-contents-ne-css-sbros.html">подводные камни</a> для доступности) и <code>flow-root</code>. Но и старые, давно знакомые (казалось бы) значения этого свойства таят в себе немало сюрпризов, подводных камней и удивительных открытий. Прежде всего, пожалуй, это значения с «приставкой» <code>inline-</code>: <code>inline-flex</code>, <code>inline-grid</code>, <code>inline-table</code>, и, наконец, наш старый <i>знакомый</i> <code>inline-block</code>.</p>
               <p>С него-то мы и начнем наш экскурс в фундаментальные глубины CSS образца 2018 года, в конце которого у нас должно сложиться целостное представление обо всех существующих механизмах раскладки в браузере. Готовы к сюрпризам?<span id="more-22152"></span></p>
+              <pre class="prettyprint" rel="CSS">@keyframes example {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 320px;
+  }
+  80% {
+    left: 270px;
+  }
+  100% {
+    left: 300px;
+  }
+}
+              </pre>
               <h2>Чуть-чуть истории</h2>
               <p>Для молодых верстальщиков и фронтендеров инлайн-блоки — что-то очень древнее. Но ни в CSS1, ни в CSS2 никакого <code>inline-block</code> не было. Появился он только в CSS2.1, а стандартом CSS2.1 стал лишь в 2011-м, в эпоху «CSS3». В Firefox до 3-й версии (а версии тогда «жили» не по полтора месяца, а годами) <code>inline-block</code> приходилось эмулировать через <code>-moz-inline-box</code>, который был не чем иным, как… мозилловской реализацией старой версии флексбоксов (да-да, <i>инлайн-блоки эмулировали флексбоксами</i>, вот так ирония!). Как ни странно, IE это значение поддерживал (в нем оно впервые и появилось!), но… только для элементов с дефолтным <code>inline</code> (впрочем, это ограничение обходилось простым хаком). В общем, веселое было время:)</p>
               <p>В начале 2010-х инлайн-блоки пережили всплеск популярности как основа для сеток. Они давали намного больше простора для разных вариантов выравнивания, чем надоевшие флоаты, и при этом не нуждались ни в каких «клиарфиксах». И по сей день они — один из самых популярных фолбэков для нормальных систем раскладки (флексбоксов и гридов).</p>
@@ -457,4 +472,7 @@
   </footer>
 
   <script src="helper.js"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+
 </html>

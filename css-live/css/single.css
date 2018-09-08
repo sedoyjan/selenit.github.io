@@ -4,10 +4,126 @@
 
 @supports (grid-gap: 0) {
     @media (min-width: 98em) {
+
         .single {
             margin: 0 6rem;
             display: grid;
             grid: auto auto / auto;
+        }
+
+        .single .post {
+            position: relative;
+        }
+
+        .single .post__header {
+            width: calc(39rem + 49vw) !important;
+            position: static;
+            padding-bottom: 3rem;
+        }
+
+        .single .post h2, .single .post h3, .single .post h4 {
+            width: calc(39rem + 49vw);
+        }
+
+        .single .post blockquote::before,
+        .single .post blockquote::after {
+            width: 24rem;
+            box-sizing: border-box;
+            border-width: 1px var(--br) 1px var(--bl);
+        }
+        .single .post blockquote::before {
+            right: 100%;
+            left: auto;
+            --br: 3px;
+            --bl: 0;
+        }
+        .single .post blockquote::after {
+            left: 100%;
+            --br: 0;
+            --bl: 3px;
+        }
+
+        .single .prettyprint::before,
+        .single .prettyprint::after {
+            content: attr(rel);
+            white-space: normal;
+            font: 500 3rem/1 'Montserrat', sans-serif;
+            min-width: 24rem;
+            box-sizing: border-box;
+            opacity: .5;
+            padding: 0 var(--pr) 0 var(--pl);
+            border-width: 1px var(--br) 1px var(--bl);
+        }
+        .single .prettyprint::before {
+            right: 100%;
+            left: auto;
+            text-align: right;
+            --pr: 3rem;
+            --pl: 0;
+            --br: 3px;
+            --bl: 0;
+        }
+
+        .single .prettyprint::after {
+            left: 100%;
+            --pr: 0;
+            --pl: 3rem;
+            --br: 0;
+            --bl: 3px;
+        }
+
+        .single .post__categories,
+        .single .post__tags {
+            position: absolute;
+            top: -19.3rem;
+            width: calc(49vw - 52rem);
+            padding-top: 1rem;
+        }
+        .single .post__categories {
+            right: 86rem;
+        }
+        .single .post__tags {
+            left: 86rem;
+        }
+
+        .single .post__categories::after,
+        .single .post__tags::after {
+            content: '';
+            border-top: 1px solid var(--theme-color);
+            position: absolute;
+            top: 0;
+        }
+        .single .post__categories::after {
+            right: 1rem;
+            left: 0;
+        }
+        .single .post__tags::after {
+            left: 1rem;
+            right: 0;
+        }
+
+        .single .post__date {
+            position: absolute;
+            right: 82rem;
+            top: 3rem;
+        }
+
+        .single .post__author {
+            position: absolute;
+            right: 85rem;
+            top: 9rem;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-end;
+        }
+
+        .single .post__author-avatar {
+            margin-right: 0;
+        }
+
+        .single .post__comments-bubble {
+            right: calc(44rem - 49vw);
+            margin-top: 2rem;
         }
 
         .single .activity, .single .partnership {
