@@ -7,7 +7,6 @@
   width: 500px;
   height: 48px;
   margin: 20px;
-  opacity: .1;
   transition: opacity .3s;
   pointer-events: none;
   cursor: wait;
@@ -15,11 +14,11 @@
   --timelineLeft: 64px;
   --volumeWidth: 80px;
   --volumeLeft: 391px;
-  --color: green;
+  --color: #ccc;
 }
 
 .player.ready {
-  opacity: 1;
+  --color: green;
   cursor: auto;
   pointer-events: all;
 }
@@ -157,12 +156,12 @@ var player = (track) => {
       <div class="player__volume-value"></div>
       <div class="player__volume-thumb"></div>
   </div>
-  <input type="range" class="player__volume" min="0" max="100" value="100">
+  <input type="range" class="player__volume" min="0" max="1" value="1" step="0.01">
   <output class="player__timer">`;
 
   // вставляем заготовку рядом с исходным аудио и делаем сам аудио невидимым
   track.parentNode.insertBefore(element, track);
-  track.controls = false;
+  //track.controls = false;
 
   const timer = element.querySelector('.player__timer');
   const timeline=  element.querySelector('.player__timeline');
@@ -209,20 +208,19 @@ var player = (track) => {
       timeline.value = track.currentTime;
     }
     if (volume.isDragging) {
-      track.volume = volume.value / 100;
+      track.volume = volume.value;
     }
     else {
-      volume.value = track.volume * 100;
+      volume.value = track.volume;
     }
 
     // синхронизируем состояние фейковых ползунков с состоянием настоящих
     let curPos = timeline.value / track.duration * timelineWidth;
     progressValue.style.width = progressThumb.style.left = curPos + 'px';
-    let curVolume = volume.value / 100 * volumeWidth;
+    let curVolume = volume.value * volumeWidth;
     volumeValue.style.width = volumeThumb.style.left = curVolume + 'px';
 
     // синхронизируем таймер
-    
     timer.value = `${formatTime(timeline.value)} / ${formatTime(track.duration)}`;
 
     // и повторяем это каждый кадр анимации
@@ -232,19 +230,18 @@ var player = (track) => {
   // по клику на кнопку запускаем/паузим
   button.addEventListener('click', toggle);
 
-  const setDragState = function(obj, state) {
-    return () => { obj.isDragging = state; }
-  }
-
   // отличаем, когда ползунок ползет сам, а когда его тянет пользователь
-  timeline.addEventListener('mouseup', setDragState(timeline, false));
-  timeline.addEventListener('mousedown', setDragState(timeline, true));
-  timeline.addEventListener('touchend', setDragState(timeline, false));
-  timeline.addEventListener('touchstart', setDragState(timeline, true));
-  volume.addEventListener('mouseup', setDragState(volume, false));
-  volume.addEventListener('mousedown', setDragState(volume, true));
-  volume.addEventListener('touchend', setDragState(volume, false));
-  volume.addEventListener('touchstart', setDragState(volume, true));
+  const dragStatesByEvents = {
+    mousedown: true,
+    mouseup: false,
+    touchstart: true,
+    touchend: false
+  }
+  for (let evt in dragStatesByEvents) {
+    [timeline, volume].map(slider => {
+      slider.addEventListener(evt, () => { slider.isDragging = dragStatesByEvents[evt]; })
+    })
+  }
 
   // инициализация
   const init = () => {
@@ -265,8 +262,9 @@ var player = (track) => {
   // если в плеере больше нет аудиофайла (напр. src поменяли на новый и он пока грузится),
   // временно делаем интерфейс недоступным для юзера (напр. полупрозрачным и некликабельным)
   track.addEventListener('emptied', () => {
-    player.wasReloaded = true;
-    element.classList.remove('ready'); }
+      player.wasReloaded = true;
+      element.classList.remove('ready');
+    }
   );
 
   // ставим флаг первой загрузки

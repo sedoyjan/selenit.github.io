@@ -93,14 +93,17 @@ pre.prettyprint.prettyprint {
     position: relative;
     max-width: 100%;
     overflow: auto;
+    padding: .8rem 0 0 1rem;
+    margin: -.8rem 0 0 0;
 }
 
 pre.prettyprint::before {
     content: '';
     position: absolute;
-    top: -.7rem;
-    height: 100%;
+    top: 0;
+    bottom: 0;
     border: solid;
+    opacity: .5;
 }
 pre.prettyprint::before {
     left: 0;

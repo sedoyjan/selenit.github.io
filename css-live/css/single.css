@@ -52,7 +52,6 @@
         }
 
         .single .prettyprint::before {
-            top: 0;
             content: attr(rel);
             white-space: normal;
             font: 500 3.6rem/1 'Montserrat', sans-serif;
