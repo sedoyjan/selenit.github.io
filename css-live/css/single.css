@@ -11,7 +11,7 @@
             grid: auto auto / auto;
         }
 
-        .single .post {
+        .post--single {
             position: relative;
         }
 
@@ -21,23 +21,23 @@
             padding-bottom: 3rem;
         }
 
-        .single .post h2, .single .post h3, .single .post h4 {
+        .post--single h2, .post--single h3, .post--single h4 {
             width: calc(34rem + 49vw);
         }
 
-        .single .post blockquote::before,
-        .single .post blockquote::after {
+        .post--single blockquote::before,
+        .post--single blockquote::after {
             width: 24rem;
             box-sizing: border-box;
             border-width: 1px var(--br) 1px var(--bl);
         }
-        .single .post blockquote::before {
+        .post--single blockquote::before {
             right: 100%;
             left: auto;
             --br: 3px;
             --bl: 0;
         }
-        .single .post blockquote::after {
+        .post--single blockquote::after {
             left: 100%;
             --br: 0;
             --bl: 3px;

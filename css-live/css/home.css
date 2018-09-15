@@ -322,10 +322,6 @@
     margin-left: -10rem;
 }
 
-.activity__section a {
-    background: none;
-}
-
 .partnership {
     display: flex;
     flex-flow: row wrap;
