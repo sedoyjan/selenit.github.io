@@ -555,7 +555,7 @@
         position: relative;
         left: .8em;
         top: .8rem;
-        font: 500 .8em/2.3rem Montserrat, sans-serif;
+        font: 500 .8em/1.5 Montserrat, sans-serif;
         color: var(--theme-color);
         transition: all .2s;
         cursor: pointer;
@@ -698,7 +698,7 @@
         top: .8rem;
         width: 3rem;
         background: transparent;
-        font: 500 .8em/2.3rem Montserrat, sans-serif;
+        font: 500 .8em/1.5 Montserrat, sans-serif;
         color: var(--theme-color);
         border: none;
         transition: all .2s .1s;
@@ -717,7 +717,7 @@
     .email__label-part {
         position: absolute;
         left: .8em;
-        font: 500 .8em/2.3rem Montserrat, sans-serif;
+        font: 500 .8em/1.5 Montserrat, sans-serif;
         color: var(--theme-color);
         transition: all .2s;
         cursor: pointer;

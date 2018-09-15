@@ -23,6 +23,7 @@
 
         .post--single h2, .post--single h3, .post--single h4 {
             width: calc(34rem + 49vw);
+            margin: 6rem 0 3rem;
         }
 
         .post--single blockquote::before,
